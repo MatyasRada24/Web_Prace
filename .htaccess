@@ -1,0 +1,275 @@
+    # Prevent Apache from adding trailing slash 301 redirects on directories
+    <IfModule mod_dir.c>
+        DirectorySlash Off
+    </IfModule>
+
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+
+        RewriteCond %{HTTPS} off
+        RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+        RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+        RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+        # Redirect any index.html to the directory root to prevent duplicate content
+        RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ (.*/)?index\.html\ HTTP/
+        RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+    </IfModule>
+
+    <IfModule mod_headers.c>
+        Header always set X-Frame-Options "SAMEORIGIN"
+        Header always set X-Content-Type-Options "nosniff"
+        Header always set X-XSS-Protection "1; mode=block"
+        Header always set Referrer-Policy "strict-origin-when-cross-origin"
+        Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
+
+        # ---------------------------------------------------------------
+        # Content Security Policy – upraven pro Google AdSense
+        # ---------------------------------------------------------------
+        Header always set Content-Security-Policy "default-src 'self'; \
+    script-src 'self' 'unsafe-inline' \
+    https://pagead2.googlesyndication.com \
+    https://adservice.google.com \
+    https://adservice.google.cz \
+    https://www.googletagservices.com \
+    https://partner.googleadservices.com \
+    https://fundingchoicesmessages.google.com \
+    https://cloud.umami.is; \
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; \
+    font-src 'self' https://fonts.gstatic.com; \
+    img-src 'self' data: https:; \
+    frame-src \
+    https://googleads.g.doubleclick.net \
+    https://tpc.googlesyndication.com \
+    https://fundingchoicesmessages.google.com \
+    https://www.google.com; \
+    connect-src 'self' \
+    https://pagead2.googlesyndication.com \
+    https://adservice.google.com \
+    https://adservice.google.cz \
+    https://cloud.umami.is \
+    https://api-gateway.umami.dev \
+    https://formspree.io; \
+    frame-ancestors 'none';"
+
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+        Header unset Server
+        Header unset X-Powered-By
+
+        # ---------------------------------------------------------------
+        # COEP/COOP/CORP – odstraněno pro kompatibilitu s AdSense
+        # (AdSense iframy vyžadují cross-origin přístup)
+        # ---------------------------------------------------------------
+        Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+        # Header always set Cross-Origin-Embedder-Policy "require-corp"  # ODSTRANĚNO – blokuje AdSense
+        Header always set Cross-Origin-Resource-Policy "cross-origin"
+
+        <FilesMatch "\.(js|css|html|json|xml)$">
+            Header append Vary Accept-Encoding
+        </FilesMatch>
+    </IfModule>
+
+    <IfModule mod_mime.c>
+        AddType application/xml .xml
+        AddType text/xml .xml
+        AddType application/json .json
+        AddType image/svg+xml .svg
+        AddType image/webp .webp
+    </IfModule>
+
+    <IfModule mod_brotli.c>
+        AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/javascript application/javascript application/x-javascript application/json application/xml text/xml image/svg+xml
+        BrotliCompressionQuality 6
+    </IfModule>
+
+    <IfModule mod_deflate.c>
+        AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/x-javascript application/json application/xml text/xml image/svg+xml
+        BrowserMatch ^Mozilla/4 gzip-only-text/html
+        BrowserMatch ^Mozilla/4\.0[678] no-gzip
+        BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    </IfModule>
+
+    <IfModule mod_headers.c>
+        <FilesMatch "\.(js|css)$">
+            Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
+        </FilesMatch>
+
+        <FilesMatch "\.(png|jpg|jpeg|gif|webp|svg|ico)$">
+            Header set Cache-Control "public, max-age=15552000, immutable"
+        </FilesMatch>
+
+        <FilesMatch "\.(woff2|woff|ttf|eot)$">
+            Header set Cache-Control "public, max-age=31536000, immutable"
+        </FilesMatch>
+
+        <FilesMatch "\.html$">
+            Header set Cache-Control "public, max-age=3600, must-revalidate"
+        </FilesMatch>
+
+        <FilesMatch "\.(xml|json)$">
+            Header set Cache-Control "public, max-age=86400"
+        </FilesMatch>
+    </IfModule>
+
+    <IfModule mod_expires.c>
+        ExpiresActive On
+        ExpiresDefault                          "access plus 1 month"
+        ExpiresByType text/html                 "access plus 1 hour"
+        ExpiresByType text/css                  "access plus 1 year"
+        ExpiresByType application/javascript    "access plus 1 year"
+        ExpiresByType application/x-javascript "access plus 1 year"
+        ExpiresByType image/webp                "access plus 6 months"
+        ExpiresByType image/png                 "access plus 6 months"
+        ExpiresByType image/jpeg                "access plus 6 months"
+        ExpiresByType image/x-icon             "access plus 1 year"
+        ExpiresByType image/svg+xml             "access plus 6 months"
+        ExpiresByType font/woff2                "access plus 1 year"
+        ExpiresByType application/xml           "access plus 1 day"
+        ExpiresByType text/xml                  "access plus 1 day"
+    </IfModule>
+
+    FileETag MTime Size
+    Options -Indexes
+
+    <FilesMatch "(\.htaccess|\.htpasswd|\.env|\.git|package\.json|composer\.json|split\.ps1|generate\.js|generate\.ps1|add_more_errors\.py|fix_data\.py|fix_data\.js|data\.js\.map|CNAME\.txt|audit_errors\.js|normalize_errors\.ps1|generate_sitemap_html\.js|minify\.js)$">
+        Order Allow,Deny
+        Deny from all
+    </FilesMatch>
+
+    <IfModule mod_rewrite.c>
+        RewriteRule ^\.git - [F,L]
+    </IfModule>
+
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteBase /
+
+        # Redirect relative sitemap.html requests in subfolders to the root sitemap
+        RewriteCond %{REQUEST_URI} !^/sitemap\.html$
+        RewriteRule sitemap\.html$ /sitemap.html [L,R=301]
+
+        # Redirect /error/* containing underscores to dashes (SEO canonicalization)
+        RewriteRule ^error/([^/_]*)_([^/_]*)(/.*)?$ /error/$1-$2$3 [L,R=301]
+
+        # Case-correction redirects for old uppercase error folders (SEO canonicalization)
+        RewriteRule ^error/NVLDDMKM\.SYS/?$ /error/nvlddmkm.sys/ [L,R=301]
+        RewriteRule ^error/0X0000007E/?$ /error/0x0000007E/ [L,R=301]
+        RewriteRule ^error/0X000000EF/?$ /error/0x000000EF/ [L,R=301]
+        RewriteRule ^error/0X0000003B/?$ /error/0x0000003B/ [L,R=301]
+        RewriteRule ^error/0X00000050/?$ /error/0x00000050/ [L,R=301]
+        RewriteRule ^error/0XC004F074/?$ /error/0xC004F074/ [L,R=301]
+        RewriteRule ^error/0X80070005/?$ /error/0x80070005/ [L,R=301]
+        RewriteRule ^error/ATIKMPAG\.SYS/?$ /error/atikmpag.sys/ [L,R=301]
+        RewriteRule ^error/0X8000FFFF/?$ /error/0x8000FFFF/ [L,R=301]
+        RewriteRule ^error/0XC0000005/?$ /error/0xC0000005/ [L,R=301]
+        RewriteRule ^error/0X0000004A/?$ /error/0x0000004A/ [L,R=301]
+        RewriteRule ^error/0X80070422/?$ /error/0x80070422/ [L,R=301]
+        RewriteRule ^error/0XC000021A/?$ /error/0xC000021A/ [L,R=301]
+        RewriteRule ^error/WU\-0X80070002/?$ /error/WU-0x80070002/ [L,R=301]
+        RewriteRule ^error/WU\-0X80070057/?$ /error/WU-0x80070057/ [L,R=301]
+        RewriteRule ^error/WU\-0X80004005/?$ /error/WU-0x80004005/ [L,R=301]
+        RewriteRule ^error/WU\-0X80070005/?$ /error/WU-0x80070005/ [L,R=301]
+        RewriteRule ^error/WU\-0X80070422/?$ /error/WU-0x80070422/ [L,R=301]
+        RewriteRule ^error/WU\-0X8009000B/?$ /error/WU-0x8009000B/ [L,R=301]
+        RewriteRule ^error/WU\-0X80072EE7/?$ /error/WU-0x80072EE7/ [L,R=301]
+        RewriteRule ^error/WU\-0X8007001F/?$ /error/WU-0x8007001F/ [L,R=301]
+        RewriteRule ^error/WU\-0X80070424/?$ /error/WU-0x80070424/ [L,R=301]
+        RewriteRule ^error/WU\-0X80070643/?$ /error/WU-0x80070643/ [L,R=301]
+        RewriteRule ^error/DLL\-FAULT\-NTDLL\.DLL/?$ /error/DLL-FAULT-ntdll.dll/ [L,R=301]
+        RewriteRule ^error/DLL\-FAULT\-KERNEL32\.DLL/?$ /error/DLL-FAULT-kernel32.dll/ [L,R=301]
+        RewriteRule ^error/DLL\-FAULT\-USER32\.DLL/?$ /error/DLL-FAULT-user32.dll/ [L,R=301]
+        RewriteRule ^error/DLL\-FAULT\-HAL\.DLL/?$ /error/DLL-FAULT-hal.dll/ [L,R=301]
+        RewriteRule ^error/DLL\-FAULT\-DXGI\.DLL/?$ /error/DLL-FAULT-dxgi.dll/ [L,R=301]
+        RewriteRule ^error/DLL\-FAULT\-D3D11\.DLL/?$ /error/DLL-FAULT-d3d11.dll/ [L,R=301]
+        RewriteRule ^error/DLL\-FAULT\-XINPUT1\-3\.DLL/?$ /error/DLL-FAULT-xinput1-3.dll/ [L,R=301]
+        RewriteRule ^error/DLL\-FAULT\-MSVCP140\.DLL/?$ /error/DLL-FAULT-msvcp140.dll/ [L,R=301]
+        RewriteRule ^error/DLL\-FAULT\-VCRUNTIME140\.DLL/?$ /error/DLL-FAULT-vcruntime140.dll/ [L,R=301]
+        RewriteRule ^error/DLL\-FAULT\-UCRTBASE\.DLL/?$ /error/DLL-FAULT-ucrtbase.dll/ [L,R=301]
+        RewriteRule ^error/BSOD\-NDIS\.SYS/?$ /error/BSOD-ndis.sys/ [L,R=301]
+        RewriteRule ^error/BSOD\-TCPIP\.SYS/?$ /error/BSOD-tcpip.sys/ [L,R=301]
+        RewriteRule ^error/BSOD\-USBPORT\.SYS/?$ /error/BSOD-usbport.sys/ [L,R=301]
+        RewriteRule ^error/BSOD\-FLTMGR\.SYS/?$ /error/BSOD-fltmgr.sys/ [L,R=301]
+        RewriteRule ^error/BSOD\-NTFS\.SYS/?$ /error/BSOD-ntfs.sys/ [L,R=301]
+        RewriteRule ^error/BSOD\-CLASSPNP\.SYS/?$ /error/BSOD-classpnp.sys/ [L,R=301]
+        RewriteRule ^error/BSOD\-DXGKRNL\.SYS/?$ /error/BSOD-dxgkrnl.sys/ [L,R=301]
+        RewriteRule ^error/BSOD\-IGDKMD64\.SYS/?$ /error/BSOD-igdkmd64.sys/ [L,R=301]
+        RewriteRule ^error/BSOD\-AMDKMDAG\.SYS/?$ /error/BSOD-amdkmdag.sys/ [L,R=301]
+        RewriteRule ^error/BSOD\-NVLDDMKM\.SYS/?$ /error/BSOD-nvlddmkm.sys/ [L,R=301]
+        RewriteRule ^error/SVC\-FAIL\-WUAUSERV/?$ /error/SVC-FAIL-wuauserv/ [L,R=301]
+        RewriteRule ^error/SVC\-FAIL\-WINMGMT/?$ /error/SVC-FAIL-Winmgmt/ [L,R=301]
+        RewriteRule ^error/SVC\-FAIL\-SPOOLER/?$ /error/SVC-FAIL-Spooler/ [L,R=301]
+        RewriteRule ^error/SVC\-FAIL\-LANMANWORKSTATION/?$ /error/SVC-FAIL-LanmanWorkstation/ [L,R=301]
+        RewriteRule ^error/SVC\-FAIL\-LANMANSERVER/?$ /error/SVC-FAIL-LanmanServer/ [L,R=301]
+        RewriteRule ^error/SVC\-FAIL\-CRYPTSVC/?$ /error/SVC-FAIL-CryptSvc/ [L,R=301]
+        RewriteRule ^error/SVC\-FAIL\-TERMSERVICE/?$ /error/SVC-FAIL-TermService/ [L,R=301]
+        RewriteRule ^error/SVC\-FAIL\-AUDIOSRV/?$ /error/SVC-FAIL-Audiosrv/ [L,R=301]
+        RewriteRule ^error/UCODE\-0X1A/?$ /error/UCODE-0x1A/ [L,R=301]
+        RewriteRule ^error/0X00000133/?$ /error/0x00000133/ [L,R=301]
+        RewriteRule ^error/0X0000009F/?$ /error/0x0000009F/ [L,R=301]
+        RewriteRule ^error/0X0000003B\-2/?$ /error/0x0000003B-2/ [L,R=301]
+        RewriteRule ^error/0X0000007B/?$ /error/0x0000007B/ [L,R=301]
+        RewriteRule ^error/0X0000000A/?$ /error/0x0000000A/ [L,R=301]
+        RewriteRule ^error/0X0000001E/?$ /error/0x0000001E/ [L,R=301]
+        RewriteRule ^error/0X000000EF\-2/?$ /error/0x000000EF-2/ [L,R=301]
+        RewriteRule ^error/0X000000FC/?$ /error/0x000000FC/ [L,R=301]
+        RewriteRule ^error/0X00000050\-2/?$ /error/0x00000050-2/ [L,R=301]
+        RewriteRule ^error/0X000000C2/?$ /error/0x000000C2/ [L,R=301]
+        RewriteRule ^error/0X00000109/?$ /error/0x00000109/ [L,R=301]
+        RewriteRule ^error/0X00000116/?$ /error/0x00000116/ [L,R=301]
+        RewriteRule ^error/0X00000139/?$ /error/0x00000139/ [L,R=301]
+        RewriteRule ^error/0X00000024/?$ /error/0x00000024/ [L,R=301]
+        RewriteRule ^error/0X000000EA/?$ /error/0x000000EA/ [L,R=301]
+        RewriteRule ^error/0XC0000142/?$ /error/0xc0000142/ [L,R=301]
+        RewriteRule ^error/0XC000007B/?$ /error/0xc000007b/ [L,R=301]
+        RewriteRule ^error/WIN\-APP\-CRASH\-0XC0000005/?$ /error/WIN-APP-CRASH-0xc0000005/ [L,R=301]
+        RewriteRule ^error/0X80070422\-2/?$ /error/0x80070422-2/ [L,R=301]
+        RewriteRule ^error/0X80073712/?$ /error/0x80073712/ [L,R=301]
+        RewriteRule ^error/CLOCK\-WATCHDOG\-TIMEOUT\-2/?$ /error/CLOCK-WATCHDOG-TIMEOUT/ [L,R=301]
+        RewriteRule ^error/0X8007007B/?$ /error/0x8007007B/ [L,R=301]
+        RewriteRule ^error/0X80070422\-3/?$ /error/0x80070422-3/ [L,R=301]
+
+
+        # Redundant/Old URLs to remove from search index (410 Gone)
+        Redirect 410 /zh
+        Redirect 410 /en
+        Redirect 410 /error/net-wifi/
+        Redirect 410 /error/gpu-color-output/
+        Redirect 410 /error/drv-audio/
+        Redirect 410 /error/app-direct-storage/
+        Redirect 410 /error/usbc-power-delivery/
+
+        RewriteRule ^guides/?$ /#guides [L,R=301,NE]
+        RewriteRule ^error/?$ / [L,R=301]
+        RewriteRule ^search/(.+)$ /?q=$1 [L,R=301,NE]
+        # Redirect direct requests for index.html to clean directory URLs (301)
+        RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /error/([^/]+)/index\.html [NC]
+        RewriteRule ^error/([^/]+)/index\.html$ /error/$1/ [R=301,L]
+
+        RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /guides/([^/]+)/index\.html [NC]
+        RewriteRule ^guides/([^/]+)/index\.html$ /guides/$1/ [R=301,L]
+
+        RewriteRule ^guides/([^/]+)/?$ /guides/$1/index.html [L]
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^error/([^/]+)/?$ /index.html [L]
+        RewriteRule ^(cpu|gpu|ram|storage|mobo|psu|bios|network|windows|drivers|directx|runtime|sw-bios)/?$ /?cat=$1 [L,R=301]
+    </IfModule>
+
+    ErrorDocument 404 /index.html
+    ErrorDocument 403 /index.html
+    ErrorDocument 500 /index.html
+
+    <FilesMatch "^index\.html$">
+        Header set Cache-Control "public, max-age=1800, stale-while-revalidate=600"
+    </FilesMatch>
+
+
+
+
+
+    <IfModule mod_rewrite.c>
+        RewriteCond %{HTTP_USER_AGENT} (libwww-perl|wget|python|nikto|sqlmap|dirbuster|nmap|masscan) [NC]
+        RewriteRule .* - [F,L]
+    </IfModule>

@@ -1,0 +1,73 @@
+# ErrorFixer – robots.txt
+# https://errorsfixer.com/
+
+User-agent: *
+Allow: /
+Allow: /?q=
+Allow: /?cat=
+
+Disallow: /.htaccess
+Disallow: /.env
+Disallow: /.git/
+Disallow: /add_more_errors.py
+Disallow: /fix_data.py
+Disallow: /fix_data.js
+Disallow: /CNAME.txt
+Disallow: /*.ps1$
+Disallow: /data.js.map
+
+Disallow: /?type=all
+Disallow: /*&type=all
+Disallow: /?lang=*
+
+# --------------------------------------------------
+# Standard Web Crawlers
+# --------------------------------------------------
+User-agent: Googlebot
+Allow: /
+Allow: /?q=
+Allow: /?cat=
+
+User-agent: Bingbot
+Crawl-delay: 1
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# --------------------------------------------------
+# AI Search Crawlers Allowed (GEO/LLM Optimization)
+# --------------------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# --------------------------------------------------
+# Sitemap
+# --------------------------------------------------
+Sitemap: https://errorsfixer.com/sitemap.xml

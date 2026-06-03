@@ -1,0 +1,2112 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head><meta property="og:image" content="https://errorsfixer.com/og-image.png"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sitemap - HTML Navigation Index | ErrorFixer</title>
+<meta name="description" content="HTML Sitemap for ErrorFixer. Easily navigate through our complete database of PC error codes, BSOD guides, and hardware diagnostic resources." />
+<meta name="robots" content="index, follow" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" /><link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="shortcut icon" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=1.0.9" />
+<style>
+.sitemap-hero {
+background: linear-gradient(135deg, #0f0f14 0%, #0d1b2a 50%, #112240 100%);
+padding: 100px 0 50px;
+text-align: center;
+border-bottom: 1px solid var(--border);
+}
+.sitemap-hero h1 {
+font-size: clamp(2rem, 5vw, 3rem);
+font-weight: 800;
+margin-bottom: 12px;
+}
+.sitemap-hero p {
+color: var(--text2);
+max-width: 600px;
+margin: 0 auto;
+font-size: 1.05rem;
+line-height: 1.6;
+}
+.sitemap-container {
+max-width: 1200px;
+margin: 40px auto;
+padding: 0 24px;
+}
+.sitemap-section {
+background: var(--card-bg);
+border: 1px solid var(--border);
+border-radius: 16px;
+padding: 30px;
+margin-bottom: 30px;
+}
+.sitemap-section h2 {
+font-size: 1.4rem;
+font-weight: 700;
+margin-bottom: 20px;
+color: var(--text);
+display: flex;
+align-items: center;
+gap: 10px;
+border-bottom: 1px solid var(--border);
+padding-bottom: 10px;
+}
+.sitemap-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 15px;
+}
+.sitemap-link {
+display: flex;
+flex-direction: column;
+padding: 12px 16px;
+background: rgba(255, 255, 255, 0.02);
+border: 1px solid var(--border);
+border-radius: 8px;
+text-decoration: none;
+transition: all 0.2s ease;
+}
+.sitemap-link:hover {
+border-color: var(--accent);
+background: rgba(59, 130, 246, 0.05);
+transform: translateY(-2px);
+}
+.sitemap-link-title {
+font-weight: 600;
+color: var(--text);
+font-size: 0.95rem;
+margin-bottom: 4px;
+}
+.sitemap-link-path {
+font-family: var(--mono);
+font-size: 0.75rem;
+color: var(--accent);
+}
+.sitemap-link-desc {
+font-size: 0.8rem;
+color: var(--text3);
+line-height: 1.4;
+margin-top: 4px;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+.subcat-header {
+font-size: 1rem;
+font-weight: 700;
+color: var(--text2);
+margin: 20px 0 10px;
+grid-column: 1 / -1;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.subcat-header::before {
+content: '';
+display: inline-block;
+width: 8px;
+height: 8px;
+background: var(--accent);
+border-radius: 50%;
+}
+</style>
+<script>
+(function() {
+const currentTheme = localStorage.getItem("theme") || "dark";
+document.documentElement.setAttribute("data-theme", currentTheme);
+})();
+</script>
+</head>
+<body>
+<header id="site-header">
+<div class="header-inner">
+<a class="logo" href="index.html" aria-label="ErrorFixer – Home">
+<svg class="logo-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+<path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>
+<span class="logo-text">Error<strong>Fixer</strong></span>
+</a>
+<nav class="main-nav" aria-label="Main navigation" id="main-nav">
+<a href="index.html" class="nav-link">Home</a>
+<a href="index.html#categories" class="nav-link">Categories</a>
+<a href="index.html#guides" class="nav-link">Guides</a>
+<a href="index.html#stats" class="nav-link">Statistics</a>
+</nav>
+<div class="header-actions">
+<button id="theme-toggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">
+<svg id="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg id="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" y1="1" x2="12" y2="3"></line>
+<line x1="12" y1="21" x2="12" y2="23"></line>
+<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+<line x1="1" y1="12" x2="3" y2="12"></line>
+<line x1="21" y1="12" x2="23" y2="12"></line>
+<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+</svg>
+</button>
+<button class="hamburger" id="hamburger" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<section class="sitemap-hero">
+<div class="container">
+<h1 class="gradient-text">HTML Sitemap</h1>
+<p>Complete navigation index of ErrorFixer. Search for diagnostic guides, troubleshooting manuals, and specific hardware/software error code databases.</p>
+</div>
+</section>
+<div class="sitemap-container">
+<section class="sitemap-section">
+<h2>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+</svg>
+Main Pages & Diagnostic Guides
+</h2>
+<div class="sitemap-grid">
+<a href="index.html" class="sitemap-link">
+<span class="sitemap-link-title">Homepage</span>
+<span class="sitemap-link-path">/index.html</span>
+<span class="sitemap-link-desc">Main database search engine, filters, categories and statistics.</span>
+</a>
+<a href="/guides/pc-build-guide/" class="sitemap-link">
+<span class="sitemap-link-title">PC Build Guide</span>
+<span class="sitemap-link-path">/guides/pc-build-guide/</span>
+<span class="sitemap-link-desc">Detailed step-by-step diagnostic guide for building and checking your custom PC.</span>
+</a>
+<a href="/guides/cpu-overheating/" class="sitemap-link">
+<span class="sitemap-link-title">CPU Overheating Guide</span>
+<span class="sitemap-link-path">/guides/cpu-overheating/</span>
+<span class="sitemap-link-desc">Learn how to identify, monitor and resolve processor thermal throttling and high temperatures.</span>
+</a>
+<a href="/guides/directx-errors/" class="sitemap-link">
+<span class="sitemap-link-title">DirectX Errors Manual</span>
+<span class="sitemap-link-path">/guides/directx-errors/</span>
+<span class="sitemap-link-desc">Fix common gaming issues like DXGI_ERROR_DEVICE_REMOVED or D3D compile errors.</span>
+</a>
+<a href="/guides/bsod-codes/" class="sitemap-link">
+<span class="sitemap-link-title">BSOD Codes Reference</span>
+<span class="sitemap-link-path">/guides/bsod-codes/</span>
+<span class="sitemap-link-desc">Resolving Windows Blue Screen of Death stop codes and driver conflicts.</span>
+</a>
+<a href="/guides/gpu-crash-gaming/" class="sitemap-link">
+<span class="sitemap-link-title">GPU Crash Troubleshooting</span>
+<span class="sitemap-link-path">/guides/gpu-crash-gaming/</span>
+<span class="sitemap-link-desc">Resolve graphics card black screens, TDR crashes, and DDU driver reinstalls.</span>
+</a>
+<a href="/guides/bios-startup-errors/" class="sitemap-link">
+<span class="sitemap-link-title">BIOS/UEFI Startup Errors</span>
+<span class="sitemap-link-path">/guides/bios-startup-errors/</span>
+<span class="sitemap-link-desc">Fix POST failure codes, secure boot violation, and CMOS battery leakage.</span>
+</a>
+<a href="/guides/pc-diagnostics-tools/" class="sitemap-link">
+<span class="sitemap-link-title">PC Diagnostics Tools</span>
+<span class="sitemap-link-path">/guides/pc-diagnostics-tools/</span>
+<span class="sitemap-link-desc">Our recommended software suite for monitoring and benchmarking computer hardware.</span>
+</a>
+<a href="/guides/windows-error-codes/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Error Codes</span>
+<span class="sitemap-link-path">/guides/windows-error-codes/</span>
+<span class="sitemap-link-desc">A deep dive into system processes, Event Viewer logs, and Windows Update failures.</span>
+</a>
+<a href="/guides/ram-troubleshooting/" class="sitemap-link">
+<span class="sitemap-link-title">RAM Troubleshooting</span>
+<span class="sitemap-link-path">/guides/ram-troubleshooting/</span>
+<span class="sitemap-link-desc">Fix memory crashes, test for hardware failure with MemTest86, and configure motherboard XMP/EXPO overclocking profiles.</span>
+</a>
+<a href="/guides/ssd-hdd-diagnostics/" class="sitemap-link">
+<span class="sitemap-link-title">SSD &amp; HDD Diagnostics</span>
+<span class="sitemap-link-path">/guides/ssd-hdd-diagnostics/</span>
+<span class="sitemap-link-desc">Check storage drive health using S.M.A.R.T., run filesystem repairs with chkdsk, and resolve boot device errors.</span>
+</a>
+<a href="/guides/windows-update-fix/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Fix</span>
+<span class="sitemap-link-path">/guides/windows-update-fix/</span>
+<span class="sitemap-link-desc">Troubleshoot Windows Update loops, reset the local update services database, and resolve WinRE partition sizing issues.</span>
+</a>
+<a href="/guides/psu-troubleshooting/" class="sitemap-link">
+<span class="sitemap-link-title">PSU Troubleshooting</span>
+<span class="sitemap-link-path">/guides/psu-troubleshooting/</span>
+<span class="sitemap-link-desc">Diagnose hardware shutdowns under gaming/3D load, run the PSU paperclip test, and check motherboard voltage rails.</span>
+</a>
+</div>
+</section>
+<section class="sitemap-section">
+<h2>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+<rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+<rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+<line x1="6" y1="6" x2="6.01" y2="6"></line>
+<line x1="6" y1="18" x2="6.01" y2="18"></line>
+</svg>
+Error Database
+</h2>
+<div class="sitemap-grid">
+<div class="subcat-header">Hardware - BIOS</div>
+<a href="/error/POST-FAILURE/" class="sitemap-link">
+<span class="sitemap-link-title">POST failure</span>
+<span class="sitemap-link-path">/error/POST-FAILURE/</span>
+<span class="sitemap-link-desc">Power-On Self Test failed. The PC will not pass the check and will not boot.</span>
+</a>
+<a href="/error/CMOS-CHECKSUM-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">CMOS Checksum error</span>
+<span class="sitemap-link-path">/error/CMOS-CHECKSUM-ERROR/</span>
+<span class="sitemap-link-desc">BIOS detected invalid data in CMOS. Settings have been lost.</span>
+</a>
+<a href="/error/SECURE-BOOT-VIOLATION/" class="sitemap-link">
+<span class="sitemap-link-title">Violation of Secure Boot</span>
+<span class="sitemap-link-path">/error/SECURE-BOOT-VIOLATION/</span>
+<span class="sitemap-link-desc">Secure Boot blocked unsigned boot code from running.</span>
+</a>
+<a href="/error/BIOS-UPDATE-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">BIOS update failure</span>
+<span class="sitemap-link-path">/error/BIOS-UPDATE-FAIL/</span>
+<span class="sitemap-link-desc">Firmware update failed. The board does not need to boot.</span>
+</a>
+<a href="/error/TPM-NOT-FOUND/" class="sitemap-link">
+<span class="sitemap-link-title">TPM chip not found</span>
+<span class="sitemap-link-path">/error/TPM-NOT-FOUND/</span>
+<span class="sitemap-link-desc">Windows 11 or BitLocker does not find the TPM 2.0 module.</span>
+</a>
+<a href="/error/BIOS-UEFI-BOOT-ORDER/" class="sitemap-link">
+<span class="sitemap-link-title">Wrong order of boot device in BIOS</span>
+<span class="sitemap-link-path">/error/BIOS-UEFI-BOOT-ORDER/</span>
+<span class="sitemap-link-desc">The computer is booting from the wrong device (USB instead of SSD or vice versa) due to the wrong sequence in the BIOS.</span>
+</a>
+<a href="/error/ME-FIRMWARE-CORRUPTION/" class="sitemap-link">
+<span class="sitemap-link-title">Intel Management Engine (ME) corruption</span>
+<span class="sitemap-link-path">/error/ME-FIRMWARE-CORRUPTION/</span>
+<span class="sitemap-link-desc">The Intel ME firmware is corrupted, which leads to strange problems (PC won&#039;t turn off by itself, fans running at full speed, lack of sensors).</span>
+</a>
+<a href="/error/ROM-SPACE-EXHAUSTED/" class="sitemap-link">
+<span class="sitemap-link-title">Insufficient space in Option ROM BIOS</span>
+<span class="sitemap-link-path">/error/ROM-SPACE-EXHAUSTED/</span>
+<span class="sitemap-link-desc">The board has too many associated devices with custom ROMs (eg RAID controllers, multiple GPUs) and has run out of space to initialize them (POST).</span>
+</a>
+<a href="/error/BIOS-ROM-ERR/" class="sitemap-link">
+<span class="sitemap-link-title">BIOS ROM checksum error</span>
+<span class="sitemap-link-path">/error/BIOS-ROM-ERR/</span>
+<span class="sitemap-link-desc">The BIOS ROM memory is corrupted or unreadable.</span>
+</a>
+<div class="subcat-header">Hardware - CPU</div>
+<a href="/error/WHEA-UNCORRECTABLE-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">WHEA uncorrectable error</span>
+<span class="sitemap-link-path">/error/WHEA-UNCORRECTABLE-ERROR/</span>
+<span class="sitemap-link-desc">Critical CPU or chipset hardware error (BSOD 0x124). Caused by voltage instability, overheating or overclocking.</span>
+</a>
+<a href="/error/CLOCK-WATCHDOG-TIMEOUT/" class="sitemap-link">
+<span class="sitemap-link-title">Clock watcher timeout</span>
+<span class="sitemap-link-path">/error/CLOCK-WATCHDOG-TIMEOUT/</span>
+<span class="sitemap-link-desc">The CPU core stopped responding to an interrupt request. Caused by overclocking or faulty driver.</span>
+</a>
+<a href="/error/CPU-THERMAL-THROTTLE/" class="sitemap-link">
+<span class="sitemap-link-title">Temperature limitation of performance</span>
+<span class="sitemap-link-path">/error/CPU-THERMAL-THROTTLE/</span>
+<span class="sitemap-link-desc">The CPU reached the maximum safe temperature and activated throttling. Performance is reduced.</span>
+</a>
+<a href="/error/MACHINE-CHECK-EXCEPTION/" class="sitemap-link">
+<span class="sitemap-link-title">MCE - Machine Check Exception</span>
+<span class="sitemap-link-path">/error/MACHINE-CHECK-EXCEPTION/</span>
+<span class="sitemap-link-desc">The CPU has detected a fatal hardware error. It could be a faulty processor or motherboard.</span>
+</a>
+<a href="/error/CPU-VCORE-LOW/" class="sitemap-link">
+<span class="sitemap-link-title">Low CPU supply voltage</span>
+<span class="sitemap-link-path">/error/CPU-VCORE-LOW/</span>
+<span class="sitemap-link-desc">Powering the processor below the minimum causes instability and crashes.</span>
+</a>
+<a href="/error/CPPC-NOT-SUPPORTED/" class="sitemap-link">
+<span class="sitemap-link-title">CPPC not supported</span>
+<span class="sitemap-link-path">/error/CPPC-NOT-SUPPORTED/</span>
+<span class="sitemap-link-desc">Collaborative Processor Performance Control is not active. Reduces the effectiveness of CPU boost.</span>
+</a>
+<a href="/error/POWER-LIMIT-THROTTLE/" class="sitemap-link">
+<span class="sitemap-link-title">Limiting CPU performance with a performance limit of</span>
+<span class="sitemap-link-path">/error/POWER-LIMIT-THROTTLE/</span>
+<span class="sitemap-link-desc">The CPU is running below maximum power due to the PL1/PL2 limits of the motherboard or laptop.</span>
+</a>
+<a href="/error/L1-CACHE-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">CPU Memory L1 Cache Error</span>
+<span class="sitemap-link-path">/error/L1-CACHE-ERROR/</span>
+<span class="sitemap-link-desc">The processor&#039;s internal L1 cache reported an unrecoverable data error. Extreme system instability.</span>
+</a>
+<a href="/error/PROCHOT-SIGNAL/" class="sitemap-link">
+<span class="sitemap-link-title">Activation of PROCHOT signal</span>
+<span class="sitemap-link-path">/error/PROCHOT-SIGNAL/</span>
+<span class="sitemap-link-desc">The Processor Hot (PROCHOT) signal has been activated, which causes extreme throttling, sometimes even at low temperatures.</span>
+</a>
+<a href="/error/PROCHOT-1/" class="sitemap-link">
+<span class="sitemap-link-title">Thermal throttling of CPU performance</span>
+<span class="sitemap-link-path">/error/PROCHOT-1/</span>
+<span class="sitemap-link-desc">The processor slows down to avoid overheating and damage.</span>
+</a>
+<a href="/error/VCORE-DROP/" class="sitemap-link">
+<span class="sitemap-link-title">Critical voltage drop across the core (Vdroop)</span>
+<span class="sitemap-link-path">/error/VCORE-DROP/</span>
+<span class="sitemap-link-desc">The power supply cascade does not supply sufficient voltage to the load.</span>
+</a>
+<a href="/error/L2-CACHE-EXC/" class="sitemap-link">
+<span class="sitemap-link-title">Exception while reading from L2/L3 cache</span>
+<span class="sitemap-link-path">/error/L2-CACHE-EXC/</span>
+<span class="sitemap-link-desc">The processor encountered corrupted data in its own cache.</span>
+</a>
+<a href="/error/UCODE-0x1A/" class="sitemap-link">
+<span class="sitemap-link-title">Processor microcode error</span>
+<span class="sitemap-link-path">/error/UCODE-0x1A/</span>
+<span class="sitemap-link-desc">The processor&#039;s internal instruction set encountered an unknown exception.</span>
+</a>
+<a href="/error/SMT-SYNC-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Loss of Thread Synchronization (SMT)</span>
+<span class="sitemap-link-path">/error/SMT-SYNC-FAIL/</span>
+<span class="sitemap-link-desc">The logical cores have lost synchronization with each other.</span>
+</a>
+<a href="/error/IMC-FAULT-00/" class="sitemap-link">
+<span class="sitemap-link-title">Integrated Memory Controller (IMC) failure</span>
+<span class="sitemap-link-path">/error/IMC-FAULT-00/</span>
+<span class="sitemap-link-desc">The controller inside the processor cannot communicate stably with the RAM.</span>
+</a>
+<a href="/error/AVX-PANIC/" class="sitemap-link">
+<span class="sitemap-link-title">Crash when executing AVX instructions</span>
+<span class="sitemap-link-path">/error/AVX-PANIC/</span>
+<span class="sitemap-link-desc">Calculation error when using AVX/AVX2 wide vector instructions.</span>
+</a>
+<a href="/error/C-STATE-HUNG/" class="sitemap-link">
+<span class="sitemap-link-title">Stuck on hibernation</span>
+<span class="sitemap-link-path">/error/C-STATE-HUNG/</span>
+<span class="sitemap-link-desc">The processor failed to properly wake up from sleep.</span>
+</a>
+<a href="/error/VRM-TEMP-CRIT/" class="sitemap-link">
+<span class="sitemap-link-title">Power cascade overheating (VRM)</span>
+<span class="sitemap-link-path">/error/VRM-TEMP-CRIT/</span>
+<span class="sitemap-link-desc">VRM sensors on the motherboard report critical temperatures limiting the CPU.</span>
+</a>
+<a href="/error/SOCKET-PIN-FLT/" class="sitemap-link">
+<span class="sitemap-link-title">Bad contact in processor socket</span>
+<span class="sitemap-link-path">/error/SOCKET-PIN-FLT/</span>
+<span class="sitemap-link-desc">The pins in the processor socket do not touch, which causes accidental disconnection of the lines.</span>
+</a>
+<a href="/error/TDP-LIMIT-MAX/" class="sitemap-link">
+<span class="sitemap-link-title">Exceeding the maximum thermal limit (TDP)</span>
+<span class="sitemap-link-path">/error/TDP-LIMIT-MAX/</span>
+<span class="sitemap-link-desc">The processor draws more power than the BIOS allows.</span>
+</a>
+<a href="/error/BCLK-JITTER/" class="sitemap-link">
+<span class="sitemap-link-title">Base clock instability (BCLK)</span>
+<span class="sitemap-link-path">/error/BCLK-JITTER/</span>
+<span class="sitemap-link-desc">The basic frequency generator on the board fluctuates.</span>
+</a>
+<a href="/error/BRANCH-PRED-ER/" class="sitemap-link">
+<span class="sitemap-link-title">Branch prediction error</span>
+<span class="sitemap-link-path">/error/BRANCH-PRED-ER/</span>
+<span class="sitemap-link-desc">The jump prediction logic inside the CPU failed, typical of aging silicon.</span>
+</a>
+<a href="/error/FPU-MATH-ERR/" class="sitemap-link">
+<span class="sitemap-link-title">Coprocessor math error (FPU)</span>
+<span class="sitemap-link-path">/error/FPU-MATH-ERR/</span>
+<span class="sitemap-link-desc">The floating point unit returns imprecise results.</span>
+</a>
+<a href="/error/RING-BUS-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Loss of internal bus synchronization</span>
+<span class="sitemap-link-path">/error/RING-BUS-FAIL/</span>
+<span class="sitemap-link-desc">The bus connecting the cores inside the processor collapsed.</span>
+</a>
+<a href="/error/CPU-PSTATE-ERR/" class="sitemap-link">
+<span class="sitemap-link-title">P-State transition failure</span>
+<span class="sitemap-link-path">/error/CPU-PSTATE-ERR/</span>
+<span class="sitemap-link-desc">Processor failed to transition to a requested performance state.</span>
+</a>
+<a href="/error/AMD-FCLK-INFINITY-ERR/" class="sitemap-link">
+<span class="sitemap-link-title">AMD Infinity Fabric Instability (FCLK)</span>
+<span class="sitemap-link-path">/error/AMD-FCLK-INFINITY-ERR/</span>
+<span class="sitemap-link-desc">AMD systems crash or become unstable due to out of sync FCLK (Infinity Fabric clock) and MEMCLK.</span>
+</a>
+<div class="subcat-header">Hardware - DRIVERS</div>
+<a href="/error/DRIVER-IRQL-NOT-LESS-OR-EQUAL/" class="sitemap-link">
+<span class="sitemap-link-title">IRQL driver - incorrect level</span>
+<span class="sitemap-link-path">/error/DRIVER-IRQL-NOT-LESS-OR-EQUAL/</span>
+<span class="sitemap-link-desc">The driver accessed memory at the wrong IRQL level. The most common type of BSOD.</span>
+</a>
+<a href="/error/CODE-43-USB/" class="sitemap-link">
+<span class="sitemap-link-title">USB device - Code 43</span>
+<span class="sitemap-link-path">/error/CODE-43-USB/</span>
+<span class="sitemap-link-desc">Windows has stopped the USB device due to a reported problem.</span>
+</a>
+<a href="/error/DRIVER-POWER-STATE-FAILURE/" class="sitemap-link">
+<span class="sitemap-link-title">Controller power status error</span>
+<span class="sitemap-link-path">/error/DRIVER-POWER-STATE-FAILURE/</span>
+<span class="sitemap-link-desc">The driver returned an invalid power state when the system went to sleep or wake up.</span>
+</a>
+<a href="/error/DRIVER-VERIFIER-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Driver Verifier found a violation of</span>
+<span class="sitemap-link-path">/error/DRIVER-VERIFIER-FAIL/</span>
+<span class="sitemap-link-desc">Windows Driver Verifier detected illegal driver behavior in memory or IRQL.</span>
+</a>
+<a href="/error/SYSTEM-THREAD-EXCEPTION/" class="sitemap-link">
+<span class="sitemap-link-title">SYSTEM_THREAD_EXCEPTION_NOT_HANDLED</span>
+<span class="sitemap-link-path">/error/SYSTEM-THREAD-EXCEPTION/</span>
+<span class="sitemap-link-desc">A system thread threw an unhandled exception, most commonly a bad driver (.sys) file.</span>
+</a>
+<a href="/error/CODE-10-DEVICE-CANNOT-START/" class="sitemap-link">
+<span class="sitemap-link-title">Code 10 - This device cannot start</span>
+<span class="sitemap-link-path">/error/CODE-10-DEVICE-CANNOT-START/</span>
+<span class="sitemap-link-desc">Windows Device Manager reported that the device could not start due to a failure to load or a faulty driver.</span>
+</a>
+<a href="/error/BSOD-ndis.sys/" class="sitemap-link">
+<span class="sitemap-link-title">ndis.sys critical driver error (BSOD)</span>
+<span class="sitemap-link-path">/error/BSOD-ndis.sys/</span>
+<span class="sitemap-link-desc">Windows has terminated due to a fatal error in the kernel module ndis.sys.</span>
+</a>
+<a href="/error/BSOD-tcpip.sys/" class="sitemap-link">
+<span class="sitemap-link-title">Critical tcpip.sys driver error (BSOD)</span>
+<span class="sitemap-link-path">/error/BSOD-tcpip.sys/</span>
+<span class="sitemap-link-desc">Windows has terminated due to a fatal error in the tcpip.sys kernel module.</span>
+</a>
+<a href="/error/BSOD-usbport.sys/" class="sitemap-link">
+<span class="sitemap-link-title">usbport.sys critical driver error (BSOD)</span>
+<span class="sitemap-link-path">/error/BSOD-usbport.sys/</span>
+<span class="sitemap-link-desc">Windows has terminated due to a fatal error in the usbport.sys kernel module.</span>
+</a>
+<a href="/error/BSOD-fltmgr.sys/" class="sitemap-link">
+<span class="sitemap-link-title">fltmgr.sys critical driver error (BSOD)</span>
+<span class="sitemap-link-path">/error/BSOD-fltmgr.sys/</span>
+<span class="sitemap-link-desc">Windows has terminated due to a fatal error in the fltmgr.sys kernel module.</span>
+</a>
+<a href="/error/BSOD-ntfs.sys/" class="sitemap-link">
+<span class="sitemap-link-title">ntfs.sys critical driver error (BSOD)</span>
+<span class="sitemap-link-path">/error/BSOD-ntfs.sys/</span>
+<span class="sitemap-link-desc">Windows has terminated due to a fatal error in the ntfs.sys kernel module.</span>
+</a>
+<a href="/error/BSOD-classpnp.sys/" class="sitemap-link">
+<span class="sitemap-link-title">Classpnp.sys Driver Critical Error (BSOD)</span>
+<span class="sitemap-link-path">/error/BSOD-classpnp.sys/</span>
+<span class="sitemap-link-desc">Windows has terminated due to a fatal error in the classpnp.sys kernel module.</span>
+</a>
+<a href="/error/BSOD-dxgkrnl.sys/" class="sitemap-link">
+<span class="sitemap-link-title">dxgkrnl.sys critical driver error (BSOD)</span>
+<span class="sitemap-link-path">/error/BSOD-dxgkrnl.sys/</span>
+<span class="sitemap-link-desc">Windows has terminated due to a fatal error in the dxgkrnl.sys kernel module.</span>
+</a>
+<a href="/error/BSOD-igdkmd64.sys/" class="sitemap-link">
+<span class="sitemap-link-title">igdkmd64.sys Driver Critical Error (BSOD)</span>
+<span class="sitemap-link-path">/error/BSOD-igdkmd64.sys/</span>
+<span class="sitemap-link-desc">Windows has terminated due to a fatal error in the igdkmd64.sys kernel module.</span>
+</a>
+<a href="/error/BSOD-amdkmdag.sys/" class="sitemap-link">
+<span class="sitemap-link-title">amdkmdag.sys critical driver error (BSOD)</span>
+<span class="sitemap-link-path">/error/BSOD-amdkmdag.sys/</span>
+<span class="sitemap-link-desc">Windows has terminated due to a fatal error in the kernel module amdkmdag.sys.</span>
+</a>
+<a href="/error/BSOD-nvlddmkm.sys/" class="sitemap-link">
+<span class="sitemap-link-title">nvlddmkm.sys critical driver error (BSOD)</span>
+<span class="sitemap-link-path">/error/BSOD-nvlddmkm.sys/</span>
+<span class="sitemap-link-desc">Windows has terminated due to a fatal error in the nvlddmkm.sys kernel module.</span>
+</a>
+<a href="/error/CODE-43-USB-HUB/" class="sitemap-link">
+<span class="sitemap-link-title">Error code 43 on USB controller (xHCI)</span>
+<span class="sitemap-link-path">/error/CODE-43-USB-HUB/</span>
+<span class="sitemap-link-desc">The entire USB controller reports code 43, which disconnects all USB ports on the given group.</span>
+</a>
+<a href="/error/NVIDIA-CONTAINER-HIGH-CPU/" class="sitemap-link">
+<span class="sitemap-link-title">NVIDIA Container process consumes CPU</span>
+<span class="sitemap-link-path">/error/NVIDIA-CONTAINER-HIGH-CPU/</span>
+<span class="sitemap-link-desc">The nvcontainer.exe or NvTelemetryContainer.exe processes constantly consume 5-20% CPU even when idle.</span>
+</a>
+<a href="/error/AUDIO-NO-OUTPUT/" class="sitemap-link">
+<span class="sitemap-link-title">No audio output device is installed</span>
+<span class="sitemap-link-path">/error/AUDIO-NO-OUTPUT/</span>
+<span class="sitemap-link-desc">Windows says it doesn&#039;t see speakers or headphones.</span>
+</a>
+<a href="/error/DDU-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">DDU clean uninstall failure</span>
+<span class="sitemap-link-path">/error/DDU-FAIL/</span>
+<span class="sitemap-link-desc">The Display Driver Uninstaller (DDU) failed to completely remove the old GPU drivers, preventing a new installation.</span>
+</a>
+<div class="subcat-header">Hardware - GPU</div>
+<a href="/error/VIDEO-TDR-FAILURE/" class="sitemap-link">
+<span class="sitemap-link-title">VIDEO TDR failure (0x116)</span>
+<span class="sitemap-link-path">/error/VIDEO-TDR-FAILURE/</span>
+<span class="sitemap-link-desc">GPU stopped responding, Windows reset it. Crash caused by driver or hardware failure. The screen goes black and the system restarts the driver.</span>
+</a>
+<a href="/error/nvlddmkm.sys/" class="sitemap-link">
+<span class="sitemap-link-title">nvlddmkm.sys / TDR Crash</span>
+<span class="sitemap-link-path">/error/nvlddmkm.sys/</span>
+<span class="sitemap-link-desc">NVIDIA kernel driver crash. The screen goes black, the system tries to restart the driver. One of the most common NVIDIA BSOD codes.</span>
+</a>
+<a href="/error/CODE-43-GPU/" class="sitemap-link">
+<span class="sitemap-link-title">Code 43 - GPU Stopped Windows</span>
+<span class="sitemap-link-path">/error/CODE-43-GPU/</span>
+<span class="sitemap-link-desc">Windows stopped the GPU in Device Manager. The driver reported an unrecoverable error to the kernel. The most common GPU error after driver issues.</span>
+</a>
+<a href="/error/DXGI-ERROR-DEVICE-HUNG/" class="sitemap-link">
+<span class="sitemap-link-title">DXGI - GPU stopped responding</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-DEVICE-HUNG/</span>
+<span class="sitemap-link-desc">DirectX has detected that the GPU has stopped processing commands. Game or app crashes.</span>
+</a>
+<a href="/error/GPU-FAN-FAILURE/" class="sitemap-link">
+<span class="sitemap-link-title">GPU fan failure</span>
+<span class="sitemap-link-path">/error/GPU-FAN-FAILURE/</span>
+<span class="sitemap-link-desc">The GPU fan stopped spinning. Causes rapid overheating and emergency shutdown.</span>
+</a>
+<a href="/error/atikmpag.sys/" class="sitemap-link">
+<span class="sitemap-link-title">atikmpag.sys – AMD GPU crash</span>
+<span class="sitemap-link-path">/error/atikmpag.sys/</span>
+<span class="sitemap-link-desc">AMD GPU kernel driver crash. NVIDIA nvlddmkm.sys equivalent for AMD Radeon cards.</span>
+</a>
+<a href="/error/GPU-BLACK-SCREEN/" class="sitemap-link">
+<span class="sitemap-link-title">Black screen with no signal</span>
+<span class="sitemap-link-path">/error/GPU-BLACK-SCREEN/</span>
+<span class="sitemap-link-desc">The monitor shows a black screen with no signal, although the PC appears to be running.</span>
+</a>
+<a href="/error/VRAM-CORRUPTION/" class="sitemap-link">
+<span class="sitemap-link-title">VRAM corruption</span>
+<span class="sitemap-link-path">/error/VRAM-CORRUPTION/</span>
+<span class="sitemap-link-desc">The GPU video memory contains bad data. It causes artifacts, app crashes or BSODs.</span>
+</a>
+<a href="/error/GPU-ARTIFACTING/" class="sitemap-link">
+<span class="sitemap-link-title">Graphical artifacts on screen</span>
+<span class="sitemap-link-path">/error/GPU-ARTIFACTING/</span>
+<span class="sitemap-link-desc">Random colored dots, stripes or triangles appear on the screen. Caused by VRAM error or overheating.</span>
+</a>
+<a href="/error/PCI-E-BANDWIDTH-ISSUE/" class="sitemap-link">
+<span class="sitemap-link-title">PCIe slot bandwidth limitation</span>
+<span class="sitemap-link-path">/error/PCI-E-BANDWIDTH-ISSUE/</span>
+<span class="sitemap-link-desc">The graphics card runs on a lower generation or PCIe bus width (eg Gen3 x4 instead of Gen4 x16), which reduces performance.</span>
+</a>
+<a href="/error/VRAM-ART-01/" class="sitemap-link">
+<span class="sitemap-link-title">Video Memory Artifacts (Checkerboard)</span>
+<span class="sitemap-link-path">/error/VRAM-ART-01/</span>
+<span class="sitemap-link-desc">Colored squares or bars appear on the screen caused by a VRAM error.</span>
+</a>
+<a href="/error/PCIE-TDR-116/" class="sitemap-link">
+<span class="sitemap-link-title">PCIe bus timer timeout</span>
+<span class="sitemap-link-path">/error/PCIE-TDR-116/</span>
+<span class="sitemap-link-desc">The graphics card did not respond to the motherboard within the timeout.</span>
+</a>
+<a href="/error/CORE-CLK-CRASH/" class="sitemap-link">
+<span class="sitemap-link-title">Unstable graphics core clock</span>
+<span class="sitemap-link-path">/error/CORE-CLK-CRASH/</span>
+<span class="sitemap-link-desc">The core of the graphics card crashes when switching to 3D load.</span>
+</a>
+<a href="/error/PWR-LIM-THROT/" class="sitemap-link">
+<span class="sitemap-link-title">GPU power limit hit hard</span>
+<span class="sitemap-link-path">/error/PWR-LIM-THROT/</span>
+<span class="sitemap-link-desc">The card suddenly underclocks because it has hit the maximum consumption.</span>
+</a>
+<a href="/error/FAN-CRV-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Graphics fan controller failure</span>
+<span class="sitemap-link-path">/error/FAN-CRV-FAIL/</span>
+<span class="sitemap-link-desc">Graphics card fans do not spin or run at 100% regardless of temperature.</span>
+</a>
+<a href="/error/DISP-SYNC-LOSS/" class="sitemap-link">
+<span class="sitemap-link-title">Loss of video signal synchronization</span>
+<span class="sitemap-link-path">/error/DISP-SYNC-LOSS/</span>
+<span class="sitemap-link-desc">The image goes black for a second and pops up again, the connection with the monitor is lost.</span>
+</a>
+<a href="/error/DEV-REMOVED/" class="sitemap-link">
+<span class="sitemap-link-title">The graphics card has been physically disconnected from Windows</span>
+<span class="sitemap-link-path">/error/DEV-REMOVED/</span>
+<span class="sitemap-link-desc">The game will report that the graphics card has been disconnected from the system while running.</span>
+</a>
+<a href="/error/GSYNC-FLICKER/" class="sitemap-link">
+<span class="sitemap-link-title">Image flickering (G-Sync/FreeSync)</span>
+<span class="sitemap-link-path">/error/GSYNC-FLICKER/</span>
+<span class="sitemap-link-desc">The adaptive sync module causes the brightness to flicker violently.</span>
+</a>
+<a href="/error/SHD-COMP-ERR/" class="sitemap-link">
+<span class="sitemap-link-title">Shader compilation error</span>
+<span class="sitemap-link-path">/error/SHD-COMP-ERR/</span>
+<span class="sitemap-link-desc">The graphics card was unable to process the game&#039;s shader code.</span>
+</a>
+<a href="/error/SLI-DESYNC/" class="sitemap-link">
+<span class="sitemap-link-title">Desynchronization of linking multiple graphics</span>
+<span class="sitemap-link-path">/error/SLI-DESYNC/</span>
+<span class="sitemap-link-desc">Two graphics cards render images out of order (Micro-stuttering).</span>
+</a>
+<a href="/error/HOTSPOT-110C/" class="sitemap-link">
+<span class="sitemap-link-title">GPU Hotspot Critical Temperature</span>
+<span class="sitemap-link-path">/error/HOTSPOT-110C/</span>
+<span class="sitemap-link-desc">The hottest sensor inside the core exceeded 110°C.</span>
+</a>
+<a href="/error/NVLDDMKM-TMOUT/" class="sitemap-link">
+<span class="sitemap-link-title">View controller timeout and refresh</span>
+<span class="sitemap-link-path">/error/NVLDDMKM-TMOUT/</span>
+<span class="sitemap-link-desc">The graphics driver stopped responding for a second and Windows restarted.</span>
+</a>
+<a href="/error/COIL-WHINE-MAX/" class="sitemap-link">
+<span class="sitemap-link-title">Extreme coil resonance on card</span>
+<span class="sitemap-link-path">/error/COIL-WHINE-MAX/</span>
+<span class="sitemap-link-desc">Coils make a deafening squeal due to high FPS or load.</span>
+</a>
+<a href="/error/VBIOS-CORRUPT/" class="sitemap-link">
+<span class="sitemap-link-title">Corrupted graphics card firmware (VBIOS)</span>
+<span class="sitemap-link-path">/error/VBIOS-CORRUPT/</span>
+<span class="sitemap-link-desc">Graphics card won&#039;t boot due to damaged chip BIOS.</span>
+</a>
+<a href="/error/ZERO-RPM-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Fan passive operation error</span>
+<span class="sitemap-link-path">/error/ZERO-RPM-FAIL/</span>
+<span class="sitemap-link-desc">The card does not turn off the fans even at zero load and low temperature.</span>
+</a>
+<a href="/error/GPU-FAN-STOP/" class="sitemap-link">
+<span class="sitemap-link-title">GPU fan controller failed</span>
+<span class="sitemap-link-path">/error/GPU-FAN-STOP/</span>
+<span class="sitemap-link-desc">The graphics card fan controller has failed, fans are not spinning.</span>
+</a>
+<a href="/error/HDMI-NO-SIGNAL/" class="sitemap-link">
+<span class="sitemap-link-title">Monitor reports No Signal via HDMI</span>
+<span class="sitemap-link-path">/error/HDMI-NO-SIGNAL/</span>
+<span class="sitemap-link-desc">The screen is black and shows &#039;No Signal&#039; even though the PC is on and the cable is connected.</span>
+</a>
+<a href="/error/DISPLAYPORT-NO-SYNC/" class="sitemap-link">
+<span class="sitemap-link-title">DisplayPort - signal loss or image flickering</span>
+<span class="sitemap-link-path">/error/DISPLAYPORT-NO-SYNC/</span>
+<span class="sitemap-link-desc">Monitor connected via DisplayPort randomly flickers, dims, or loses sync.</span>
+</a>
+<a href="/error/RESIZABLE-BAR-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">Resizable BAR (SAM) causes performance degradation</span>
+<span class="sitemap-link-path">/error/RESIZABLE-BAR-ERROR/</span>
+<span class="sitemap-link-desc">FPS drops in some games after enabling Resizable BAR (AMD Smart Access Memory) or nVidia NVLink.</span>
+</a>
+<div class="subcat-header">Hardware - MOBO</div>
+<a href="/error/VRM-OVERTEMP-THROT/" class="sitemap-link">
+<span class="sitemap-link-title">Thermal throttling of the VRM on the motherboard</span>
+<span class="sitemap-link-path">/error/VRM-OVERTEMP-THROT/</span>
+<span class="sitemap-link-desc">Processors with a high TDP (i9, Ryzen 9) reduce performance due to overheating of the power supply circuits (VRM) of the board.</span>
+</a>
+<a href="/error/USB-DEV-DESC-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">USB device handle request failed</span>
+<span class="sitemap-link-path">/error/USB-DEV-DESC-FAIL/</span>
+<span class="sitemap-link-desc">When connecting a USB device, the system failed to read its identifier and reports error code 43.</span>
+</a>
+<a href="/error/BT-ERR-43/" class="sitemap-link">
+<span class="sitemap-link-title">Bluetooth adapter error 43</span>
+<span class="sitemap-link-path">/error/BT-ERR-43/</span>
+<span class="sitemap-link-desc">Bluetooth has stopped working, the icon has disappeared and the device is reporting Code 43.</span>
+</a>
+<a href="/error/BATT-NOT-CHARGING/" class="sitemap-link">
+<span class="sitemap-link-title">Laptop battery is connected but not charging</span>
+<span class="sitemap-link-path">/error/BATT-NOT-CHARGING/</span>
+<span class="sitemap-link-desc">The adapter is on the network, the icon shows power, but the percentages do not increase.</span>
+</a>
+<a href="/error/USB-POWER-SURGE/" class="sitemap-link">
+<span class="sitemap-link-title">Overvoltage on USB hub port</span>
+<span class="sitemap-link-path">/error/USB-POWER-SURGE/</span>
+<span class="sitemap-link-desc">The USB device has exceeded the power limits of its hub port.</span>
+</a>
+<a href="/error/TPM-CLR-PROMPT/" class="sitemap-link">
+<span class="sitemap-link-title">Prompt to clear TPM after turning on the computer (fTPM/PTT)</span>
+<span class="sitemap-link-path">/error/TPM-CLR-PROMPT/</span>
+<span class="sitemap-link-desc">After turning on the PC (often when changing the CPU), a message will appear asking you to press Y or N regarding fTPM NV recovery.</span>
+</a>
+<a href="/error/PCIE-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">PCIe communication error</span>
+<span class="sitemap-link-path">/error/PCIE-ERROR/</span>
+<span class="sitemap-link-desc">Error on the PCIe line between the motherboard and the component.</span>
+</a>
+<a href="/error/VRM-OVERHEAT/" class="sitemap-link">
+<span class="sitemap-link-title">Motherboard VRM overheating</span>
+<span class="sitemap-link-path">/error/VRM-OVERHEAT/</span>
+<span class="sitemap-link-desc">The Voltage Regulator Module is overheating. Limits CPU performance or causes shutdown.</span>
+</a>
+<a href="/error/PCIE-BIFURCATION-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">PCIe bifurcation error</span>
+<span class="sitemap-link-path">/error/PCIE-BIFURCATION-ERROR/</span>
+<span class="sitemap-link-desc">The motherboard incorrectly distributes the PCIe lines for the adapter (NVME RAID, PLX switch).</span>
+</a>
+<a href="/error/CMOS-CHK-ERR/" class="sitemap-link">
+<span class="sitemap-link-title">Corrupt CMOS checksum</span>
+<span class="sitemap-link-path">/error/CMOS-CHK-ERR/</span>
+<span class="sitemap-link-desc">The BIOS has lost its settings due to a dead coin-cell battery on the board.</span>
+</a>
+<a href="/error/POST-CODE-55/" class="sitemap-link">
+<span class="sitemap-link-title">POST Critical Error (Code 55 - Memory)</span>
+<span class="sitemap-link-path">/error/POST-CODE-55/</span>
+<span class="sitemap-link-desc">The board failed to initialize RAM during boot.</span>
+</a>
+<a href="/error/BIFURC-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Failure to split PCIe lines (Bifurcation)</span>
+<span class="sitemap-link-path">/error/BIFURC-FAIL/</span>
+<span class="sitemap-link-desc">The splitter adapter (eg for multiple M.2 drives) did not get the correct PCIe lines.</span>
+</a>
+<a href="/error/SEC-BOT-KEY-MS/" class="sitemap-link">
+<span class="sitemap-link-title">Missing certificates for Secure Boot</span>
+<span class="sitemap-link-path">/error/SEC-BOT-KEY-MS/</span>
+<span class="sitemap-link-desc">Safe boot platform keys deleted, can&#039;t boot into Windows 11.</span>
+</a>
+<a href="/error/TPM-ATT-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Security TPM chip verification failure</span>
+<span class="sitemap-link-path">/error/TPM-ATT-FAIL/</span>
+<span class="sitemap-link-desc">The Trusted Platform Module failed to verify the identity of the hardware.</span>
+</a>
+<a href="/error/VRM-PHS-IMB/" class="sitemap-link">
+<span class="sitemap-link-title">Unbalanced load of the board power phases</span>
+<span class="sitemap-link-path">/error/VRM-PHS-IMB/</span>
+<span class="sitemap-link-desc">One of the power supply phases on the board does not supply current, the others are critically overloaded.</span>
+</a>
+<a href="/error/USB-CTL-DEAD/" class="sitemap-link">
+<span class="sitemap-link-title">Critical failure of USB controller on board</span>
+<span class="sitemap-link-path">/error/USB-CTL-DEAD/</span>
+<span class="sitemap-link-desc">Some or all of the USB ports have completely stopped responding, the mouse and keyboard are not working.</span>
+</a>
+<a href="/error/PCH-OVERHEAT/" class="sitemap-link">
+<span class="sitemap-link-title">Released Passive Chipset Cooler (Chipset)</span>
+<span class="sitemap-link-path">/error/PCH-OVERHEAT/</span>
+<span class="sitemap-link-desc">The chipset on the board is overheating because the passive cooling has lost contact.</span>
+</a>
+<a href="/error/AZA-AUD-MISS/" class="sitemap-link">
+<span class="sitemap-link-title">Integrated sound card not found</span>
+<span class="sitemap-link-path">/error/AZA-AUD-MISS/</span>
+<span class="sitemap-link-desc">The integrated sound card (eg Realtek) completely disappeared from the device manager.</span>
+</a>
+<a href="/error/BIOS-FLS-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Error uploading board firmware (BIOS)</span>
+<span class="sitemap-link-path">/error/BIOS-FLS-FAIL/</span>
+<span class="sitemap-link-desc">A corrupt installation file was detected while attempting to update the BIOS.</span>
+</a>
+<a href="/error/DMI-LNK-DOWN/" class="sitemap-link">
+<span class="sitemap-link-title">Loss of connection with PCH chipset</span>
+<span class="sitemap-link-path">/error/DMI-LNK-DOWN/</span>
+<span class="sitemap-link-desc">Communication between the processor and the rest of the board collapses.</span>
+</a>
+<a href="/error/CMOS-BAT-LEAK/" class="sitemap-link">
+<span class="sitemap-link-title">Physical CMOS battery drain</span>
+<span class="sitemap-link-path">/error/CMOS-BAT-LEAK/</span>
+<span class="sitemap-link-desc">Physical damage to the board caused by button cell battery acid.</span>
+</a>
+<a href="/error/ARGB-HDR-SHRT/" class="sitemap-link">
+<span class="sitemap-link-title">Lighting Controller Short (RGB/ARGB)</span>
+<span class="sitemap-link-path">/error/ARGB-HDR-SHRT/</span>
+<span class="sitemap-link-desc">The motherboard has shorted on the 5V ARGB connector, the lighting is flashing or off.</span>
+</a>
+<a href="/error/LPC-BUS-HANG/" class="sitemap-link">
+<span class="sitemap-link-title">Sensor bus (LPC) freeze</span>
+<span class="sitemap-link-path">/error/LPC-BUS-HANG/</span>
+<span class="sitemap-link-desc">The sensor bus for temperature monitoring and fan control stopped responding.</span>
+</a>
+<a href="/error/FAN-HDR-BURN/" class="sitemap-link">
+<span class="sitemap-link-title">Burnt connector for connecting the fan</span>
+<span class="sitemap-link-path">/error/FAN-HDR-BURN/</span>
+<span class="sitemap-link-desc">Connecting a too powerful fan fried the PWM control circuit on the motherboard.</span>
+</a>
+<a href="/error/USB-OVERCURRENT/" class="sitemap-link">
+<span class="sitemap-link-title">USB device overcurrent status detected</span>
+<span class="sitemap-link-path">/error/USB-OVERCURRENT/</span>
+<span class="sitemap-link-desc">System shutting down after 15 seconds to protect motherboard from USB short circuit.</span>
+</a>
+<a href="/error/PCIE-GEN-MISMATCH/" class="sitemap-link">
+<span class="sitemap-link-title">PCIe generation - speed mismatch</span>
+<span class="sitemap-link-path">/error/PCIE-GEN-MISMATCH/</span>
+<span class="sitemap-link-desc">GPU or NVMe SSD running on PCIe 3.0 instead of PCIe 4.0/5.0, performance is significantly reduced.</span>
+</a>
+<div class="subcat-header">Hardware - NETWORK</div>
+<a href="/error/NET-WIFI-NO-INTERNET/" class="sitemap-link">
+<span class="sitemap-link-title">Connected but no internet access</span>
+<span class="sitemap-link-path">/error/NET-WIFI-NO-INTERNET/</span>
+<span class="sitemap-link-desc">Wi-Fi reports a connection to the router, but Windows says that it cannot access the outside.</span>
+</a>
+<a href="/error/WLAN-LIMITED/" class="sitemap-link">
+<span class="sitemap-link-title">Limited network connection</span>
+<span class="sitemap-link-path">/error/WLAN-LIMITED/</span>
+<span class="sitemap-link-desc">There is a yellow triangle with an exclamation mark on the Wi-Fi icon.</span>
+</a>
+<a href="/error/ERR-SSL-PROTOCOL-ERR/" class="sitemap-link">
+<span class="sitemap-link-title">Secure connection (SSL) error</span>
+<span class="sitemap-link-path">/error/ERR-SSL-PROTOCOL-ERR/</span>
+<span class="sitemap-link-desc">The browser refuses to load the web page due to an HTTPS/SSL error.</span>
+</a>
+<a href="/error/NETIO-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">Network I/O Error</span>
+<span class="sitemap-link-path">/error/NETIO-ERROR/</span>
+<span class="sitemap-link-desc">A network driver or hardware caused an I/O communication error.</span>
+</a>
+<a href="/error/DNS-RESOLUTION-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">DNS translation failure</span>
+<span class="sitemap-link-path">/error/DNS-RESOLUTION-FAIL/</span>
+<span class="sitemap-link-desc">PC cannot translate domain names to IP addresses.</span>
+</a>
+<a href="/error/WINSOCK-CORRUPT/" class="sitemap-link">
+<span class="sitemap-link-title">Corrupted Winsock catalog</span>
+<span class="sitemap-link-path">/error/WINSOCK-CORRUPT/</span>
+<span class="sitemap-link-desc">Winsock catalog is corrupted, network connections are not working. Website not loading.</span>
+</a>
+<a href="/error/WIFI-DRIVER-CRASH/" class="sitemap-link">
+<span class="sitemap-link-title">Wi-Fi driver crash</span>
+<span class="sitemap-link-path">/error/WIFI-DRIVER-CRASH/</span>
+<span class="sitemap-link-desc">The wireless network adapter has stopped responding or is disconnecting.</span>
+</a>
+<a href="/error/SSL-HANDSHAKE-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">SSL handshake failure</span>
+<span class="sitemap-link-path">/error/SSL-HANDSHAKE-FAIL/</span>
+<span class="sitemap-link-desc">The browser or application cannot establish an encrypted HTTPS connection.</span>
+</a>
+<a href="/error/GATEWAY-UNAVAILABLE/" class="sitemap-link">
+<span class="sitemap-link-title">Default gateway not available</span>
+<span class="sitemap-link-path">/error/GATEWAY-UNAVAILABLE/</span>
+<span class="sitemap-link-desc">The computer is connected to the network (LAN/Wi-Fi) but cannot access the Internet due to loss of connection with the default gateway (router).</span>
+</a>
+<a href="/error/IP-ADDRESS-CONFLICT/" class="sitemap-link">
+<span class="sitemap-link-title">IP address conflict on the network</span>
+<span class="sitemap-link-path">/error/IP-ADDRESS-CONFLICT/</span>
+<span class="sitemap-link-desc">Your device has been assigned the same IP address that is already being used by another device in the local network. The connection is not working.</span>
+</a>
+<a href="/error/DHCP-TIMEOUT/" class="sitemap-link">
+<span class="sitemap-link-title">IP address assignment timeout (DHCP)</span>
+<span class="sitemap-link-path">/error/DHCP-TIMEOUT/</span>
+<span class="sitemap-link-desc">The computer connected to the network, but the router did not assign an IP address to it.</span>
+</a>
+<a href="/error/DNS-RES-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Domain name resolution (DNS) failure</span>
+<span class="sitemap-link-path">/error/DNS-RES-FAIL/</span>
+<span class="sitemap-link-desc">The browser cannot translate the web address to an IP address (DNS problem).</span>
+</a>
+<a href="/error/IPV6-LOOP/" class="sitemap-link">
+<span class="sitemap-link-title">Routing loop in IPv6</span>
+<span class="sitemap-link-path">/error/IPV6-LOOP/</span>
+<span class="sitemap-link-desc">Packets in an IPv6 network go around in a loop and never reach their destination.</span>
+</a>
+<a href="/error/WLAN-RST-LOOP/" class="sitemap-link">
+<span class="sitemap-link-title">Constantly restarting the Wi-Fi adapter</span>
+<span class="sitemap-link-path">/error/WLAN-RST-LOOP/</span>
+<span class="sitemap-link-desc">The Wi-Fi card keeps disconnecting and restarting due to a driver error.</span>
+</a>
+<a href="/error/CBL-UNPL-FLS/" class="sitemap-link">
+<span class="sitemap-link-title">False report of unplugged network cable</span>
+<span class="sitemap-link-path">/error/CBL-UNPL-FLS/</span>
+<span class="sitemap-link-desc">The NIC reports &#039;Cable disconnected&#039; even though the cable is physically plugged in.</span>
+</a>
+<a href="/error/MAC-CONFLICT/" class="sitemap-link">
+<span class="sitemap-link-title">Physical MAC address conflict in network</span>
+<span class="sitemap-link-path">/error/MAC-CONFLICT/</span>
+<span class="sitemap-link-desc">Two devices on the network share the same physical MAC address.</span>
+</a>
+<a href="/error/TCP-IP-CORR/" class="sitemap-link">
+<span class="sitemap-link-title">TCP/IP protocol structure corruption</span>
+<span class="sitemap-link-path">/error/TCP-IP-CORR/</span>
+<span class="sitemap-link-desc">Windows internal networking layer is corrupt, no internet working.</span>
+</a>
+<a href="/error/WINSOCK-REG-ER/" class="sitemap-link">
+<span class="sitemap-link-title">Missing or corrupted Winsock registries</span>
+<span class="sitemap-link-path">/error/WINSOCK-REG-ER/</span>
+<span class="sitemap-link-desc">Application communication via internet sockets has completely crashed.</span>
+</a>
+<a href="/error/VPN-TUN-DROP/" class="sitemap-link">
+<span class="sitemap-link-title">Encrypted VPN tunnel crash</span>
+<span class="sitemap-link-path">/error/VPN-TUN-DROP/</span>
+<span class="sitemap-link-desc">The encrypted VPN connection was unexpectedly terminated by the firewall.</span>
+</a>
+<a href="/error/QOS-THROTTLE/" class="sitemap-link">
+<span class="sitemap-link-title">Connection speed limiter (QoS) error</span>
+<span class="sitemap-link-path">/error/QOS-THROTTLE/</span>
+<span class="sitemap-link-desc">Quality of Service on the router or in Windows inadvertently limits the speed to a fraction of the maximum.</span>
+</a>
+<a href="/error/IGMP-SNP-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Packet loss due to faulty multicast filtering</span>
+<span class="sitemap-link-path">/error/IGMP-SNP-FAIL/</span>
+<span class="sitemap-link-desc">A local switch or router does not properly filter multicast traffic, IPTV is interrupted.</span>
+</a>
+<a href="/error/ARP-POISON/" class="sitemap-link">
+<span class="sitemap-link-title">ARP Cache Poisoning Detection (Network Attack)</span>
+<span class="sitemap-link-path">/error/ARP-POISON/</span>
+<span class="sitemap-link-desc">An attempted Man-In-The-Middle attack has been detected on your network.</span>
+</a>
+<a href="/error/PRX-DET-STLL/" class="sitemap-link">
+<span class="sitemap-link-title">Proxy detection failure</span>
+<span class="sitemap-link-path">/error/PRX-DET-STLL/</span>
+<span class="sitemap-link-desc">The computer is stuck detecting proxy settings and is blocking web traffic.</span>
+</a>
+<a href="/error/MTU-MISMATCH/" class="sitemap-link">
+<span class="sitemap-link-title">Packet Transmitted Size (MTU) Mismatch</span>
+<span class="sitemap-link-path">/error/MTU-MISMATCH/</span>
+<span class="sitemap-link-desc">Different Maximum Transmission Unit settings cause fragmentation and brutal network slowdown.</span>
+</a>
+<a href="/error/WLAN-AUTO-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">The WLAN AutoConfig service failed</span>
+<span class="sitemap-link-path">/error/WLAN-AUTO-FAIL/</span>
+<span class="sitemap-link-desc">The wireless network configuration service has failed, the Wi-Fi icon has completely disappeared.</span>
+</a>
+<a href="/error/NET-DHCP-LEASE/" class="sitemap-link">
+<span class="sitemap-link-title">DHCP lease renewal failure</span>
+<span class="sitemap-link-path">/error/NET-DHCP-LEASE/</span>
+<span class="sitemap-link-desc">The system failed to renew its IP address from the DHCP server.</span>
+</a>
+<a href="/error/WINSOCK-CORRUPT-2/" class="sitemap-link">
+<span class="sitemap-link-title">Corrupted Winsock catalog</span>
+<span class="sitemap-link-path">/error/WINSOCK-CORRUPT-2/</span>
+<span class="sitemap-link-desc">The Internet connection works on the router, but Windows cannot establish any TCP/IP connections.</span>
+</a>
+<a href="/error/IPV6-LEAK-TUNNEL/" class="sitemap-link">
+<span class="sitemap-link-title">IPv6 tunnel causes connectivity issues</span>
+<span class="sitemap-link-path">/error/IPV6-LEAK-TUNNEL/</span>
+<span class="sitemap-link-desc">Windows automatically creates a 6to4 or Teredo tunnel for IPv6, which causes the connection to slow down or fail.</span>
+</a>
+<a href="/error/DNS-REBINDING-ATTACK/" class="sitemap-link">
+<span class="sitemap-link-title">DNS Cache Poisoning / Rebinding</span>
+<span class="sitemap-link-path">/error/DNS-REBINDING-ATTACK/</span>
+<span class="sitemap-link-desc">The web browser or DNS cache has been poisoned, causing redirects to bad websites.</span>
+</a>
+<div class="subcat-header">Hardware - PSU</div>
+<a href="/error/PSU-OVERVOLTAGE/" class="sitemap-link">
+<span class="sitemap-link-title">Source overvoltage</span>
+<span class="sitemap-link-path">/error/PSU-OVERVOLTAGE/</span>
+<span class="sitemap-link-desc">The power supply supplies a higher voltage than specified. Risk of component damage.</span>
+</a>
+<a href="/error/PSU-INSUFFICIENT/" class="sitemap-link">
+<span class="sitemap-link-title">Insufficient resource power</span>
+<span class="sitemap-link-path">/error/PSU-INSUFFICIENT/</span>
+<span class="sitemap-link-desc">The resource does not have time to cover the consumption of all components. Causes resets.</span>
+</a>
+<a href="/error/PSU-RIPPLE-NOISE/" class="sitemap-link">
+<span class="sitemap-link-title">Higher power ripple (Ripple)</span>
+<span class="sitemap-link-path">/error/PSU-RIPPLE-NOISE/</span>
+<span class="sitemap-link-desc">The source produces higher than permitted supply voltage ripple. It causes instability or damage to the capacitors on the board.</span>
+</a>
+<a href="/error/OCP-TRIGGERED/" class="sitemap-link">
+<span class="sitemap-link-title">Activation of overcurrent protection (OCP)</span>
+<span class="sitemap-link-path">/error/OCP-TRIGGERED/</span>
+<span class="sitemap-link-desc">The source detected a dangerously high current draw on some of the lines (typically 12V) and immediately shut down the computer just to be safe.</span>
+</a>
+<a href="/error/COIL-WHINE-EXTREME/" class="sitemap-link">
+<span class="sitemap-link-title">Extreme coil whine (Coil Whine)</span>
+<span class="sitemap-link-path">/error/COIL-WHINE-EXTREME/</span>
+<span class="sitemap-link-desc">The source or graphics card emits a high-pitched, annoying buzzing sound, especially under load or at high FPS.</span>
+</a>
+<a href="/error/OVP-TRIPPED/" class="sitemap-link">
+<span class="sitemap-link-title">Overvoltage protection (OVP) activated</span>
+<span class="sitemap-link-path">/error/OVP-TRIPPED/</span>
+<span class="sitemap-link-desc">The source immediately shut down because the voltage on some of the branches (12V, 5V, 3.3V) increased dangerously.</span>
+</a>
+<a href="/error/OCP-TRIPPED/" class="sitemap-link">
+<span class="sitemap-link-title">Overcurrent protection (OCP) activated</span>
+<span class="sitemap-link-path">/error/OCP-TRIPPED/</span>
+<span class="sitemap-link-desc">The resource has shut down because one of the components (often the GPU) is drawing more current than the cable/branch can handle.</span>
+</a>
+<a href="/error/UVP-TRIPPED/" class="sitemap-link">
+<span class="sitemap-link-title">Undervoltage protection (UVP) activated</span>
+<span class="sitemap-link-path">/error/UVP-TRIPPED/</span>
+<span class="sitemap-link-desc">The voltage fell below the critical limit, the system shut down as a precaution.</span>
+</a>
+<a href="/error/OPP-TRIPPED/" class="sitemap-link">
+<span class="sitemap-link-title">Overload protection (OPP) activated</span>
+<span class="sitemap-link-path">/error/OPP-TRIPPED/</span>
+<span class="sitemap-link-desc">The total required system power exceeds the maximum power supply limit.</span>
+</a>
+<a href="/error/SCP-TRIPPED/" class="sitemap-link">
+<span class="sitemap-link-title">Short circuit protection (SCP) activated</span>
+<span class="sitemap-link-path">/error/SCP-TRIPPED/</span>
+<span class="sitemap-link-desc">The source has detected a physical short circuit, immediately disconnects the power supply, the PC does not respond to the button at all.</span>
+</a>
+<a href="/error/OTP-TRIPPED/" class="sitemap-link">
+<span class="sitemap-link-title">Overheat protection (OTP) activated</span>
+<span class="sitemap-link-path">/error/OTP-TRIPPED/</span>
+<span class="sitemap-link-desc">The source&#039;s internal temperature sensors exceeded the safe limit and the source shut down.</span>
+</a>
+<a href="/error/PG-SIGNAL-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Power Good (PG) signal failure</span>
+<span class="sitemap-link-path">/error/PG-SIGNAL-FAIL/</span>
+<span class="sitemap-link-desc">The power supply failed to confirm to the motherboard in time that the voltage is stable, therefore the board will not start (POST).</span>
+</a>
+<a href="/error/RIPPLE-NOISE-MAX/" class="sitemap-link">
+<span class="sitemap-link-title">Extreme Electrical Noise (Ripple)</span>
+<span class="sitemap-link-path">/error/RIPPLE-NOISE-MAX/</span>
+<span class="sitemap-link-desc">The DC power from the power supply contains too much AC interference (noise), causing instability and freezing of the PC.</span>
+</a>
+<a href="/error/PWR-CABLE-MELT/" class="sitemap-link">
+<span class="sitemap-link-title">Soldering the power connector</span>
+<span class="sitemap-link-path">/error/PWR-CABLE-MELT/</span>
+<span class="sitemap-link-desc">The plastic connector (typically 12VHPWR or older PCIe) has melted due to contact resistance.</span>
+</a>
+<a href="/error/COIL-WHINE-PSU/" class="sitemap-link">
+<span class="sitemap-link-title">Squealing coils from source</span>
+<span class="sitemap-link-path">/error/COIL-WHINE-PSU/</span>
+<span class="sitemap-link-desc">The power supply emits a very unpleasant high-frequency sound, especially when switched off or under load.</span>
+</a>
+<div class="subcat-header">Hardware - RAM</div>
+<a href="/error/MEMORY-MANAGEMENT/" class="sitemap-link">
+<span class="sitemap-link-title">Memory Management - BSOD</span>
+<span class="sitemap-link-path">/error/MEMORY-MANAGEMENT/</span>
+<span class="sitemap-link-desc">Windows has detected a critical RAM problem. Most often a faulty memory module.</span>
+</a>
+<a href="/error/BAD-POOL-HEADER/" class="sitemap-link">
+<span class="sitemap-link-title">Bad memory pool header</span>
+<span class="sitemap-link-path">/error/BAD-POOL-HEADER/</span>
+<span class="sitemap-link-desc">Pool manager detected corrupted data in memory. It could be the RAM or the driver.</span>
+</a>
+<a href="/error/XMP-INSTABILITY/" class="sitemap-link">
+<span class="sitemap-link-title">XMP Profile Instability</span>
+<span class="sitemap-link-path">/error/XMP-INSTABILITY/</span>
+<span class="sitemap-link-desc">Activated XMP/EXPO profile causes instability or non-booting.</span>
+</a>
+<a href="/error/RAM-NOT-DETECTED/" class="sitemap-link">
+<span class="sitemap-link-title">RAM module not detected</span>
+<span class="sitemap-link-path">/error/RAM-NOT-DETECTED/</span>
+<span class="sitemap-link-desc">Motherboard doesn&#039;t recognize RAM - reports low memory or won&#039;t boot.</span>
+</a>
+<a href="/error/RAM-ECC-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">ECC RAM Error</span>
+<span class="sitemap-link-path">/error/RAM-ECC-ERROR/</span>
+<span class="sitemap-link-desc">The ECC memory detected and corrected the error, but there is a risk of an uncorrectable error when retrying.</span>
+</a>
+<a href="/error/PAGE-FAULT-BOOT/" class="sitemap-link">
+<span class="sitemap-link-title">Paging Fault During POST/Boot</span>
+<span class="sitemap-link-path">/error/PAGE-FAULT-BOOT/</span>
+<span class="sitemap-link-desc">BIOS/UEFI detected a fatal page fault during operating system startup. Windows won&#039;t load.</span>
+</a>
+<a href="/error/SPD-CORRUPTION/" class="sitemap-link">
+<span class="sitemap-link-title">SPD data chip damage</span>
+<span class="sitemap-link-path">/error/SPD-CORRUPTION/</span>
+<span class="sitemap-link-desc">The Serial Presence Detect (SPD) chip on the RAM module has corrupted data, the system does not know what timing and frequency to set.</span>
+</a>
+<a href="/error/SPD-CHK-ERR/" class="sitemap-link">
+<span class="sitemap-link-title">Bad memory profile (SPD) checksum</span>
+<span class="sitemap-link-path">/error/SPD-CHK-ERR/</span>
+<span class="sitemap-link-desc">The motherboard cannot read the timing from the memory module.</span>
+</a>
+<a href="/error/BNK-INT-ERR/" class="sitemap-link">
+<span class="sitemap-link-title">Memory block interleaving error</span>
+<span class="sitemap-link-path">/error/BNK-INT-ERR/</span>
+<span class="sitemap-link-desc">Communication problem between the front and back of the memory module.</span>
+</a>
+<a href="/error/XMP-BOOT-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Crash with XMP/EXPO profile enabled</span>
+<span class="sitemap-link-path">/error/XMP-BOOT-FAIL/</span>
+<span class="sitemap-link-desc">Memory cannot run at factory overclocked values.</span>
+</a>
+<a href="/error/MEMTEST-ERR-8/" class="sitemap-link">
+<span class="sitemap-link-title">Memory hardware error in load</span>
+<span class="sitemap-link-path">/error/MEMTEST-ERR-8/</span>
+<span class="sitemap-link-desc">Memory diagnostics detected a hardware defect in the memory cell.</span>
+</a>
+<a href="/error/VDDQ-U-VOLT/" class="sitemap-link">
+<span class="sitemap-link-title">Insufficient RAM supply voltage</span>
+<span class="sitemap-link-path">/error/VDDQ-U-VOLT/</span>
+<span class="sitemap-link-desc">The modules lack the voltage to maintain the set frequencies.</span>
+</a>
+<a href="/error/1T-CMD-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Instability at Command Rate 1T</span>
+<span class="sitemap-link-path">/error/1T-CMD-FAIL/</span>
+<span class="sitemap-link-desc">The memory controller does not have time to process commands with a delay of only 1 clock.</span>
+</a>
+<a href="/error/ECC-LIM-EXC/" class="sitemap-link">
+<span class="sitemap-link-title">ECC error limit exceeded</span>
+<span class="sitemap-link-path">/error/ECC-LIM-EXC/</span>
+<span class="sitemap-link-desc">Server memory is fixing so many bugs that it can&#039;t keep up.</span>
+</a>
+<a href="/error/ROW-HAM-DET/" class="sitemap-link">
+<span class="sitemap-link-title">Charge Leakage Detection (Row Hammer)</span>
+<span class="sitemap-link-path">/error/ROW-HAM-DET/</span>
+<span class="sitemap-link-desc">Dangerous charge spillage between memory cells noted.</span>
+</a>
+<a href="/error/DCH-ASYNC/" class="sitemap-link">
+<span class="sitemap-link-title">Asymmetry of two-channel memory connection</span>
+<span class="sitemap-link-path">/error/DCH-ASYNC/</span>
+<span class="sitemap-link-desc">Although the memories run in Dual-Channel, they are poorly matched, which limits throughput.</span>
+</a>
+<a href="/error/PIN-OXIDATION/" class="sitemap-link">
+<span class="sitemap-link-title">Oxidation of the gold contacts of the memory module</span>
+<span class="sitemap-link-path">/error/PIN-OXIDATION/</span>
+<span class="sitemap-link-desc">Contact with the socket is broken due to dirt or oxidation on the pin.</span>
+</a>
+<a href="/error/REF-TIMEOUT/" class="sitemap-link">
+<span class="sitemap-link-title">Memory refresh period expired</span>
+<span class="sitemap-link-path">/error/REF-TIMEOUT/</span>
+<span class="sitemap-link-desc">Memory cells have lost their charge before the next refresh cycle.</span>
+</a>
+<a href="/error/GEAR-MD-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Loss of controller divider sync</span>
+<span class="sitemap-link-path">/error/GEAR-MD-FAIL/</span>
+<span class="sitemap-link-desc">The motherboard cannot run stably in split controller frequency mode.</span>
+</a>
+<a href="/error/SUBTIM-CORRUPT/" class="sitemap-link">
+<span class="sitemap-link-title">RAM Secondary Timing Corruption</span>
+<span class="sitemap-link-path">/error/SUBTIM-CORRUPT/</span>
+<span class="sitemap-link-desc">The board set too aggressive sub-timings (eg tFAW, tRRD).</span>
+</a>
+<a href="/error/DDR5-PMIC-TMP/" class="sitemap-link">
+<span class="sitemap-link-title">Overheating the power chip on DDR5</span>
+<span class="sitemap-link-path">/error/DDR5-PMIC-TMP/</span>
+<span class="sitemap-link-desc">The Power Integrated Controller (PMIC) on the DDR5 memory has overheated.</span>
+</a>
+<a href="/error/IMP-CAL-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Memory calibration failure on PC startup</span>
+<span class="sitemap-link-path">/error/IMP-CAL-FAIL/</span>
+<span class="sitemap-link-desc">The motherboard is stuck in a loop while calibrating the memory signal impedance.</span>
+</a>
+<a href="/error/MCE-MEM-READ-ERR/" class="sitemap-link">
+<span class="sitemap-link-title">MCE memory read error (Memory Read Error)</span>
+<span class="sitemap-link-path">/error/MCE-MEM-READ-ERR/</span>
+<span class="sitemap-link-desc">The processor detected an unrecoverable error while reading data from memory and wrote it to the MCE log.</span>
+</a>
+<div class="subcat-header">Hardware - STORAGE</div>
+<a href="/error/SMART-REALLOCATED/" class="sitemap-link">
+<span class="sitemap-link-title">S.M.A.R.T.: Remapped Sectors</span>
+<span class="sitemap-link-path">/error/SMART-REALLOCATED/</span>
+<span class="sitemap-link-desc">SSD/HDD remaps bad sectors. The disk is nearing the end of its life.</span>
+</a>
+<a href="/error/NTFS-FILE-SYSTEM/" class="sitemap-link">
+<span class="sitemap-link-title">NTFS_FILE_SYSTEM error</span>
+<span class="sitemap-link-path">/error/NTFS-FILE-SYSTEM/</span>
+<span class="sitemap-link-desc">NTFS file system error. The disk or driver has a read/write problem.</span>
+</a>
+<a href="/error/INACCESSIBLE-BOOT-DEVICE/" class="sitemap-link">
+<span class="sitemap-link-title">Inaccessible boot device</span>
+<span class="sitemap-link-path">/error/INACCESSIBLE-BOOT-DEVICE/</span>
+<span class="sitemap-link-desc">Windows cannot access the system disk at startup.</span>
+</a>
+<a href="/error/SSD-TRIM-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">SSD TRIM not working</span>
+<span class="sitemap-link-path">/error/SSD-TRIM-FAIL/</span>
+<span class="sitemap-link-desc">TRIM for SSD does not work, it reduces the performance and life of the drive.</span>
+</a>
+<a href="/error/NVME-CONTROLLER-RESET/" class="sitemap-link">
+<span class="sitemap-link-title">NVMe controller reset</span>
+<span class="sitemap-link-path">/error/NVME-CONTROLLER-RESET/</span>
+<span class="sitemap-link-desc">The NVMe SSD controller has reset due to a communication error. It causes system crashes or data loss.</span>
+</a>
+<a href="/error/SSD-WEAR-CRITICAL/" class="sitemap-link">
+<span class="sitemap-link-title">SSD critical wear</span>
+<span class="sitemap-link-path">/error/SSD-WEAR-CRITICAL/</span>
+<span class="sitemap-link-desc">The SSD has reached the critical TBW (Total Bytes Written) wear limit. Risk of failure.</span>
+</a>
+<a href="/error/DISK-READ-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">Disk read error at startup</span>
+<span class="sitemap-link-path">/error/DISK-READ-ERROR/</span>
+<span class="sitemap-link-desc">Windows reports &#039;A disk read error occurred&#039; when booting. PC won&#039;t boot.</span>
+</a>
+<a href="/error/CRC-DATA-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">Data Redundancy Error (CRC)</span>
+<span class="sitemap-link-path">/error/CRC-DATA-ERROR/</span>
+<span class="sitemap-link-desc">The operating system encountered a Cyclic Redundancy Check error while reading from the file. The data is corrupted and cannot be read.</span>
+</a>
+<a href="/error/RAW-FILE-SYSTEM/" class="sitemap-link">
+<span class="sitemap-link-title">Disk partition converted to RAW format</span>
+<span class="sitemap-link-path">/error/RAW-FILE-SYSTEM/</span>
+<span class="sitemap-link-desc">The disk&#039;s file system (NTFS/FAT32) has been corrupted and the system sees it as unformatted (RAW). Data is unavailable.</span>
+</a>
+<a href="/error/SMART-PRE-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">S.M.A.R.T. warning - Impending disk failure</span>
+<span class="sitemap-link-path">/error/SMART-PRE-FAIL/</span>
+<span class="sitemap-link-desc">Self-diagnosis of the disk predicts its early physical end.</span>
+</a>
+<a href="/error/NVME-CTL-RST/" class="sitemap-link">
+<span class="sitemap-link-title">M.2 NVMe Controller Unexpected Reset</span>
+<span class="sitemap-link-path">/error/NVME-CTL-RST/</span>
+<span class="sitemap-link-desc">The controller on the SSD lost communication and restarted itself (OS crashes).</span>
+</a>
+<a href="/error/SATA-CRC-ERR/" class="sitemap-link">
+<span class="sitemap-link-title">Data transfer error on SATA cable</span>
+<span class="sitemap-link-path">/error/SATA-CRC-ERR/</span>
+<span class="sitemap-link-desc">Data is lost during cable transmission, indicating a damaged connector.</span>
+</a>
+<a href="/error/BAD-SEC-UNC/" class="sitemap-link">
+<span class="sitemap-link-title">Physically bad sectors found on disk</span>
+<span class="sitemap-link-path">/error/BAD-SEC-UNC/</span>
+<span class="sitemap-link-desc">The HDD surface or SSD memory cell has been permanently damaged.</span>
+</a>
+<a href="/error/CACHE-FLSH-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Failed to write data from disk cache</span>
+<span class="sitemap-link-path">/error/CACHE-FLSH-FAIL/</span>
+<span class="sitemap-link-desc">The data in the disk cache was not saved before the power failure.</span>
+</a>
+<a href="/error/MBR-GPT-CORR/" class="sitemap-link">
+<span class="sitemap-link-title">Corrupt disk partition table (MBR/GPT)</span>
+<span class="sitemap-link-path">/error/MBR-GPT-CORR/</span>
+<span class="sitemap-link-desc">The system sees the disk as unallocated space with no data.</span>
+</a>
+<a href="/error/VSS-FREEZE/" class="sitemap-link">
+<span class="sitemap-link-title">Stuck in the Shadow Copy (Backup) process</span>
+<span class="sitemap-link-path">/error/VSS-FREEZE/</span>
+<span class="sitemap-link-desc">Creating a restore point or backup caused the disk to freeze.</span>
+</a>
+<a href="/error/TRIM-IGNORE/" class="sitemap-link">
+<span class="sitemap-link-title">TRIM command to clean SSD was ignored</span>
+<span class="sitemap-link-path">/error/TRIM-IGNORE/</span>
+<span class="sitemap-link-desc">The SSD does not clean up the deleted blocks, which reduces the speed extremely.</span>
+</a>
+<a href="/error/SPN-MOT-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Plate disc spindle motor failure</span>
+<span class="sitemap-link-path">/error/SPN-MOT-FAIL/</span>
+<span class="sitemap-link-desc">The platters of a classic hard disk cannot spin (click).</span>
+</a>
+<a href="/error/TBW-LIM-RCH/" class="sitemap-link">
+<span class="sitemap-link-title">Critical Cell Wear (SSD End of Life)</span>
+<span class="sitemap-link-path">/error/TBW-LIM-RCH/</span>
+<span class="sitemap-link-desc">The SSD has reached the end of its write life (TBW) and has entered read-only mode.</span>
+</a>
+<a href="/error/M2-THROTTLING/" class="sitemap-link">
+<span class="sitemap-link-title">Controller overheating on powerful M.2 disk</span>
+<span class="sitemap-link-path">/error/M2-THROTTLING/</span>
+<span class="sitemap-link-desc">The M.2 disk controller is baked under the graphics card, and the speed has dropped to a minimum.</span>
+</a>
+<a href="/error/BIT-ROT-DET/" class="sitemap-link">
+<span class="sitemap-link-title">Silent Disk Data Corruption (Bit Rot)</span>
+<span class="sitemap-link-path">/error/BIT-ROT-DET/</span>
+<span class="sitemap-link-desc">The data on the disk has naturally degraded, leading to archive file corruption.</span>
+</a>
+<a href="/error/DRAM-CAC-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">SSD internal DRAM cache failure</span>
+<span class="sitemap-link-path">/error/DRAM-CAC-FAIL/</span>
+<span class="sitemap-link-desc">A buffer built directly on the disk reports a hardware error.</span>
+</a>
+<a href="/error/SEC-ERS-LOCK/" class="sitemap-link">
+<span class="sitemap-link-title">Blocked attempt to securely delete data</span>
+<span class="sitemap-link-path">/error/SEC-ERS-LOCK/</span>
+<span class="sitemap-link-desc">ATA Secure Erase command was rejected by frozen disk security.</span>
+</a>
+<a href="/error/PCIE-LANE-DRP/" class="sitemap-link">
+<span class="sitemap-link-title">Loss of NVMe drive PCIe lanes</span>
+<span class="sitemap-link-path">/error/PCIE-LANE-DRP/</span>
+<span class="sitemap-link-desc">M.2 drive running on PCIe x4 suddenly fell into PCIe x1 mode, reading speed dropped drastically.</span>
+</a>
+<a href="/error/SSD-TEMP-WARN/" class="sitemap-link">
+<span class="sitemap-link-title">SSD operating temperature warning</span>
+<span class="sitemap-link-path">/error/SSD-TEMP-WARN/</span>
+<span class="sitemap-link-desc">The NVMe or SATA SSD is operating above optimal temperatures.</span>
+</a>
+<a href="/error/NVME-PCIE-DEMOTION/" class="sitemap-link">
+<span class="sitemap-link-title">NVMe drive degraded to PCIe x2 speed</span>
+<span class="sitemap-link-path">/error/NVME-PCIE-DEMOTION/</span>
+<span class="sitemap-link-desc">The M.2 SSD runs at half speed due to shared PCIe lanes with the GPU or chipset.</span>
+</a>
+<a href="/error/SSD-DRAM-CACHE-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">SSD DRAM cache failure</span>
+<span class="sitemap-link-path">/error/SSD-DRAM-CACHE-FAIL/</span>
+<span class="sitemap-link-desc">An SSD without a DRAM cache (DRAM-less) is extremely slow when writing large files or reading small files.</span>
+</a>
+<a href="/error/CHKDSK-STAGE3-STUCK/" class="sitemap-link">
+<span class="sitemap-link-title">Chkdsk is stuck on stage 3 or 4</span>
+<span class="sitemap-link-path">/error/CHKDSK-STAGE3-STUCK/</span>
+<span class="sitemap-link-desc">The chkdsk disk checker is stuck at stage 3 (Security Descriptors) or 4 and is not progressing.</span>
+</a>
+<a href="/error/BITLOCKER-RECOVERY-LOOP/" class="sitemap-link">
+<span class="sitemap-link-title">BitLocker requires a recovery key after every boot</span>
+<span class="sitemap-link-path">/error/BITLOCKER-RECOVERY-LOOP/</span>
+<span class="sitemap-link-desc">The computer asks for the 48-digit BitLocker key every time it is restarted, even if the password is not changed.</span>
+</a>
+<div class="subcat-header">Software - DIRECTX</div>
+<a href="/error/DXGI-ERROR-DEVICE-REMOVED/" class="sitemap-link">
+<span class="sitemap-link-title">DirectX - GPU Removed</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-DEVICE-REMOVED/</span>
+<span class="sitemap-link-desc">DirectX has lost access to the GPU. The game or application crashes.</span>
+</a>
+<a href="/error/D3D-INIT-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">Direct3D initialization failed</span>
+<span class="sitemap-link-path">/error/D3D-INIT-ERROR/</span>
+<span class="sitemap-link-desc">The application cannot initialize Direct3D. The GPU or driver does not support the required version.</span>
+</a>
+<a href="/error/DIRECTX-FEATURE-LEVEL/" class="sitemap-link">
+<span class="sitemap-link-title">Unsupported DirectX Feature Level</span>
+<span class="sitemap-link-path">/error/DIRECTX-FEATURE-LEVEL/</span>
+<span class="sitemap-link-desc">The application requires DirectX Feature Level 11.0 or higher, which is not supported by the GPU.</span>
+</a>
+<a href="/error/OPENCL-INIT-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">OpenCL initialization failed</span>
+<span class="sitemap-link-path">/error/OPENCL-INIT-FAIL/</span>
+<span class="sitemap-link-desc">An application or software cannot initialize the OpenCL interface for GPU computation.</span>
+</a>
+<a href="/error/DXGI-ERROR-DEVICE-REMOVED-2/" class="sitemap-link">
+<span class="sitemap-link-title">Graphics adapter has been disconnected</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-DEVICE-REMOVED-2/</span>
+<span class="sitemap-link-desc">The Direct3D device has been removed or the driver has crashed.</span>
+</a>
+<a href="/error/DXGI-ERROR-DEVICE-HUNG-2/" class="sitemap-link">
+<span class="sitemap-link-title">Video adapter freezing</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-DEVICE-HUNG-2/</span>
+<span class="sitemap-link-desc">The application sent an invalid command and the GPU became unresponsive.</span>
+</a>
+<a href="/error/D3D11-ERROR-OUT-OF-MEMORY/" class="sitemap-link">
+<span class="sitemap-link-title">Insufficient graphics memory for DirectX</span>
+<span class="sitemap-link-path">/error/D3D11-ERROR-OUT-OF-MEMORY/</span>
+<span class="sitemap-link-desc">The game or program has exhausted the available VRAM on the graphics card.</span>
+</a>
+<a href="/error/DXGI-ERROR-INVALID-CALL/" class="sitemap-link">
+<span class="sitemap-link-title">Invalid call to API function</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-INVALID-CALL/</span>
+<span class="sitemap-link-desc">The application provided incorrect parameters to DirectX.</span>
+</a>
+<a href="/error/D3D12-ERROR-ADAPTER-NOT-FOUND/" class="sitemap-link">
+<span class="sitemap-link-title">DX12 compatible GPU not found</span>
+<span class="sitemap-link-path">/error/D3D12-ERROR-ADAPTER-NOT-FOUND/</span>
+<span class="sitemap-link-desc">The application requires DirectX 12 Feature Level, which the graphics card does not support.</span>
+</a>
+<a href="/error/DXGI-ERROR-WAS-STILL-DRAWING/" class="sitemap-link">
+<span class="sitemap-link-title">Image rendering conflict</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-WAS-STILL-DRAWING/</span>
+<span class="sitemap-link-desc">Attempting to access the surface that the GPU is currently drawing on.</span>
+</a>
+<a href="/error/D3D-COMPILER-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">Failed to compile HLSL shader</span>
+<span class="sitemap-link-path">/error/D3D-COMPILER-ERROR/</span>
+<span class="sitemap-link-desc">The driver failed to compile the shader program for the graphics card.</span>
+</a>
+<a href="/error/DXGI-ERROR-UNSUPPORTED/" class="sitemap-link">
+<span class="sitemap-link-title">Unsupported DirectX feature</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-UNSUPPORTED/</span>
+<span class="sitemap-link-desc">A request has been made for a format or function that the hardware does not support.</span>
+</a>
+<a href="/error/DXGI-ERROR-ACCESS-DENIED/" class="sitemap-link">
+<span class="sitemap-link-title">DirectX resource access denied</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-ACCESS-DENIED/</span>
+<span class="sitemap-link-desc">The application does not have rights or the resource is exclusively locked by another program.</span>
+</a>
+<a href="/error/DXGI-ERROR-NOT-CURRENT/" class="sitemap-link">
+<span class="sitemap-link-title">Loss of exclusive full screen mode</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-NOT-CURRENT/</span>
+<span class="sitemap-link-desc">The game lost focus or was minimized by a system notification.</span>
+</a>
+<a href="/error/D3D11-ERROR-FILE-NOT-FOUND/" class="sitemap-link">
+<span class="sitemap-link-title">Missing DirectX system library</span>
+<span class="sitemap-link-path">/error/D3D11-ERROR-FILE-NOT-FOUND/</span>
+<span class="sitemap-link-desc">The requested file (eg d3dx11_43.dll) was not found in the system.</span>
+</a>
+<a href="/error/DXGI-ERROR-MODE-CHANGE-IN-PROGRESS/" class="sitemap-link">
+<span class="sitemap-link-title">Changing display mode</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-MODE-CHANGE-IN-PROGRESS/</span>
+<span class="sitemap-link-desc">Call failure due to resolution or refresh rate change in progress.</span>
+</a>
+<a href="/error/D3D12-ERROR-NOT-SUPPORTED-OS/" class="sitemap-link">
+<span class="sitemap-link-title">The Windows version does not support DX12</span>
+<span class="sitemap-link-path">/error/D3D12-ERROR-NOT-SUPPORTED-OS/</span>
+<span class="sitemap-link-desc">DirectX 12 requires a newer build of Windows 10/11.</span>
+</a>
+<a href="/error/DXGI-ERROR-DRIVER-INTERNAL-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">Internal graphics driver error</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-DRIVER-INTERNAL-ERROR/</span>
+<span class="sitemap-link-desc">The video card driver encountered an error and could not complete the operation.</span>
+</a>
+<a href="/error/D3D11-CREATE-DEVICE-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Failed to initialize D3D device</span>
+<span class="sitemap-link-path">/error/D3D11-CREATE-DEVICE-FAIL/</span>
+<span class="sitemap-link-desc">CreateDevice failed, probably hardware not responding.</span>
+</a>
+<a href="/error/DXGI-ERROR-NONEXCLUSIVE/" class="sitemap-link">
+<span class="sitemap-link-title">Unavailability of exclusive access</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-NONEXCLUSIVE/</span>
+<span class="sitemap-link-desc">An application is trying to gain exclusive access to the screen, but another program already has it.</span>
+</a>
+<a href="/error/D3D12-RAYTRACING-UNSUPPORTED/" class="sitemap-link">
+<span class="sitemap-link-title">Unsupported Raytracing hardware</span>
+<span class="sitemap-link-path">/error/D3D12-RAYTRACING-UNSUPPORTED/</span>
+<span class="sitemap-link-desc">The game tries to enable DXR (DirectX Raytracing) on ​​a card without RT cores.</span>
+</a>
+<a href="/error/DXGI-ERROR-FRAME-STATISTICS-DISJOINT/" class="sitemap-link">
+<span class="sitemap-link-title">Break frame statistics</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-FRAME-STATISTICS-DISJOINT/</span>
+<span class="sitemap-link-desc">The frame rate counter has lost sync.</span>
+</a>
+<a href="/error/D3D-SHADER-LINK-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">Failed to link shaders</span>
+<span class="sitemap-link-path">/error/D3D-SHADER-LINK-ERROR/</span>
+<span class="sitemap-link-desc">Failed to link shaders due to different registers or HLSL version.</span>
+</a>
+<a href="/error/DXGI-ERROR-WAIT-TIMEOUT/" class="sitemap-link">
+<span class="sitemap-link-title">DirectX Timeout</span>
+<span class="sitemap-link-path">/error/DXGI-ERROR-WAIT-TIMEOUT/</span>
+<span class="sitemap-link-desc">The application waited too long for a synchronization event from the GPU.</span>
+</a>
+<a href="/error/D3D12-ERROR-OUT-OF-MEMORY/" class="sitemap-link">
+<span class="sitemap-link-title">DirectX 12 Out of Memory</span>
+<span class="sitemap-link-path">/error/D3D12-ERROR-OUT-OF-MEMORY/</span>
+<span class="sitemap-link-desc">DirectX 12 application failed to allocate sufficient video or system memory.</span>
+</a>
+<a href="/error/D3D11-CREATE-DEVICE-FAILED/" class="sitemap-link">
+<span class="sitemap-link-title">Direct3D 11 Initialization Failure</span>
+<span class="sitemap-link-path">/error/D3D11-CREATE-DEVICE-FAILED/</span>
+<span class="sitemap-link-desc">The application or game could not initialize Direct3D 11. This occurs when the graphics driver is corrupted or the GPU does not support the required DirectX 11 features.</span>
+</a>
+<div class="subcat-header">Software - RUNTIME</div>
+<a href="/error/VCRUNTIME140-DLL-MISSING/" class="sitemap-link">
+<span class="sitemap-link-title">VCRUNTIME140.dll is missing</span>
+<span class="sitemap-link-path">/error/VCRUNTIME140-DLL-MISSING/</span>
+<span class="sitemap-link-desc">The application cannot start because the file VCRUNTIME140.dll or MSVCP140.dll is missing.</span>
+</a>
+<a href="/error/STEAM-DISK-WRITE-ERR/" class="sitemap-link">
+<span class="sitemap-link-title">Steam - Error writing to disk during installation</span>
+<span class="sitemap-link-path">/error/STEAM-DISK-WRITE-ERR/</span>
+<span class="sitemap-link-desc">Steam will abort installing or updating a game with a disk write error.</span>
+</a>
+<a href="/error/GAME-EAC-VIOLATION/" class="sitemap-link">
+<span class="sitemap-link-title">EasyAntiCheat - Compliance Violation</span>
+<span class="sitemap-link-path">/error/GAME-EAC-VIOLATION/</span>
+<span class="sitemap-link-desc">The game will kick you out with an EasyAntiCheat violation even though you&#039;re not cheating.</span>
+</a>
+<a href="/error/0xc0000142/" class="sitemap-link">
+<span class="sitemap-link-title">Error initializing application</span>
+<span class="sitemap-link-path">/error/0xc0000142/</span>
+<span class="sitemap-link-desc">The application failed to start properly (0xc0000142) and will be terminated.</span>
+</a>
+<a href="/error/0xc000007b/" class="sitemap-link">
+<span class="sitemap-link-title">The application did not start correctly</span>
+<span class="sitemap-link-path">/error/0xc000007b/</span>
+<span class="sitemap-link-desc">An application built for a 64-bit architecture tries to load a 32-bit library (or vice versa).</span>
+</a>
+<a href="/error/VCRUNTIME-MISSING/" class="sitemap-link">
+<span class="sitemap-link-title">Missing Visual C++ Runtime</span>
+<span class="sitemap-link-path">/error/VCRUNTIME-MISSING/</span>
+<span class="sitemap-link-desc">The application requires the Visual C++ Redistributable, which is missing.</span>
+</a>
+<a href="/error/NET-FRAMEWORK-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">.NET Framework error</span>
+<span class="sitemap-link-path">/error/NET-FRAMEWORK-ERROR/</span>
+<span class="sitemap-link-desc">The application requires the .NET Framework, which is missing or corrupted.</span>
+</a>
+<a href="/error/DLL-NOT-FOUND/" class="sitemap-link">
+<span class="sitemap-link-title">DLL file not found</span>
+<span class="sitemap-link-path">/error/DLL-NOT-FOUND/</span>
+<span class="sitemap-link-desc">The application cannot find the required DLL and will not start.</span>
+</a>
+<a href="/error/INSTALLER-ERROR-1603/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Installer error 1603</span>
+<span class="sitemap-link-path">/error/INSTALLER-ERROR-1603/</span>
+<span class="sitemap-link-desc">Fatal error installing MSI package. Installation failed.</span>
+</a>
+<a href="/error/PYTHON-DLL-LOAD/" class="sitemap-link">
+<span class="sitemap-link-title">Error loading Python DLL</span>
+<span class="sitemap-link-path">/error/PYTHON-DLL-LOAD/</span>
+<span class="sitemap-link-desc">Python cannot load the required DLL (python3xx.dll). The application or script does not start.</span>
+</a>
+<a href="/error/MSVCR140-MISSING/" class="sitemap-link">
+<span class="sitemap-link-title">Missing MSVCR140.dll</span>
+<span class="sitemap-link-path">/error/MSVCR140-MISSING/</span>
+<span class="sitemap-link-desc">The application requires MSVCR140.dll from the Visual C++ 2015-2022 Runtime, which is not installed.</span>
+</a>
+<a href="/error/DLL-FAULT-ntdll.dll/" class="sitemap-link">
+<span class="sitemap-link-title">Missing or corrupt library ntdll.dll</span>
+<span class="sitemap-link-path">/error/DLL-FAULT-ntdll.dll/</span>
+<span class="sitemap-link-desc">The application could not be started because the ntdll.dll module threw an exception or was not found.</span>
+</a>
+<a href="/error/DLL-FAULT-kernel32.dll/" class="sitemap-link">
+<span class="sitemap-link-title">Missing or corrupt kernel32.dll library</span>
+<span class="sitemap-link-path">/error/DLL-FAULT-kernel32.dll/</span>
+<span class="sitemap-link-desc">The application could not be started because the kernel32.dll module threw an exception or was not found.</span>
+</a>
+<a href="/error/DLL-FAULT-user32.dll/" class="sitemap-link">
+<span class="sitemap-link-title">Missing or corrupt library user32.dll</span>
+<span class="sitemap-link-path">/error/DLL-FAULT-user32.dll/</span>
+<span class="sitemap-link-desc">The application could not be started because the user32.dll module threw an exception or was not found.</span>
+</a>
+<a href="/error/DLL-FAULT-hal.dll/" class="sitemap-link">
+<span class="sitemap-link-title">Missing or corrupt hal.dll library</span>
+<span class="sitemap-link-path">/error/DLL-FAULT-hal.dll/</span>
+<span class="sitemap-link-desc">The application could not be started because the hal.dll module threw an exception or was not found.</span>
+</a>
+<a href="/error/DLL-FAULT-dxgi.dll/" class="sitemap-link">
+<span class="sitemap-link-title">Missing or corrupt dxgi.dll library</span>
+<span class="sitemap-link-path">/error/DLL-FAULT-dxgi.dll/</span>
+<span class="sitemap-link-desc">The application could not be started because the dxgi.dll module threw an exception or was not found.</span>
+</a>
+<a href="/error/DLL-FAULT-d3d11.dll/" class="sitemap-link">
+<span class="sitemap-link-title">Missing or corrupt library d3d11.dll</span>
+<span class="sitemap-link-path">/error/DLL-FAULT-d3d11.dll/</span>
+<span class="sitemap-link-desc">The application could not be started because the d3d11.dll module threw an exception or was not found.</span>
+</a>
+<a href="/error/DLL-FAULT-xinput1-3.dll/" class="sitemap-link">
+<span class="sitemap-link-title">Missing or corrupt library xinput1_3.dll</span>
+<span class="sitemap-link-path">/error/DLL-FAULT-xinput1-3.dll/</span>
+<span class="sitemap-link-desc">The application could not be started because the xinput1_3.dll module threw an exception or was not found.</span>
+</a>
+<a href="/error/DLL-FAULT-msvcp140.dll/" class="sitemap-link">
+<span class="sitemap-link-title">Missing or corrupt library msvcp140.dll</span>
+<span class="sitemap-link-path">/error/DLL-FAULT-msvcp140.dll/</span>
+<span class="sitemap-link-desc">The application could not be started because the msvcp140.dll module threw an exception or was not found.</span>
+</a>
+<a href="/error/DLL-FAULT-vcruntime140.dll/" class="sitemap-link">
+<span class="sitemap-link-title">Missing or corrupt library vcruntime140.dll</span>
+<span class="sitemap-link-path">/error/DLL-FAULT-vcruntime140.dll/</span>
+<span class="sitemap-link-desc">The application could not be started because the vcruntime140.dll module threw an exception or was not found.</span>
+</a>
+<a href="/error/DLL-FAULT-ucrtbase.dll/" class="sitemap-link">
+<span class="sitemap-link-title">Missing or corrupt library ucrtbase.dll</span>
+<span class="sitemap-link-path">/error/DLL-FAULT-ucrtbase.dll/</span>
+<span class="sitemap-link-desc">The application could not be started because the ucrtbase.dll module threw an exception or was not found.</span>
+</a>
+<a href="/error/STATUS-ACCESS-VIOLATION-2/" class="sitemap-link">
+<span class="sitemap-link-title">Memory Access Violation (STATUS_ACCESS_VIOLATION)</span>
+<span class="sitemap-link-path">/error/STATUS-ACCESS-VIOLATION-2/</span>
+<span class="sitemap-link-desc">A process attempted to read or write to a memory address to which it does not have appropriate access permissions. Extremely common in web browsers (Chrome, Edge) and gaming applications.</span>
+</a>
+<div class="subcat-header">Software - SW-BIOS</div>
+<a href="/error/BIOS-BOOT-LOOP/" class="sitemap-link">
+<span class="sitemap-link-title">Loop of reboots after BIOS</span>
+<span class="sitemap-link-path">/error/BIOS-BOOT-LOOP/</span>
+<span class="sitemap-link-desc">The PC restarts in an endless loop after POST. Problem with UEFI boot records or corrupted BCD.</span>
+</a>
+<a href="/error/UEFI-SHELL-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">UEFI Shell - Startup Error</span>
+<span class="sitemap-link-path">/error/UEFI-SHELL-ERROR/</span>
+<span class="sitemap-link-desc">The system booted into the UEFI shell instead of the OS. The boot record is missing or corrupted.</span>
+</a>
+<a href="/error/FIRMWARE-ROLLBACK-BLOCKED/" class="sitemap-link">
+<span class="sitemap-link-title">BIOS rollback blocked</span>
+<span class="sitemap-link-path">/error/FIRMWARE-ROLLBACK-BLOCKED/</span>
+<span class="sitemap-link-desc">An attempt to downgrade the BIOS was blocked by board protection or Intel Boot Guard.</span>
+</a>
+<a href="/error/NVRAM-FULL/" class="sitemap-link">
+<span class="sitemap-link-title">NVRAM BIOS memory full</span>
+<span class="sitemap-link-path">/error/NVRAM-FULL/</span>
+<span class="sitemap-link-desc">UEFI NVRAM is full of variables. It causes boot problems and the inability to save settings.</span>
+</a>
+<a href="/error/CSM-CONFLICT/" class="sitemap-link">
+<span class="sitemap-link-title">CSM / Legacy Boot Conflict</span>
+<span class="sitemap-link-path">/error/CSM-CONFLICT/</span>
+<span class="sitemap-link-desc">Compatibility Support Module (CSM) conflicts with UEFI OS or Secure Boot.</span>
+</a>
+<a href="/error/UEFI-BOOT-LOOP/" class="sitemap-link">
+<span class="sitemap-link-title">System stuck in loop into UEFI/BIOS</span>
+<span class="sitemap-link-path">/error/UEFI-BOOT-LOOP/</span>
+<span class="sitemap-link-desc">Every time the PC is started, the system automatically redirects to the BIOS instead of Windows.</span>
+</a>
+<a href="/error/CSM-CONFLICT-VGA/" class="sitemap-link">
+<span class="sitemap-link-title">Conflict between UEFI and old graphics driver</span>
+<span class="sitemap-link-path">/error/CSM-CONFLICT-VGA/</span>
+<span class="sitemap-link-desc">The CSM module has been disabled, but the older graphics card does not have UEFI GOP (Graphics Output Protocol).</span>
+</a>
+<a href="/error/SEC-BOOT-VIOLATION/" class="sitemap-link">
+<span class="sitemap-link-title">Violation of Secure Boot rules</span>
+<span class="sitemap-link-path">/error/SEC-BOOT-VIOLATION/</span>
+<span class="sitemap-link-desc">System boot stopped due to unsigned bootloader or driver.</span>
+</a>
+<a href="/error/NVRAM-FULL-ERR/" class="sitemap-link">
+<span class="sitemap-link-title">Not enough space in the NVRAM chip</span>
+<span class="sitemap-link-path">/error/NVRAM-FULL-ERR/</span>
+<span class="sitemap-link-desc">The NVRAM memory capacity for storing boot variables is full.</span>
+</a>
+<a href="/error/UEFI-SHELL-FALLBACK/" class="sitemap-link">
+<span class="sitemap-link-title">Drop into the built-in EFI Shell</span>
+<span class="sitemap-link-path">/error/UEFI-SHELL-FALLBACK/</span>
+<span class="sitemap-link-desc">It started the EFI command interface instead of the operating system.</span>
+</a>
+<a href="/error/ME-FW-UPDATE-FAIL/" class="sitemap-link">
+<span class="sitemap-link-title">Intel ME update failure</span>
+<span class="sitemap-link-path">/error/ME-FW-UPDATE-FAIL/</span>
+<span class="sitemap-link-desc">The Intel Management Engine firmware update failed or was interrupted.</span>
+</a>
+<a href="/error/AMD-AGESA-MICROCODE/" class="sitemap-link">
+<span class="sitemap-link-title">AMD AGESA incompatible microcode</span>
+<span class="sitemap-link-path">/error/AMD-AGESA-MICROCODE/</span>
+<span class="sitemap-link-desc">The installed processor is not fully supported by the current version of AGESA libraries in the BIOS.</span>
+</a>
+<a href="/error/ACPI-TABLE-CORRUPT/" class="sitemap-link">
+<span class="sitemap-link-title">Corruption of ACPI tables</span>
+<span class="sitemap-link-path">/error/ACPI-TABLE-CORRUPT/</span>
+<span class="sitemap-link-desc">Windows BSOD ACPI_BIOS_ERROR due to faulty BIOS power management configuration.</span>
+</a>
+<a href="/error/FAST-BOOT-HANG/" class="sitemap-link">
+<span class="sitemap-link-title">Fast Boot Stuck</span>
+<span class="sitemap-link-path">/error/FAST-BOOT-HANG/</span>
+<span class="sitemap-link-desc">The computer won&#039;t start because it&#039;s stuck in the fast boot phase.</span>
+</a>
+<a href="/error/BIOS-PWD-LOCKOUT/" class="sitemap-link">
+<span class="sitemap-link-title">Locked by BIOS password</span>
+<span class="sitemap-link-path">/error/BIOS-PWD-LOCKOUT/</span>
+<span class="sitemap-link-desc">Access to the computer is blocked due to an unknown UEFI administrator password.</span>
+</a>
+<div class="subcat-header">Software - WINDOWS</div>
+<a href="/error/KERNEL-SECURITY-CHECK-FAILURE/" class="sitemap-link">
+<span class="sitemap-link-title">Kernel security check failure</span>
+<span class="sitemap-link-path">/error/KERNEL-SECURITY-CHECK-FAILURE/</span>
+<span class="sitemap-link-desc">Windows has detected corruption of kernel data structures. Most often caused by a faulty driver or memory corruption.</span>
+</a>
+<a href="/error/PRN-OFFLINE/" class="sitemap-link">
+<span class="sitemap-link-title">Printer is offline</span>
+<span class="sitemap-link-path">/error/PRN-OFFLINE/</span>
+<span class="sitemap-link-desc">Although the printer is turned on and connected, Windows says it is in Offline mode.</span>
+</a>
+<a href="/error/WIN-APP-CRASH-0xc0000005/" class="sitemap-link">
+<span class="sitemap-link-title">Access Violation when reading (Access Violation)</span>
+<span class="sitemap-link-path">/error/WIN-APP-CRASH-0xc0000005/</span>
+<span class="sitemap-link-desc">The application crashed with exception code 0xc0000005. This is a general memory access error.</span>
+</a>
+<a href="/error/DISK-USAGE-100/" class="sitemap-link">
+<span class="sitemap-link-title">Disk usage at 100% in Task Manager</span>
+<span class="sitemap-link-path">/error/DISK-USAGE-100/</span>
+<span class="sitemap-link-desc">The system gets extremely stuck, the response takes seconds, the disk is lit at 100% in the task manager.</span>
+</a>
+<a href="/error/WIN-LICENSE-EXPIRE/" class="sitemap-link">
+<span class="sitemap-link-title">Your Windows license is about to expire</span>
+<span class="sitemap-link-path">/error/WIN-LICENSE-EXPIRE/</span>
+<span class="sitemap-link-desc">Windows pops up with a message that activation will expire. It also occurs frequently with legal systems of activated organizations (KMS).</span>
+</a>
+<a href="/error/MEM-LEAK-SYS/" class="sitemap-link">
+<span class="sitemap-link-title">System memory leak detected</span>
+<span class="sitemap-link-path">/error/MEM-LEAK-SYS/</span>
+<span class="sitemap-link-desc">A critical system process is consuming available memory indefinitely.</span>
+</a>
+<a href="/error/0x0000007E/" class="sitemap-link">
+<span class="sitemap-link-title">SYSTEM_THREAD_EXCEPTION_NOT_HANDLED</span>
+<span class="sitemap-link-path">/error/0x0000007E/</span>
+<span class="sitemap-link-desc">A system thread threw an unhandled exception. A very common Windows BSOD caused by drivers.</span>
+</a>
+<a href="/error/0x000000EF/" class="sitemap-link">
+<span class="sitemap-link-title">CRITICAL_PROCESS_DIED</span>
+<span class="sitemap-link-path">/error/0x000000EF/</span>
+<span class="sitemap-link-desc">A critical system process (winlogon, csrss, lsass) has terminated.</span>
+</a>
+<a href="/error/0x0000003B/" class="sitemap-link">
+<span class="sitemap-link-title">SYSTEM_SERVICE_EXCEPTION</span>
+<span class="sitemap-link-path">/error/0x0000003B/</span>
+<span class="sitemap-link-desc">A system service threw an exception. Caused by drivers or system files.</span>
+</a>
+<a href="/error/0x00000050/" class="sitemap-link">
+<span class="sitemap-link-title">PAGE_FAULT_IN_NONPAGED_AREA</span>
+<span class="sitemap-link-path">/error/0x00000050/</span>
+<span class="sitemap-link-desc">Windows accessed an invalid memory address.</span>
+</a>
+<a href="/error/0xC004F074/" class="sitemap-link">
+<span class="sitemap-link-title">Windows activation error</span>
+<span class="sitemap-link-path">/error/0xC004F074/</span>
+<span class="sitemap-link-desc">Windows could not contact the activation server or the key is invalid.</span>
+</a>
+<a href="/error/0x80070005/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update - Access Denied</span>
+<span class="sitemap-link-path">/error/0x80070005/</span>
+<span class="sitemap-link-desc">Windows Update failed due to permissions or blocking.</span>
+</a>
+<a href="/error/KERNEL-DATA-INPAGE-ERROR/" class="sitemap-link">
+<span class="sitemap-link-title">Error reading kernel data from page</span>
+<span class="sitemap-link-path">/error/KERNEL-DATA-INPAGE-ERROR/</span>
+<span class="sitemap-link-desc">Windows could not retrieve the requested data from the paging file or disk. Typically a disk or RAM problem.</span>
+</a>
+<a href="/error/DPC-WATCHDOG-VIOLATION/" class="sitemap-link">
+<span class="sitemap-link-title">DPC Watchdog Violation</span>
+<span class="sitemap-link-path">/error/DPC-WATCHDOG-VIOLATION/</span>
+<span class="sitemap-link-desc">The Deferred Procedure Call was not handled in time. Caused by driver or SSD firmware issues.</span>
+</a>
+<a href="/error/UNEXPECTED-KERNEL-MODE-TRAP/" class="sitemap-link">
+<span class="sitemap-link-title">Unexpected kernel trap</span>
+<span class="sitemap-link-path">/error/UNEXPECTED-KERNEL-MODE-TRAP/</span>
+<span class="sitemap-link-desc">The CPU generated an interrupt that the kernel could not catch. Typically HW error or damaged driver.</span>
+</a>
+<a href="/error/STATUS-ACCESS-VIOLATION/" class="sitemap-link">
+<span class="sitemap-link-title">Memory access violation</span>
+<span class="sitemap-link-path">/error/STATUS-ACCESS-VIOLATION/</span>
+<span class="sitemap-link-desc">The application attempted to access a protected area of ​​memory. Most often an application or driver error.</span>
+</a>
+<a href="/error/0x8000FFFF/" class="sitemap-link">
+<span class="sitemap-link-title">Catastrophic Windows Update Failures</span>
+<span class="sitemap-link-path">/error/0x8000FFFF/</span>
+<span class="sitemap-link-desc">Windows Update encountered an unexpected error and cannot download or install updates.</span>
+</a>
+<a href="/error/0xC0000005/" class="sitemap-link">
+<span class="sitemap-link-title">Access Violation - access denied</span>
+<span class="sitemap-link-path">/error/0xC0000005/</span>
+<span class="sitemap-link-desc">The application attempted to access memory to which it does not have access rights. Typical application or driver error.</span>
+</a>
+<a href="/error/0x0000004A/" class="sitemap-link">
+<span class="sitemap-link-title">IRQL_GT_ZERO_AT_SYSTEM_SERVICE</span>
+<span class="sitemap-link-path">/error/0x0000004A/</span>
+<span class="sitemap-link-desc">A critical Windows error indicating that a system service was accessed with an IRQL that was too high.</span>
+</a>
+<a href="/error/KMODE-EXCEPTION-NOT-HANDLED/" class="sitemap-link">
+<span class="sitemap-link-title">0x0000001E BSOD</span>
+<span class="sitemap-link-path">/error/KMODE-EXCEPTION-NOT-HANDLED/</span>
+<span class="sitemap-link-desc">A kernel process generated an exception that the system could not handle. It usually points to faulty drivers or memory.</span>
+</a>
+<a href="/error/PFN-LIST-CORRUPT/" class="sitemap-link">
+<span class="sitemap-link-title">0x0000004E PFN List Corrupt</span>
+<span class="sitemap-link-path">/error/PFN-LIST-CORRUPT/</span>
+<span class="sitemap-link-desc">The PFN (Page Frame Number) data structure is corrupted. The system detected an inconsistency in memory.</span>
+</a>
+<a href="/error/0x80070422/" class="sitemap-link">
+<span class="sitemap-link-title">The Windows Update service cannot be started</span>
+<span class="sitemap-link-path">/error/0x80070422/</span>
+<span class="sitemap-link-desc">Windows Update has been disabled or is not working properly. Unable to download updates.</span>
+</a>
+<a href="/error/0xC000021A/" class="sitemap-link">
+<span class="sitemap-link-title">STATUS_SYSTEM_PROCESS_TERMINATED</span>
+<span class="sitemap-link-path">/error/0xC000021A/</span>
+<span class="sitemap-link-desc">A critical user subsystem (such as WinLogon or CSRSS) has been critically terminated. The system cannot continue to run.</span>
+</a>
+<a href="/error/WU-0x80070002/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Failure (0x80070002)</span>
+<span class="sitemap-link-path">/error/WU-0x80070002/</span>
+<span class="sitemap-link-desc">Windows cannot check for or install updates. Error code: 0x80070002.</span>
+</a>
+<a href="/error/WU-0x80070057/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Failure (0x80070057)</span>
+<span class="sitemap-link-path">/error/WU-0x80070057/</span>
+<span class="sitemap-link-desc">Windows cannot check for or install updates. Error code: 0x80070057.</span>
+</a>
+<a href="/error/WU-0x80004005/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Failure (0x80004005)</span>
+<span class="sitemap-link-path">/error/WU-0x80004005/</span>
+<span class="sitemap-link-desc">Windows cannot check for or install updates. Error code: 0x80004005.</span>
+</a>
+<a href="/error/WU-0x80070005/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Failure (0x80070005)</span>
+<span class="sitemap-link-path">/error/WU-0x80070005/</span>
+<span class="sitemap-link-desc">Windows cannot check for or install updates. Error code: 0x80070005.</span>
+</a>
+<a href="/error/WU-0x80070422/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Failure (0x80070422)</span>
+<span class="sitemap-link-path">/error/WU-0x80070422/</span>
+<span class="sitemap-link-desc">Windows cannot check for or install updates. Error code: 0x80070422.</span>
+</a>
+<a href="/error/WU-0x8009000B/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Failure (0x8009000B)</span>
+<span class="sitemap-link-path">/error/WU-0x8009000B/</span>
+<span class="sitemap-link-desc">Windows cannot check for or install updates. Error code: 0x8009000B.</span>
+</a>
+<a href="/error/WU-0x80072EE7/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Failure (0x80072EE7)</span>
+<span class="sitemap-link-path">/error/WU-0x80072EE7/</span>
+<span class="sitemap-link-desc">Windows cannot check for or install updates. Error code: 0x80072EE7.</span>
+</a>
+<a href="/error/WU-0x8007001F/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Failure (0x8007001F)</span>
+<span class="sitemap-link-path">/error/WU-0x8007001F/</span>
+<span class="sitemap-link-desc">Windows cannot check for or install updates. Error code: 0x8007001F.</span>
+</a>
+<a href="/error/WU-0x80070424/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Failure (0x80070424)</span>
+<span class="sitemap-link-path">/error/WU-0x80070424/</span>
+<span class="sitemap-link-desc">Windows cannot check for or install updates. Error code: 0x80070424.</span>
+</a>
+<a href="/error/WU-0x80070643/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Failure (0x80070643)</span>
+<span class="sitemap-link-path">/error/WU-0x80070643/</span>
+<span class="sitemap-link-desc">Windows cannot check for or install updates. Error code: 0x80070643.</span>
+</a>
+<a href="/error/SVC-FAIL-wuauserv/" class="sitemap-link">
+<span class="sitemap-link-title">System Service Crash: Windows Update</span>
+<span class="sitemap-link-path">/error/SVC-FAIL-wuauserv/</span>
+<span class="sitemap-link-desc">The wuauserv service terminated unexpectedly. Services dependent on this process may not work.</span>
+</a>
+<a href="/error/SVC-FAIL-BITS/" class="sitemap-link">
+<span class="sitemap-link-title">System Service Crash: BITS Service</span>
+<span class="sitemap-link-path">/error/SVC-FAIL-BITS/</span>
+<span class="sitemap-link-desc">The BITS service has terminated unexpectedly. Services dependent on this process may not work.</span>
+</a>
+<a href="/error/SVC-FAIL-Winmgmt/" class="sitemap-link">
+<span class="sitemap-link-title">System service crash: WMI (Winmgmt)</span>
+<span class="sitemap-link-path">/error/SVC-FAIL-Winmgmt/</span>
+<span class="sitemap-link-desc">The Winmgmt service terminated unexpectedly. Services dependent on this process may not work.</span>
+</a>
+<a href="/error/SVC-FAIL-Spooler/" class="sitemap-link">
+<span class="sitemap-link-title">System Service Crash: Print Spooler Service</span>
+<span class="sitemap-link-path">/error/SVC-FAIL-Spooler/</span>
+<span class="sitemap-link-desc">The Spooler service terminated unexpectedly. Services dependent on this process may not work.</span>
+</a>
+<a href="/error/SVC-FAIL-LanmanWorkstation/" class="sitemap-link">
+<span class="sitemap-link-title">System service crashed: Workstation</span>
+<span class="sitemap-link-path">/error/SVC-FAIL-LanmanWorkstation/</span>
+<span class="sitemap-link-desc">The LanmanWorkstation service terminated unexpectedly. Services dependent on this process may not work.</span>
+</a>
+<a href="/error/SVC-FAIL-LanmanServer/" class="sitemap-link">
+<span class="sitemap-link-title">System service down: Server</span>
+<span class="sitemap-link-path">/error/SVC-FAIL-LanmanServer/</span>
+<span class="sitemap-link-desc">The LanmanServer service terminated unexpectedly. Services dependent on this process may not work.</span>
+</a>
+<a href="/error/SVC-FAIL-CryptSvc/" class="sitemap-link">
+<span class="sitemap-link-title">System Service Crash: Encryption Services</span>
+<span class="sitemap-link-path">/error/SVC-FAIL-CryptSvc/</span>
+<span class="sitemap-link-desc">The CryptSvc service terminated unexpectedly. Services dependent on this process may not work.</span>
+</a>
+<a href="/error/SVC-FAIL-TermService/" class="sitemap-link">
+<span class="sitemap-link-title">System Service Crash: Remote Desktop (TermService)</span>
+<span class="sitemap-link-path">/error/SVC-FAIL-TermService/</span>
+<span class="sitemap-link-desc">TermService terminated unexpectedly. Services dependent on this process may not work.</span>
+</a>
+<a href="/error/SVC-FAIL-Audiosrv/" class="sitemap-link">
+<span class="sitemap-link-title">System Service Crash: Windows Sound</span>
+<span class="sitemap-link-path">/error/SVC-FAIL-Audiosrv/</span>
+<span class="sitemap-link-desc">The Audiosrv service terminated unexpectedly. Services dependent on this process may not work.</span>
+</a>
+<a href="/error/SVC-FAIL-VSS/" class="sitemap-link">
+<span class="sitemap-link-title">System Service Crash: Volume Shadow Copy (VSS)</span>
+<span class="sitemap-link-path">/error/SVC-FAIL-VSS/</span>
+<span class="sitemap-link-desc">The VSS service terminated unexpectedly. Services dependent on this process may not work.</span>
+</a>
+<a href="/error/0x00000133/" class="sitemap-link">
+<span class="sitemap-link-title">DPC_WATCHDOG_VIOLATION</span>
+<span class="sitemap-link-path">/error/0x00000133/</span>
+<span class="sitemap-link-desc">A deferred procedure call (DPC) routine took too long and crashed the system.</span>
+</a>
+<a href="/error/0x8007007B/" class="sitemap-link">
+<span class="sitemap-link-title">Windows activation error 0x8007007B</span>
+<span class="sitemap-link-path">/error/0x8007007B/</span>
+<span class="sitemap-link-desc">The filename, directory name, or volume label syntax is incorrect during activation.</span>
+</a>
+<a href="/error/0x0000009F/" class="sitemap-link">
+<span class="sitemap-link-title">DRIVER_POWER_STATE_FAILURE</span>
+<span class="sitemap-link-path">/error/0x0000009F/</span>
+<span class="sitemap-link-desc">The driver put the device into an erroneous power state and the system crashed.</span>
+</a>
+<a href="/error/0x80070422-3/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Defender service disabled</span>
+<span class="sitemap-link-path">/error/0x80070422-3/</span>
+<span class="sitemap-link-desc">The Windows Defender service cannot start, leaving the system vulnerable.</span>
+</a>
+<a href="/error/0x0000003B-2/" class="sitemap-link">
+<span class="sitemap-link-title">SYSTEM_SERVICE_EXCEPTION</span>
+<span class="sitemap-link-path">/error/0x0000003B-2/</span>
+<span class="sitemap-link-desc">An exception occurred while transitioning from unprotected user code to a protected kernel.</span>
+</a>
+<a href="/error/0x0000007B/" class="sitemap-link">
+<span class="sitemap-link-title">INACCESSIBLE_BOOT_DEVICE</span>
+<span class="sitemap-link-path">/error/0x0000007B/</span>
+<span class="sitemap-link-desc">Windows lost access to the root system partition during startup.</span>
+</a>
+<a href="/error/0x0000000A/" class="sitemap-link">
+<span class="sitemap-link-title">IRQL_NOT_LESS_OR_EQUAL</span>
+<span class="sitemap-link-path">/error/0x0000000A/</span>
+<span class="sitemap-link-desc">A kernel process attempted to access memory at an unauthorized high interrupt level (IRQL).</span>
+</a>
+<a href="/error/0x0000001E/" class="sitemap-link">
+<span class="sitemap-link-title">KMODE_EXCEPTION_NOT_HANDLED</span>
+<span class="sitemap-link-path">/error/0x0000001E/</span>
+<span class="sitemap-link-desc">A program running in kernel mode generated an exception that was not caught by the routine code.</span>
+</a>
+<a href="/error/0x000000EF-2/" class="sitemap-link">
+<span class="sitemap-link-title">CRITICAL_PROCESS_DIED</span>
+<span class="sitemap-link-path">/error/0x000000EF-2/</span>
+<span class="sitemap-link-desc">A critical system process (eg svchost, csrss, wininit) terminated unexpectedly.</span>
+</a>
+<a href="/error/0x000000FC/" class="sitemap-link">
+<span class="sitemap-link-title">ATTEMPTED_EXECUTE_OF_NOEXECUTE_MEMORY</span>
+<span class="sitemap-link-path">/error/0x000000FC/</span>
+<span class="sitemap-link-desc">An attempt was made to execute code in memory that is marked as &#039;read only&#039;.</span>
+</a>
+<a href="/error/0x00000050-2/" class="sitemap-link">
+<span class="sitemap-link-title">PAGE_FAULT_IN_NONPAGED_AREA</span>
+<span class="sitemap-link-path">/error/0x00000050-2/</span>
+<span class="sitemap-link-desc">An error occurred when requesting non-paged memory because the data was not found there.</span>
+</a>
+<a href="/error/0x000000C2/" class="sitemap-link">
+<span class="sitemap-link-title">BAD_POOL_CALLER</span>
+<span class="sitemap-link-path">/error/0x000000C2/</span>
+<span class="sitemap-link-desc">The current thread made an invalid request to the memory pool.</span>
+</a>
+<a href="/error/0x00000109/" class="sitemap-link">
+<span class="sitemap-link-title">CRITICAL_STRUCTURE_CORRUPTION</span>
+<span class="sitemap-link-path">/error/0x00000109/</span>
+<span class="sitemap-link-desc">The kernel has detected corruption of key system data or kernel memory structure.</span>
+</a>
+<a href="/error/0x00000116/" class="sitemap-link">
+<span class="sitemap-link-title">VIDEO_TDR_ERROR</span>
+<span class="sitemap-link-path">/error/0x00000116/</span>
+<span class="sitemap-link-desc">An attempt to reset the graphics driver and recover after timeout failed.</span>
+</a>
+<a href="/error/0x00000139/" class="sitemap-link">
+<span class="sitemap-link-title">KERNEL_SECURITY_CHECK_FAILURE</span>
+<span class="sitemap-link-path">/error/0x00000139/</span>
+<span class="sitemap-link-desc">The kernel detected corruption of security-critical data structures.</span>
+</a>
+<a href="/error/0x00000024/" class="sitemap-link">
+<span class="sitemap-link-title">NTFS_FILE_SYSTEM</span>
+<span class="sitemap-link-path">/error/0x00000024/</span>
+<span class="sitemap-link-desc">Fatal error inside NTFS driver.</span>
+</a>
+<a href="/error/0x000000EA/" class="sitemap-link">
+<span class="sitemap-link-title">THREAD_STUCK_IN_DEVICE_DRIVER</span>
+<span class="sitemap-link-path">/error/0x000000EA/</span>
+<span class="sitemap-link-desc">A thread has been waiting for a device in hardware state for an infinite amount of time.</span>
+</a>
+<a href="/error/0x80070422-2/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update - Service not running</span>
+<span class="sitemap-link-path">/error/0x80070422-2/</span>
+<span class="sitemap-link-desc">Windows Update reports error 0x80070422 and refuses to download updates.</span>
+</a>
+<a href="/error/0x80073712/" class="sitemap-link">
+<span class="sitemap-link-title">Missing Windows Component Files</span>
+<span class="sitemap-link-path">/error/0x80073712/</span>
+<span class="sitemap-link-desc">Windows updates fail with code 0x80073712 due to corrupt or missing component system files.</span>
+</a>
+<a href="/error/CLOCK-WATCHDOG-TIMEOUT-2/" class="sitemap-link">
+<span class="sitemap-link-title">CLOCK_WATCHDOG_TIMEOUT (0x00000101)</span>
+<span class="sitemap-link-path">/error/CLOCK-WATCHDOG-TIMEOUT-2/</span>
+<span class="sitemap-link-desc">The processor waited too long for a response from another processor or core and caused a BSOD.</span>
+</a>
+<a href="/error/MEMORY-INTEGRITY-INCOMP/" class="sitemap-link">
+<span class="sitemap-link-title">Memory Integrity Protection (HVCI) - incompatible driver</span>
+<span class="sitemap-link-path">/error/MEMORY-INTEGRITY-INCOMP/</span>
+<span class="sitemap-link-desc">Windows Security reports that Memory Integrity Protection is disabled due to an incompatible driver.</span>
+</a>
+<a href="/error/WINDOWS-DEFENDER-STUCK/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Defender is stuck scanning</span>
+<span class="sitemap-link-path">/error/WINDOWS-DEFENDER-STUCK/</span>
+<span class="sitemap-link-desc">Windows Defender Antivirus is causing 100% CPU or disk usage and is not responding.</span>
+</a>
+<a href="/error/WU-0x800f0922/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x800f0922</span>
+<span class="sitemap-link-path">/error/WU-0x800f0922/</span>
+<span class="sitemap-link-desc">Windows Update fails to install, typically caused by insufficient space in the System Reserved or EFI System Partition (ESP), Secure Boot configuration conflicts, or active VPN connection blocks.</span>
+</a>
+<a href="/error/WU-0x800f081f/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x800f081f</span>
+<span class="sitemap-link-path">/error/WU-0x800f081f/</span>
+<span class="sitemap-link-desc">The source files required for the Windows Update package could not be found, causing installation failure (often occurs during DISM deployment tasks or .NET Framework 3.5 updates).</span>
+</a>
+<a href="/error/WU-0x80070003/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x80070003</span>
+<span class="sitemap-link-path">/error/WU-0x80070003/</span>
+<span class="sitemap-link-desc">The system cannot find the path specified, preventing Windows Update, Windows Backup, or installer services from accessing the target directories.</span>
+</a>
+<a href="/error/WU-0x80244018/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x80244018</span>
+<span class="sitemap-link-path">/error/WU-0x80244018/</span>
+<span class="sitemap-link-desc">Connection to the Microsoft update servers is blocked, usually caused by custom proxy servers, custom firewall rules, or stale DNS resolver cache settings.</span>
+</a>
+<a href="/error/WU-0x80070490/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x80070490</span>
+<span class="sitemap-link-path">/error/WU-0x80070490/</span>
+<span class="sitemap-link-desc">The Component Store or Component-Based Servicing (CBS) manifest file is corrupted, causing Windows Update installation attempts to fail.</span>
+</a>
+<a href="/error/WU-0x800f0988/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x800f0988</span>
+<span class="sitemap-link-path">/error/WU-0x800f0988/</span>
+<span class="sitemap-link-desc">Windows Update fails to install cumulative updates, typically caused by system language pack mismatches, corrupted update package files, or incomplete servicing stack logs.</span>
+</a>
+<a href="/error/WU-0x8007000d/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x8007000d</span>
+<span class="sitemap-link-path">/error/WU-0x8007000d/</span>
+<span class="sitemap-link-desc">The update data is invalid. This error indicates that the downloaded update files are incomplete, corrupted, or have failed validation checks.</span>
+</a>
+<a href="/error/WU-0x80073701/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x80073701</span>
+<span class="sitemap-link-path">/error/WU-0x80073701/</span>
+<span class="sitemap-link-desc">The referenced assembly could not be found. This error indicates missing or corrupted assembly manifest files inside the Windows Component Store (WinSxS).</span>
+</a>
+<a href="/error/WU-0x80240020/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x80240020</span>
+<span class="sitemap-link-path">/error/WU-0x80240020/</span>
+<span class="sitemap-link-desc">The update installation was blocked or failed to trigger, typically due to upgrade registry locks or incomplete session parameters in the update database.</span>
+</a>
+<a href="/error/WU-0x80246007/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x80246007</span>
+<span class="sitemap-link-path">/error/WU-0x80246007/</span>
+<span class="sitemap-link-desc">The update failed to download. This error indicates that the Background Intelligent Transfer Service (BITS) has stopped or is misconfigured, preventing file retrieval.</span>
+</a>
+<a href="/error/WU-0x8024402c/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x8024402c</span>
+<span class="sitemap-link-path">/error/WU-0x8024402c/</span>
+<span class="sitemap-link-desc">Windows Update connection fails. This error occurs when the update client is unable to connect to the Windows Update servers, usually due to incorrect proxy settings, custom firewall restrictions, or invalid DNS configurations.</span>
+</a>
+<a href="/error/WU-0x80240017/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x80240017</span>
+<span class="sitemap-link-path">/error/WU-0x80240017/</span>
+<span class="sitemap-link-desc">The update is not applicable to the operating system. This usually happens when the update package architecture does not match your system (e.g. 64-bit update on 32-bit OS) or prerequisite updates are missing.</span>
+</a>
+<a href="/error/WU-0x800b0100/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x800b0100</span>
+<span class="sitemap-link-path">/error/WU-0x800b0100/</span>
+<span class="sitemap-link-desc">No signature was present in the subject. This error indicates that the downloaded update files are missing digital signatures or have been corrupted, causing trust verification to fail.</span>
+</a>
+<a href="/error/WU-0x80070bc2/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x80070bc2</span>
+<span class="sitemap-link-path">/error/WU-0x80070bc2/</span>
+<span class="sitemap-link-desc">A system restart is required to complete the installation of the update. The update installation enters a loop where it continually requests a reboot without completing.</span>
+</a>
+<a href="/error/WU-0x80070020/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x80070020</span>
+<span class="sitemap-link-path">/error/WU-0x80070020/</span>
+<span class="sitemap-link-desc">The process cannot access the file because it is being used by another process. This occurs when Windows Update attempts to modify or copy critical system files that are locked by a background program or third-party security software.</span>
+</a>
+<a href="/error/0x803f8001/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Store Game License Error 0x803f8001</span>
+<span class="sitemap-link-path">/error/0x803f8001/</span>
+<span class="sitemap-link-desc">This error indicates a licensing or digital rights validation issue when launching or downloading games and apps from the Microsoft Store or Xbox App (such as Minecraft or Xbox Game Pass titles). The system cannot verify that your account owns the product license.</span>
+</a>
+<a href="/error/0x80080005/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x80080005</span>
+<span class="sitemap-link-path">/error/0x80080005/</span>
+<span class="sitemap-link-desc">This error occurs when the Windows Update client fails to execute because the background service or security catalog database is corrupted, preventing Windows from downloading updates.</span>
+</a>
+<a href="/error/0x80072efd/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Connection Timeout 0x80072efd</span>
+<span class="sitemap-link-path">/error/0x80072efd/</span>
+<span class="sitemap-link-desc">This error indicates that the Windows Update service encountered a network connection timeout while trying to reach Microsoft&#039;s update servers, usually caused by network filters, firewalls, or proxy settings.</span>
+</a>
+<a href="/error/0x8007007e/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Module Load Failure 0x8007007e</span>
+<span class="sitemap-link-path">/error/0x8007007e/</span>
+<span class="sitemap-link-desc">The specified module could not be found. This error commonly occurs during Windows Updates, system service operations, or application launches when a critical DLL dynamic link library or driver component is missing.</span>
+</a>
+<a href="/error/0x80244007/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update SOAP Client Error 0x80244007</span>
+<span class="sitemap-link-path">/error/0x80244007/</span>
+<span class="sitemap-link-desc">SOAP client failed. This error is triggered during Windows Update scans when SOAP (Simple Object Access Protocol) XML messages are blocked or misformatted, often due to server-side session timeouts or proxy interference.</span>
+</a>
+<a href="/error/0x800F081F/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Repair Failure (0x800F081F)</span>
+<span class="sitemap-link-path">/error/0x800F081F/</span>
+<span class="sitemap-link-desc">This error is triggered when Windows Update or the DISM tool cannot locate the required source files to complete a system repair or component installation.</span>
+</a>
+<a href="/error/0x80070002/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update File Failure (0x80070002)</span>
+<span class="sitemap-link-path">/error/0x80070002/</span>
+<span class="sitemap-link-desc">This error occurs when Windows Update or an installer attempts to access a critical installation file that has been deleted, moved, or corrupted.</span>
+</a>
+<a href="/error/0x80244018/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Forbidden (0x80244018)</span>
+<span class="sitemap-link-path">/error/0x80244018/</span>
+<span class="sitemap-link-desc">Windows Update connection was blocked by a proxy, firewall, or gateway, returning an HTTP 403 Forbidden status code.</span>
+</a>
+<a href="/error/0x80070643/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x80070643 (WinRE size too small)</span>
+<span class="sitemap-link-path">/error/0x80070643/</span>
+<span class="sitemap-link-desc">This error is triggered when Windows Update fails to install the recovery partition update (often KB5034441) due to the Windows Recovery Environment (WinRE) partition size being too small.</span>
+</a>
+<a href="/error/0x800f0922/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x800f0922 (Secure Boot / Space Issue)</span>
+<span class="sitemap-link-path">/error/0x800f0922/</span>
+<span class="sitemap-link-desc">This error is triggered when Windows Update fails to install due to a secure boot configuration mismatch, insufficient system reserved partition space, or a connection failure to Microsoft servers.</span>
+</a>
+<a href="/error/0x80240034/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x80240034 (Download Database Fail)</span>
+<span class="sitemap-link-path">/error/0x80240034/</span>
+<span class="sitemap-link-desc">This error occurs when the Windows Update client fails to download the update package because the download transaction metadata or database state is corrupted.</span>
+</a>
+<a href="/error/0x80246007/" class="sitemap-link">
+<span class="sitemap-link-title">Windows Update Error 0x80246007 (Download Interrupted)</span>
+<span class="sitemap-link-path">/error/0x80246007/</span>
+<span class="sitemap-link-desc">This error indicates that the update download was interrupted unexpectedly. This is typically related to background intelligent transfer service (BITS) dropouts or network conflicts.</span>
+</a>
+</div>
+</section>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<svg class="logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+<path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>
+<span class="logo-text">Error<strong>Fixer</strong></span>
+<p>Comprehensive error code database for technicians and enthusiasts.</p>
+</div>
+<div class="footer-links">
+<h3>Guides</h3>
+<a href="/guides/pc-build-guide/" class="footer-guide-link">PC Build Guide</a>
+<a href="/guides/cpu-overheating/" class="footer-guide-link">CPU Overheating</a>
+<a href="/guides/directx-errors/" class="footer-guide-link">DirectX Errors</a>
+<a href="/guides/bsod-codes/" class="footer-guide-link">BSOD Codes</a>
+<a href="/guides/ram-troubleshooting/" class="footer-guide-link">RAM Troubleshooting</a>
+<a href="/guides/ssd-hdd-diagnostics/" class="footer-guide-link">SSD &amp; HDD Diagnostics</a>
+<a href="/guides/windows-update-fix/" class="footer-guide-link">Windows Update Fix</a>
+<a href="/guides/psu-troubleshooting/" class="footer-guide-link">PSU Troubleshooting</a>
+<a href="sitemap.html" class="footer-guide-link">HTML Sitemap</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 ErrorFixer &ndash; Error Database</span>
+</div>
+</div>
+</footer>
+<script src="errors-db.js?v=1.0.9" defer="defer"></script>
+<script src="app.js?v=1.0.9" defer="defer"></script>
+</body>
+</html>

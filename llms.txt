@@ -1,0 +1,36 @@
+# ErrorFixer
+
+> ErrorFixer is a comprehensive database and diagnostic repository containing 300+ PC hardware error codes, software bugs, and system troubleshooting diagnostics. It features step-by-step guides for fixing Windows BSODs, GPU crashes, CPU overheating, DirectX errors, and motherboard BIOS startup issues.
+
+## Core Resources
+- [ErrorFixer Homepage](https://errorsfixer.com/) – The main dynamic troubleshooting search engine and interactive error database.
+- [Sitemap](https://errorsfixer.com/sitemap.xml) – Complete XML list of all indexable error codes, guides, and diagnostic pages.
+
+## Diagnostic & Troubleshooting Guides
+Comprehensive, step-by-step guides covering major areas of PC assembly, hardware stability, and software troubleshooting:
+
+- [PC Build Guide](https://errorsfixer.com/guides/pc-build-guide/) – How to avoid common computer assembly mistakes, diagnose motherboard POST codes, and set up your BIOS correctly.
+- [CPU Overheating](https://errorsfixer.com/guides/cpu-overheating/) – Diagnosing high processor temperatures, optimizing PC case cooling airflow, and applying/replacing thermal paste.
+- [GPU Crash in Games](https://errorsfixer.com/guides/gpu-crash-gaming/) – Troubleshooting graphics card black screens, driver Timeout Detection and Recovery (TDR) crashes (`nvlddmkm.sys`), and Crash to Desktop (CTD) events in modern games.
+- [DirectX Errors](https://errorsfixer.com/guides/directx-errors/) – Resolving `DXGI_ERROR_DEVICE_HUNG`, `DXGI_ERROR_DEVICE_REMOVED`, missing DirectX DLL files, and graphics API crashes.
+- [BIOS Startup Errors](https://errorsfixer.com/guides/bios-startup-errors/) – Fixing CMOS checksum errors, motherboard boot loops, UEFI boot order conflicts, Secure Boot violations, and TPM/AGESA issues.
+- [Common BSOD Codes](https://errorsfixer.com/guides/bsod-codes/) – Step-by-step repair instructions for Windows Blue Screen of Death stop codes, driver crashes, and kernel security failures.
+- [Windows Error Codes](https://errorsfixer.com/guides/windows-error-codes/) – Troubleshooting failed Windows Updates, permission errors (`0x80070005`), corrupt system files (`sfc /scannow`), and service crashes.
+- [Diagnostic Tools](https://errorsfixer.com/guides/pc-diagnostics-tools/) – A curated directory of the best free software tools to stress-test your CPU, monitor temperature sensors, verify RAM integrity, and check SSD/HDD health.
+
+## Technical Categories
+The database covers individual issues organized across the following core hardware and software categories:
+
+### Hardware Components
+- **Processor (CPU)** – Thermal throttling, voltage drops, cache parity exceptions, PROCHOT signals, and clock speed instability.
+- **Graphics Card (GPU)** – Hardware Code 43, VRAM corruption, fan failures, power limit throttling, and PCIe bandwidth bottlenecks.
+- **Memory (RAM)** – XMP boot loops, MemTest86 errors, ECC memory failures, and row hammer detections.
+- **Storage (SSD/HDD)** – S.M.A.R.T reallocated sectors, NTFS file system degradation, TRIM alignment problems, and NVMe controller resets.
+- **Motherboard** – VRM overheating, PCIe lane drops, PCH thermal issues, and battery voltage leaks.
+- **Power Supply (PSU)** – Overvoltage (OVP), overcurrent (OCP), undervoltage (UVP) triggers, extreme ripple noise, and 12VHPWR cable safety.
+
+### Software & API Layers
+- **Windows / BSOD** – Stop codes including `WHEA_UNCORRECTABLE_ERROR`, `DPC_WATCHDOG_VIOLATION`, `KERNEL_SECURITY_CHECK_FAILURE`, and `INACCESSIBLE_BOOT_DEVICE`.
+- **System Drivers** – Safe Mode troubleshooting, Clean driver uninstalls with Display Driver Uninstaller (DDU), driver power state issues, and USB controller failures.
+- **Graphics APIs** – Vulkan out-of-date exceptions, Vulkan validation layers, OpenGL invalid operations, and shader compilation conflicts.
+- **Runtimes & Libraries** – Missing Visual C++ redistributables (`MSVCP140.dll`, `VCRUNTIME140.dll`), DLL hijacking mitigations, and .NET Framework initialization errors.
