@@ -7,7 +7,7 @@ Tento projekt je komplexní databáze počítačových chyb. Slouží jako diagn
 ## 1. Úvod
 * **Název projektu:** ErrorFixer
 * **Téma:** Vyhledávání a diagnostika hardwarových a softwarových chyb PC, návody krok za krokem.
-* **Živý web (GitHub Pages):** [[https://errorsfixer.com](https://[errorsfixer.com](https://matyasrada24.github.io/Web_Prace/))](https://matyasrada24.github.io/Web_Prace/) (web je hostován přes GitHub Pages a propojen s vlastní doménou pomocí souboru `CNAME.txt` od hostingu Namecheap).
+* **Živý web (GitHub Pages):** (https://matyasrada24.github.io/Web_Prace/))](https://matyasrada24.github.io/Web_Prace/) (web je hostován přes GitHub Pages a propojen s vlastní doménou pomocí souboru `CNAME.txt` od hostingu Namecheap).
 
 ---
 
