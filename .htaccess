@@ -27,15 +27,21 @@
         # ---------------------------------------------------------------
         # Content Security Policy – upraven pro Google AdSense
         # ---------------------------------------------------------------
+        # ---------------------------------------------------------------
+        # Content Security Policy – fixed: added GTM and Cloudflare
+        # ---------------------------------------------------------------
         Header always set Content-Security-Policy "default-src 'self'; \
-    script-src 'self' 'unsafe-inline' \
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' \
+    https://www.googletagmanager.com \
+    https://www.google-analytics.com \
+    https://ssl.google-analytics.com \
     https://pagead2.googlesyndication.com \
     https://adservice.google.com \
     https://adservice.google.cz \
     https://www.googletagservices.com \
     https://partner.googleadservices.com \
     https://fundingchoicesmessages.google.com \
-    https://cloud.umami.is; \
+    https://static.cloudflareinsights.com; \
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; \
     font-src 'self' https://fonts.gstatic.com; \
     img-src 'self' data: https:; \
@@ -45,11 +51,13 @@
     https://fundingchoicesmessages.google.com \
     https://www.google.com; \
     connect-src 'self' \
+    https://www.google-analytics.com \
+    https://www.googletagmanager.com \
     https://pagead2.googlesyndication.com \
     https://adservice.google.com \
     https://adservice.google.cz \
-    https://cloud.umami.is \
-    https://api-gateway.umami.dev \
+    https://static.cloudflareinsights.com \
+    https://cloudflareinsights.com \
     https://formspree.io; \
     frame-ancestors 'none';"
 
@@ -93,7 +101,7 @@
 
     <IfModule mod_headers.c>
         <FilesMatch "\.(js|css)$">
-            Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
+            Header set Cache-Control "public, max-age=31536000, immutable"
         </FilesMatch>
 
         <FilesMatch "\.(png|jpg|jpeg|gif|webp|svg|ico)$">
@@ -257,9 +265,9 @@
         RewriteRule ^(cpu|gpu|ram|storage|mobo|psu|bios|network|windows|drivers|directx|runtime|sw-bios)/?$ /?cat=$1 [L,R=301]
     </IfModule>
 
-    ErrorDocument 404 /index.html
-    ErrorDocument 403 /index.html
-    ErrorDocument 500 /index.html
+    ErrorDocument 404 /404.html
+    ErrorDocument 403 /404.html
+    ErrorDocument 500 /404.html
 
     <FilesMatch "^index\.html$">
         Header set Cache-Control "public, max-age=1800, stale-while-revalidate=600"
