@@ -162,6 +162,3 @@ Náhledy rozhraní a klíčových funkcí webové aplikace:
 
 ### Mobilní zobrazení a optimalizované detaily chyb
 Aplikace je plně responzivní. Mobilní verze nepoužívá náročné canvas částice na pozadí (`#particleCanvas { display: none; }` pro displeje pod 768px), což výrazně šetří výkon mobilního procesoru a prodlužuje výdrž baterie zařízení. Tabulka chyb se načítá plynule při scrollování a vyhledávání nabízí okamžitý našeptávač.
-
-## UPDATE
-7.6. 2026 - Web se z neznámého důvodu nenačítá, tak jak by měl. Pro lepší zážitek doporučuji navštívit mojí doménu errorsfixer.com.
