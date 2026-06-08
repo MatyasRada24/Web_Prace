@@ -3,15 +3,17 @@
 
 <head><meta property="og:image" content="https://errorsfixer.com/og-image.png"/>
 <!-- Google Analytics (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D5CWSS5ZHC"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-D5CWSS5ZHC');
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var l=false;function load(){if(l)return;l=true;
+var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-D5CWSS5ZHC';s.async=true;document.head.appendChild(s);
+gtag('js',new Date());gtag('config','G-D5CWSS5ZHC');}
+if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:3000});}
+else{setTimeout(load,2000);}})();
 </script>
 
-  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="dark light">
+<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact Us - ErrorFixer</title>
   <meta name="description" content="Get in touch with the ErrorFixer team. Report missing error codes, suggest solutions, or send feedback to matyas.rada08@gmail.com." />
@@ -21,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=1.0.9" />
+  <link rel="preload" href="/style.css?v=1.0.9" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/style.css?v=1.0.9"></noscript>
   <style>
     .info-container {
       max-width: 800px;
@@ -165,7 +167,7 @@
           });
       }
   </script>
-<link rel="preload" href="/style.css?v=1.0.9" as="style"/>
+
 <link rel="preload" href="/app.js?v=1.0.9" as="script"/>
 <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Context"/>
 </head>
@@ -271,37 +273,72 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <svg class="logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-            <path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          </svg>
-          <span class="logo-text">Error<strong>Fixer</strong></span>
-          <p>Comprehensive error code database for technicians and enthusiasts.</p>
-        </div>
-        <div class="footer-links">
-          <h3>Guides</h3>
-          <a href="/guides/pc-build-guide/" class="footer-guide-link">PC Build Guide</a>
-          <a href="/guides/cpu-overheating/" class="footer-guide-link">CPU Overheating</a>
-          <a href="/guides/directx-errors/" class="footer-guide-link">DirectX Errors</a>
-          <a href="/guides/bsod-codes/" class="footer-guide-link">BSOD Codes</a>
-          <a href="/sitemap.html" class="footer-guide-link">HTML Sitemap</a>
-        </div>
-        <div class="footer-links">
-          <h3>About & Support</h3>
-          <a href="/about.html" class="footer-guide-link">About Us</a>
-          <a href="/contact.html" class="footer-guide-link">Contact Us</a>
-          <a href="/privacy-policy.html" class="footer-guide-link">Privacy Policy</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 ErrorFixer &ndash; Error Database</span>
-      </div>
-    </div>
-  </footer>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<svg class="logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+<path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>
+<span class="logo-text">Error<strong>Fixer</strong></span>
+<p>
+Comprehensive error code database for technicians and enthusiasts.
+</p>
+</div>
+<div class="footer-links">
+<h3>Categories</h3>
+<a href="/#categories" class="footer-cat-link">Processor</a>
+<a href="/#categories" class="footer-cat-link">Graphics</a>
+<a href="/#categories" class="footer-cat-link">Windows</a>
+<a href="/#categories" class="footer-cat-link">HW BIOS</a>
+<a href="/#categories" class="footer-cat-link">SW BIOS/FW</a>
+</div>
+<div class="footer-links">
+<h3>Guides</h3>
+<a href="/guides/pc-build-guide/" class="footer-guide-link">PC Build Guide</a>
+<a href="/guides/cpu-overheating/" class="footer-guide-link">CPU Overheating</a>
+<a href="/guides/directx-errors/" class="footer-guide-link">DirectX Errors</a>
+<a href="/guides/bsod-codes/" class="footer-guide-link">BSOD Codes</a>
+<a href="/guides/ram-troubleshooting/" class="footer-guide-link">RAM Troubleshooting</a>
+<a href="/guides/ssd-hdd-diagnostics/" class="footer-guide-link">SSD &amp; HDD Diagnostics</a>
+<a href="/guides/windows-update-fix/" class="footer-guide-link">Windows Update Fix</a>
+<a href="/guides/psu-troubleshooting/" class="footer-guide-link">PSU Troubleshooting</a>
+<a href="/sitemap.html" class="footer-guide-link">HTML Sitemap</a>
+</div>
+<div class="footer-links">
+<h3>About &amp; Support</h3>
+<a href="/about.html" class="footer-guide-link">About Us</a>
+<a href="/contact.html" class="footer-guide-link">Contact Us</a>
+<a href="/privacy-policy.html" class="footer-guide-link">Privacy Policy</a>
+<button class="footer-report-btn" id="footer-report-btn">
+Report Missing Code
+</button>
+</div>
+</div>
+<div class="footer-disclaimer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+stroke-linecap="round" style="
+display: inline;
+vertical-align: middle;
+margin-right: 5px;
+flex-shrink: 0;
+">
+<circle cx="12" cy="12" r="10" />
+<line x1="12" y1="8" x2="12" y2="12" />
+<line x1="12" y1="16" x2="12.01" y2="16" />
+</svg>
+<span><strong>Disclaimer:</strong> Information on this website is
+provided for informational purposes only. The author assumes no
+responsibility for hardware damage, data loss, or any other damage
+resulting from the use or misuse of the solutions provided. Perform
+all actions at your own risk.</span>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 ErrorFixer &ndash; Error Database</span>
+</div>
+</div>
+</footer>
 
     <script src="/app.js?v=1.0.9" defer="defer"></script>
   <script>
