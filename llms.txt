@@ -1,10 +1,21 @@
 # ErrorFixer
 
-> ErrorFixer is a comprehensive database and diagnostic repository containing 300+ PC hardware error codes, software bugs, and system troubleshooting diagnostics. It features step-by-step guides for fixing Windows BSODs, GPU crashes, CPU overheating, DirectX errors, and motherboard BIOS startup issues.
+> ErrorFixer is a comprehensive, open-access PC hardware and software error diagnostic repository. It contains 395+ individual error code pages with detailed, step-by-step repair guides, causes, diagnostic commands, and severity ratings. The site covers Windows BSODs, GPU crashes, CPU overheating, DirectX API failures, BIOS/UEFI startup errors, RAM faults, SSD/HDD failures, PSU issues, driver problems, and more.
+
+## Site Structure
+- **Homepage**: https://errorsfixer.com/ – Main search engine with fuzzy search, category filters, error table with pagination, interactive diagnostic troubleshooter, and live Windows Update alert tracker.
+- **Error Pages**: https://errorsfixer.com/error/{ERROR-CODE}/ – Individual pages (395+) for each error, each containing: description, causes, recommended solutions, diagnostic commands, severity badge, FAQ, E-E-A-T metadata.
+- **Guides**: https://errorsfixer.com/guides/{GUIDE-SLUG}/ – 13 comprehensive multi-section diagnostic guides.
+- **About**: https://errorsfixer.com/about.html – E-E-A-T information about the site's mission and verification process.
+- **Contact**: https://errorsfixer.com/contact.html – Contact form for reporting missing errors or requesting help.
+- **Privacy Policy**: https://errorsfixer.com/privacy-policy.html
+- **Sitemap (XML)**: https://errorsfixer.com/sitemap.xml
+- **Sitemap (HTML)**: https://errorsfixer.com/sitemap.html
 
 ## Core Resources
 - [ErrorFixer Homepage](https://errorsfixer.com/) – The main dynamic troubleshooting search engine and interactive error database.
-- [Sitemap](https://errorsfixer.com/sitemap.xml) – Complete XML list of all indexable error codes, guides, and diagnostic pages.
+- [XML Sitemap](https://errorsfixer.com/sitemap.xml) – Complete XML list of all indexable error codes, guides, and diagnostic pages.
+- [HTML Sitemap](https://errorsfixer.com/sitemap.html) – Human-readable index of all 395+ error pages organized alphabetically.
 
 ## Diagnostic & Troubleshooting Guides
 Comprehensive, step-by-step guides covering major areas of PC assembly, hardware stability, and software troubleshooting:
@@ -17,6 +28,20 @@ Comprehensive, step-by-step guides covering major areas of PC assembly, hardware
 - [Common BSOD Codes](https://errorsfixer.com/guides/bsod-codes/) – Step-by-step repair instructions for Windows Blue Screen of Death stop codes, driver crashes, and kernel security failures.
 - [Windows Error Codes](https://errorsfixer.com/guides/windows-error-codes/) – Troubleshooting failed Windows Updates, permission errors (`0x80070005`), corrupt system files (`sfc /scannow`), and service crashes.
 - [Diagnostic Tools](https://errorsfixer.com/guides/pc-diagnostics-tools/) – A curated directory of the best free software tools to stress-test your CPU, monitor temperature sensors, verify RAM integrity, and check SSD/HDD health.
+- [RAM Troubleshooting](https://errorsfixer.com/guides/ram-troubleshooting/) – Diagnosing memory errors with MemTest86, XMP/EXPO instability, dual-channel configuration issues.
+- [SSD & HDD Diagnostics](https://errorsfixer.com/guides/ssd-hdd-diagnostics/) – S.M.A.R.T. status interpretation, NVMe health checks, TRIM alignment, and data recovery options.
+- [Windows Update Fix](https://errorsfixer.com/guides/windows-update-fix/) – Fixing stuck Windows Update, 0x80070643, 0x800F0922, and SoftwareDistribution cache corruption.
+- [PSU Troubleshooting](https://errorsfixer.com/guides/psu-troubleshooting/) – Diagnosing power supply failures, OCP/OVP/UVP trips, 12VHPWR connector safety, and ripple noise.
+
+## Notable Error Pages
+These are among the most commonly searched errors on the site:
+- [WHEA_UNCORRECTABLE_ERROR](https://errorsfixer.com/error/WHEA-UNCORRECTABLE-ERROR/) – Critical BSOD 0x124 caused by CPU/chipset hardware fault, voltage instability, or overclocking.
+- [Code 43 GPU](https://errorsfixer.com/error/CODE-43-GPU/) – Windows stopped the graphics card; fix via DDU driver reinstall.
+- [nvlddmkm.sys](https://errorsfixer.com/error/nvlddmkm.sys/) – NVIDIA kernel driver TDR crash; fix using DDU in Safe Mode.
+- [MEMORY_MANAGEMENT](https://errorsfixer.com/error/MEMORY-MANAGEMENT/) – Critical RAM BSOD; fix using MemTest86 and driver updates.
+- [IRQL_NOT_LESS_OR_EQUAL](https://errorsfixer.com/error/0x0000000A/) – Kernel IRQL memory access violation; fix using driver updates and mdsched.
+- [DPC_WATCHDOG_VIOLATION](https://errorsfixer.com/error/DPC-WATCHDOG-VIOLATION/) – Timeout in deferred procedure call; caused by SSD firmware or driver conflicts.
+- [INACCESSIBLE_BOOT_DEVICE](https://errorsfixer.com/error/INACCESSIBLE_BOOT_DEVICE/) – Windows bootloader missing; fix using bootrec /rebuildbcd.
 
 ## Technical Categories
 The database covers individual issues organized across the following core hardware and software categories:
@@ -28,9 +53,22 @@ The database covers individual issues organized across the following core hardwa
 - **Storage (SSD/HDD)** – S.M.A.R.T reallocated sectors, NTFS file system degradation, TRIM alignment problems, and NVMe controller resets.
 - **Motherboard** – VRM overheating, PCIe lane drops, PCH thermal issues, and battery voltage leaks.
 - **Power Supply (PSU)** – Overvoltage (OVP), overcurrent (OCP), undervoltage (UVP) triggers, extreme ripple noise, and 12VHPWR cable safety.
+- **BIOS / UEFI** – Boot order conflicts, Secure Boot violations, CMOS checksum errors, TPM issues, and AGESA failures.
+- **Network / NIC** – DNS resolution failures, Winsock corruption, SMB signing mismatches, and WiFi driver crashes.
 
 ### Software & API Layers
 - **Windows / BSOD** – Stop codes including `WHEA_UNCORRECTABLE_ERROR`, `DPC_WATCHDOG_VIOLATION`, `KERNEL_SECURITY_CHECK_FAILURE`, and `INACCESSIBLE_BOOT_DEVICE`.
 - **System Drivers** – Safe Mode troubleshooting, Clean driver uninstalls with Display Driver Uninstaller (DDU), driver power state issues, and USB controller failures.
 - **Graphics APIs** – Vulkan out-of-date exceptions, Vulkan validation layers, OpenGL invalid operations, and shader compilation conflicts.
+- **DirectX / DXGI** – DXGI_ERROR_DEVICE_REMOVED, DXGI_ERROR_DEVICE_HUNG, DXGI_ERROR_DRIVER_INTERNAL_ERROR, and missing DLL errors.
 - **Runtimes & Libraries** – Missing Visual C++ redistributables (`MSVCP140.dll`, `VCRUNTIME140.dll`), DLL hijacking mitigations, and .NET Framework initialization errors.
+- **Windows Services** – Service failure codes for Spooler, BITS, CryptSvc, Audiosrv, VSS, wuauserv, TermService, and Winmgmt.
+
+## Data Quality & E-E-A-T
+All error pages include:
+- Severity ratings (Low / Medium / High / Critical)
+- Last updated date and "Verified by ErrorFixer Technical Board" badge
+- Structured data: TechArticle, HowTo, BreadcrumbList (JSON-LD)
+- Canonical URLs and Open Graph tags
+- Diagnostic commands (copy-to-clipboard enabled)
+- FAQ section with common follow-up questions
