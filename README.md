@@ -164,7 +164,10 @@ Náhledy rozhraní a klíčových funkcí webové aplikace:
 ![image alt](https://github.com/MatyasRada24/Web_Prace/blob/506cd2373a251cbdefc58afef68ec6629a570aa5/Images/zacatek_telefon.PNG)
 
 ## Guidy
-#![image alt](https://github.com/MatyasRada24/Web_Prace/blob/506cd2373a251cbdefc58afef68ec6629a570aa5/Images/guidy.PNG)
+![image alt](https://github.com/MatyasRada24/Web_Prace/blob/506cd2373a251cbdefc58afef68ec6629a570aa5/Images/guidy.PNG)
+
+## Filtry Errorů
+![image alt](https://github.com/MatyasRada24/Web_Prace/blob/506cd2373a251cbdefc58afef68ec6629a570aa5/Images/error_filtr.PNG)
 
 ### Mobilní zobrazení a optimalizované detaily chyb
 Aplikace je plně responzivní. Mobilní verze nepoužívá náročné canvas částice na pozadí (`#particleCanvas { display: none; }` pro displeje pod 768px), což výrazně šetří výkon mobilního procesoru a prodlužuje výdrž baterie zařízení. Tabulka chyb se načítá plynule při scrollování a vyhledávání nabízí okamžitý našeptávač.
