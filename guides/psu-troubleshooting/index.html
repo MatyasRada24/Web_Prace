@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en"><head>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var l=false;function load(){if(l)return;l=true;
+var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-D5CWSS5ZHC';s.async=true;document.head.appendChild(s);
+gtag('js',new Date());gtag('config','G-D5CWSS5ZHC');}
+if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:3000});}
+else{setTimeout(load,2000);}})();
+</script>
+<meta name="color-scheme" content="dark light">
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Power Supply (PSU) Troubleshooting – Diagnose Power Crashes | ErrorFixer</title><meta name="description" content="Complete step-by-step diagnostic guide to troubleshoot computer power supply issues, sudden shutdowns, instability under load, and voltage errors."/><meta name="keywords" content="Power supply troubleshooting, PSU crash under load, PC sudden shutdown, paperclip test PSU, check PSU voltages"/><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/><meta name="author" content="ErrorFixer"/><meta name="theme-color" content="#0f0f14"/><link rel="canonical" href="https://errorsfixer.com/guides/psu-troubleshooting/"/><meta property="og:type" content="article"/><meta property="og:site_name" content="ErrorFixer"/><meta property="og:title" content="Power Supply (PSU) Troubleshooting – Diagnose Power Crashes"/><meta property="og:description" content="Diagnose and troubleshoot power supply unit (PSU) failures. Covers under-load shutdowns, voltage checks, and how to verify wattage needs."/><meta property="og:url" content="https://errorsfixer.com/guides/psu-troubleshooting/"/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/><link rel="preload" href="/style.css?v=1.0.9" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/style.css?v=1.0.9"></noscript>
+<link rel="preload" href="/detail-pages.css?v=1.0.9" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/detail-pages.css?v=1.0.9"></noscript><script type="application/ld+json">{
+"@context": "https://schema.org",
+"@type": "HowTo",
+"name": "How to Troubleshoot a PC Power Supply",
+"description": "Step-by-step guide to testing a PC power supply unit, checking ATX voltages, and resolving sudden crashes under gaming or rendering loads.",
+"totalTime": "PT45M",
+"step": [
+{"@type":"HowToStep","position":1,"name":"Identify crash symptoms","text":"Determine if your PC shuts down instantly under gaming load without showing a Blue Screen (BSOD). Instantly turning off like the plug was pulled is a classic sign of PSU overload or failure."},
+{"@type":"HowToStep","position":2,"name":"Verify system wattage needs","text":"Combine the TDP wattage of your CPU and GPU. Add 150-200W for RAM, storage, fans, and motherboard overhead. Ensure your PSU's rated wattage exceeds this sum by at least 20% for transient load spikes."},
+{"@type":"HowToStep","position":3,"name":"Perform the PSU Paperclip Test","text":"Power off, unplug all internal components, and use a paperclip to bridge the green PS_ON pin 16 to a black ground pin 17/18 on the 24-pin connector. Turn on the switch; if the PSU fan doesn't start, the unit is dead."},
+{"@type":"HowToStep","position":4,"name":"Check hardware voltage rails in BIOS","text":"Reboot your PC, enter BIOS, and navigate to Hardware Monitor. Verify that +12V, +5V, and +3.3V rails stay within the +/- 5% tolerance limit under ATX specifications."},
+{"@type":"HowToStep","position":5,"name":"Verify PCIe power cables are secure","text":"Check that all PCIe cables connecting to your GPU are locked in. Use separate cables for high-wattage graphics cards instead of daisy-chained pigtail cables to avoid melting cables or triggering overcurrent protection."},
+{"@type":"HowToStep","position":6,"name":"Isolate by swapping the PSU","text":"To rule out motherboard or GPU issues, connect a known working power supply of equivalent or higher wattage to your system and test if the under-load crashes cease."}
+]
+}</script><script type="application/ld+json">{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{"@type":"Question","name":"What are the symptoms of a failing power supply?","acceptedAnswer":{"@type":"Answer","text":"Failing PSUs typically cause sudden shutdowns under 3D load, random restarts without warning or blue screens, failure to power on at all (no fans, no lights), clicking noises, or a burnt smell."}},
+{"@type":"Question","name":"How do I test if my PSU is dead using a paperclip?","acceptedAnswer":{"@type":"Answer","text":"You can test the PSU by unplugging it from all computer components. Take the 24-pin cable and use a bent paperclip to bridge the green wire (pin 16, PS_ON) to any black wire (ground, e.g., pin 15 or 17). Plug the PSU into the wall and flip the switch. If the fan spins, the PSU basic circuitry functions."}},
+{"@type":"Question","name":"What are the safe voltage tolerance ranges for ATX PSUs?","acceptedAnswer":{"@type":"Answer","text":"According to Intel ATX design guides, a +/- 5% tolerance is allowed on all primary rails: +12V rail should be between 11.40V and 12.60V; +5V rail between 4.75V and 5.25V; +3.3V rail between 3.14V and 3.47V. Anything outside this range indicates hardware instability."}},
+{"@type":"Question","name":"Can an insufficient PSU cause graphics card crashes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Modern GPUs draw significant power and experience 'transient spikes' (brief demands for double their typical power). If your PSU cannot handle these brief surges, it triggers OCP (Overcurrent Protection) or OPP (Overpower Protection), shutting off the PC instantly to protect the system."}}
+]
+}</script>
+
+<link rel="preload" href="/app.js?v=1.0.9" as="script"/>
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Context"/>
+</head><body><header id="site-header"><div class="header-inner"><a class="logo" href="/" aria-label="ErrorFixer – Home"><svg class="logo-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> <span class="logo-text">Error<strong>Fixer</strong></span></a><nav class="main-nav" aria-label="Main navigation"><a href="/" class="nav-link">Home</a> <a href="/#categories" class="nav-link">Categories</a> <a href="/#stats" class="nav-link">Statistics</a></nav><div class="header-actions"><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></div></header><main><section class="guide-hero"><div class="container"><nav class="breadcrumb" style="justify-content:center;margin-bottom:24px;padding:0" aria-label="Breadcrumb"><a href="/">ErrorFixer</a><span>›</span> <a href="/#guides">Guides</a><span>›</span> <span>PSU Troubleshooting</span></nav><h1>Power Supply (PSU) Troubleshooting – <span class="gradient-text">Complete Diagnostic Guide</span></h1><p class="lead">A failing, faulty, or insufficient power supply unit (PSU) is one of the most difficult PC components to diagnose. It can manifest as sudden system shutdowns under 3D load, random restarts without blue screens, boot loops, or component-damaging voltage spikes. This guide walks you through diagnosing PSU problems systematically — from identifying wattage requirements to performing safety tests and reading system voltages.</p></div></section><div class="guide-body"><div class="temp-info-box"><h2>⚡ Safe ATX PSU Voltage Tolerances (+/- 5%)</h2><p><strong>+12V Rail:</strong> 11.40V – 12.60V &nbsp;|&nbsp; <strong>+5V Rail:</strong> 4.75V – 5.25V &nbsp;|&nbsp; <strong>+3.3V Rail:</strong> 3.14V – 3.47V. Use HWiNFO64 to check these values under load or check the Hardware Monitor section in BIOS.</p></div><section class="guide-section"><h2>Most Common Signs of PSU Failure & Instability</h2><ul class="cause-list emoji-bolt"><li>Instantly shutting down under heavy load (looks like the plug was pulled)</li><li>Random PC restarts without showing a Blue Screen of Death (BSOD)</li><li>Loud clicking noises, squealing coil whine, or grinding fan bearings</li><li>PC fails to boot, but motherboard standby lights are illuminated</li><li>Noticeable burnt electrical smell coming from the rear exhaust vent</li><li>Random USB connectivity dropouts or PCIe errors due to ripple noise</li></ul></section><section class="guide-section"><h2>How to Troubleshoot a PC Power Supply – Step by Step</h2><ol class="guide-steps-list"><li><strong>Analyze crash patterns and logs</strong>If your PC turns off instantly during 3D gaming or rendering, check Windows Event Viewer for Event ID 41 (Kernel-Power). While Event ID 41 indicates an unexpected shutdown, a shutdown without a corresponding bug check code (BSOD) points heavily to a PSU cut-off.</li><li><strong>Calculate total system power draw</strong>Look up your GPU's typical power draw and your CPU's package power under load. Add them together, add 150W for system overhead, and add 20% safety margin. If you have a 300W GPU and 150W CPU, your system needs a high-quality 650W-750W PSU.</li><li><strong>Perform the paperclip jumper test</strong>Unplug the PSU power cable from the wall. Disconnect all cables from the motherboard, GPU, and drives. Use a paperclip to bridge Pin 16 (Green, PS_ON) to Pin 17 or 15 (Black, Ground) on the 24-pin ATX cable. Turn the PSU back on. If the fan does not spin, the PSU is dead.</li><li><strong>Monitor voltage rails under load</strong>Install HWiNFO64, run a CPU/GPU stress test (e.g. OCCT, Cinebench + Furmark), and look at the +12V, +5V, and +3.3V readings. If the +12V rail drops below 11.40V under heavy load, your PSU is failing or overloaded.</li><li><strong>Use dedicated PCIe cables for high TDP GPUs</strong>Ensure your GPU is not powered via daisy-chained splitter cables. Use separate PCIe power cables from the PSU for each connector on the graphics card. This spreads the electrical load across separate +12V rails and prevents overcurrent shutdowns.</li><li><strong>Swap with a known good test unit</strong>The only 100% reliable diagnostic for an unstable power supply is swapping it with a known working test unit. If the system stops shutting down or restarting with the replacement unit, your original power supply must be replaced.</li></ol></section><section class="guide-section"><h2>Related PSU Error Codes & Events</h2><div class="error-table-wrap"><table><thead><tr><th>Code / ID</th><th>Error Name</th><th>Severity</th></tr></thead><tbody><tr><td><code>Event ID 41</code></td><td>Kernel-Power – unexpected shutdown without BSOD</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>PSU Insufficient</code></td><td><a href="/error/PSU-INSUFFICIENT/">PSU Insufficient</a> – power supply wattage exceeded</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>PSU Overvoltage</code></td><td><a href="/error/PSU-OVERVOLTAGE/">PSU Overvoltage</a> – motherboard triggers protection</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>PSU Ripple Noise</code></td><td><a href="/error/PSU-RIPPLE-NOISE/">PSU Ripple Noise</a> – unstable DC voltage delivery</td><td><span class="badge badge-high">High</span></td></tr><tr><td><code>Power Limit Throttle</code></td><td><a href="/error/POWER-LIMIT-THROTTLE/">POWER_LIMIT_THROTTLE</a> – CPU/GPU throttles due to power limit</td><td><span class="badge badge-medium">Medium</span></td></tr><tr><td><code>PCIe Connection Fail</code></td><td><a href="/error/PCIE-ERROR/">PCIE_ERROR</a> – graphics card reports power loss</td><td><span class="badge badge-high">High</span></td></tr></tbody></table></div></section><section class="guide-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-q">What are the signs of a failing power supply?</div><div class="faq-a">Common signs include sudden shutdowns under load, random restarts without warning, failure to boot, clicking noises, or a burnt smell.</div></div><div class="faq-item"><div class="faq-q">What is the paperclip test for a PSU?</div><div class="faq-a">A test to see if a PSU powers on without being plugged into the motherboard by bridging Pin 16 (Green, PS_ON) to Pin 17 (Black, Ground). If the fan spins, the PSU basic standby rails are functional.</div></div><div class="faq-item"><div class="faq-q">How do I check if my PSU wattage is sufficient?</div><div class="faq-a">Combine CPU TDP and GPU TDP, add 150-200W for memory, drives, fans, and headroom. E.g., a 300W GPU + 150W CPU needs at least a 650W PSU. High transient spikes on modern GPUs may require even higher wattage.</div></div><div class="faq-item"><div class="faq-q">What are the safe voltage ranges for +12V, +5V, and +3.3V?</div><div class="faq-a">Intel ATX specifications allow a +/- 5% tolerance: +12V should be 11.4V to 12.6V; +5V should be 4.75V to 5.25V; +3.3V should be 3.14V to 3.47V. Dropping below these thresholds indicates instability.</div></div></div></section></div></main><footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<svg class="logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+<path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>
+<span class="logo-text">Error<strong>Fixer</strong></span>
+<p>
+Comprehensive error code database for technicians and enthusiasts.
+</p>
+</div>
+<div class="footer-links">
+<h3>Categories</h3>
+<a href="/#categories" class="footer-cat-link">Processor</a>
+<a href="/#categories" class="footer-cat-link">Graphics</a>
+<a href="/#categories" class="footer-cat-link">Windows</a>
+<a href="/#categories" class="footer-cat-link">HW BIOS</a>
+<a href="/#categories" class="footer-cat-link">SW BIOS/FW</a>
+</div>
+<div class="footer-links">
+<h3>Guides</h3>
+<a href="/guides/pc-build-guide/" class="footer-guide-link">PC Build Guide</a>
+<a href="/guides/cpu-overheating/" class="footer-guide-link">CPU Overheating</a>
+<a href="/guides/directx-errors/" class="footer-guide-link">DirectX Errors</a>
+<a href="/guides/bsod-codes/" class="footer-guide-link">BSOD Codes</a>
+<a href="/guides/ram-troubleshooting/" class="footer-guide-link">RAM Troubleshooting</a>
+<a href="/guides/ssd-hdd-diagnostics/" class="footer-guide-link">SSD &amp; HDD Diagnostics</a>
+<a href="/guides/windows-update-fix/" class="footer-guide-link">Windows Update Fix</a>
+<a href="/guides/psu-troubleshooting/" class="footer-guide-link">PSU Troubleshooting</a>
+<a href="/sitemap.html" class="footer-guide-link">HTML Sitemap</a>
+</div>
+<div class="footer-links">
+<h3>About &amp; Support</h3>
+<a href="/about.html" class="footer-guide-link">About Us</a>
+<a href="/contact.html" class="footer-guide-link">Contact Us</a>
+<a href="/privacy-policy.html" class="footer-guide-link">Privacy Policy</a>
+<button class="footer-report-btn" id="footer-report-btn">
+Report Missing Code
+</button>
+</div>
+</div>
+<div class="footer-disclaimer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+stroke-linecap="round" style="
+display: inline;
+vertical-align: middle;
+margin-right: 5px;
+flex-shrink: 0;
+">
+<circle cx="12" cy="12" r="10" />
+<line x1="12" y1="8" x2="12" y2="12" />
+<line x1="12" y1="16" x2="12.01" y2="16" />
+</svg>
+<span><strong>Disclaimer:</strong> Information on this website is
+provided for informational purposes only. The author assumes no
+responsibility for hardware damage, data loss, or any other damage
+resulting from the use or misuse of the solutions provided. Perform
+all actions at your own risk.</span>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 ErrorFixer &ndash; Error Database</span>
+</div>
+</div>
+</footer><script src="/app.js?v=1.0.9" defer="defer"></script></body></html>

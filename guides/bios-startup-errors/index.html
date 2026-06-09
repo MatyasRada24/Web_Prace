@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var l=false;function load(){if(l)return;l=true;
+var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-D5CWSS5ZHC';s.async=true;document.head.appendChild(s);
+gtag('js',new Date());gtag('config','G-D5CWSS5ZHC');}
+if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:3000});}
+else{setTimeout(load,2000);}})();
+</script>
+<meta name="color-scheme" content="dark light">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>BIOS Errors on Startup – Causes &amp; Fix Guide | ErrorFixer</title>
+<meta name="description"
+content="Fix BIOS errors on PC startup. Covers POST failures, beep codes, CMOS errors, boot device not found, UEFI errors, and step-by-step solutions." />
+<meta name="keywords"
+content="BIOS errors startup, POST failure, BIOS beep codes, CMOS checksum error, boot device not found BIOS, UEFI error fix, BIOS startup problems" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="author" content="ErrorFixer" />
+<meta name="theme-color" content="#0f0f14" />
+<link rel="canonical" href="https://errorsfixer.com/guides/bios-startup-errors/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="ErrorFixer" />
+<meta property="og:title" content="BIOS Errors on Startup – Causes &amp; Fix Guide" />
+<meta property="og:description"
+content="Fix BIOS and UEFI startup errors including POST failures, beep codes, CMOS errors, and boot device not found with our expert step-by-step guide." />
+<meta property="og:url" content="https://errorsfixer.com/guides/bios-startup-errors/" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+rel="stylesheet" />
+<link rel="preload" href="/style.css?v=1.0.9" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/style.css?v=1.0.9"></noscript>
+<link rel="preload" href="/detail-pages.css?v=1.0.9" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/detail-pages.css?v=1.0.9"></noscript>
+<script type="application/ld+json">{
+"@context": "https://schema.org",
+"@type": "HowTo",
+"name": "How to Fix BIOS Errors on PC Startup",
+"description": "Step-by-step guide to diagnosing and fixing BIOS/UEFI errors that occur during PC startup, including POST failures, beep codes, and boot device errors.",
+"totalTime": "PT1H",
+"step": [
+{"@type":"HowToStep","position":1,"name":"Listen for POST beep codes","text":"Count the number and pattern of beeps on startup. Different BIOS vendors (AMI, Award, Phoenix) use different beep sequences. One short beep = POST passed. Any other pattern indicates a specific hardware failure."},
+{"@type":"HowToStep","position":2,"name":"Reseat all hardware","text":"Power off, unplug. Reseat RAM sticks (remove and reinsert), GPU, NVMe SSD, and SATA cables. Many POST failures are caused by poor contact rather than component failure."},
+{"@type":"HowToStep","position":3,"name":"Clear CMOS to reset BIOS","text":"Power off and unplug. Locate the CMOS battery (flat, round, CR2032) on the motherboard. Remove it for 30 seconds. Alternatively, use the CLRTC jumper or CMOS_RST button on the motherboard."},
+{"@type":"HowToStep","position":4,"name":"Check BIOS boot order","text":"Enter BIOS (DEL/F2). Navigate to Boot settings. Ensure the correct drive is first in boot order. If using UEFI + NVMe, confirm the drive is visible in BIOS storage settings."},
+{"@type":"HowToStep","position":5,"name":"Update BIOS firmware","text":"Download the latest BIOS update from your motherboard manufacturer's website. Use their proprietary BIOS flash utility or EZ Flash from within BIOS. Only flash if necessary — a failed flash can brick the board."},
+{"@type":"HowToStep","position":6,"name":"Test with minimal hardware","text":"Remove all non-essential components: extra RAM sticks, GPU (use integrated graphics), PCIe cards, and extra drives. If POST succeeds, add components back one by one to identify the faulty piece."}
+]
+}</script>
+<script type="application/ld+json">{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{"@type":"Question","name":"What does no POST mean and how do I fix it?","acceptedAnswer":{"@type":"Answer","text":"No POST (Power-On Self-Test) means the system powers on but produces no video output and no beep codes. Common causes: (1) RAM not seated — remove and reinstall firmly, try one stick at a time. (2) No CPU power — check the 4/8-pin CPU connector near the top of the motherboard. (3) GPU not seated or no display output cable connected to GPU. (4) Dead PSU — test with a PSU tester or swap with a known-good unit."}},
+{"@type":"Question","name":"What is a CMOS checksum error and how do I fix it?","acceptedAnswer":{"@type":"Answer","text":"A CMOS Checksum Error means the data stored in the CMOS chip (which holds BIOS settings) is corrupted or the CMOS battery has died. Fix by replacing the CR2032 CMOS battery on the motherboard (cost: ~$1-2). After replacement, BIOS will reset to defaults — re-enter your settings including XMP/EXPO, boot order, and date/time."}},
+{"@type":"Question","name":"What does 'Boot Device Not Found' mean?","acceptedAnswer":{"@type":"Answer","text":"'Boot Device Not Found' or 'No Bootable Device' means BIOS cannot find an operating system to start. Causes: (1) OS drive not detected — check cable connections and that the drive is visible in BIOS Storage settings. (2) Wrong boot order — BIOS is looking at the wrong drive. (3) Corrupted Windows bootloader — fix with: boot from Windows USB → Repair your computer → bootrec /rebuildbcd. (4) NVMe driver missing after Windows update."}},
+{"@type":"Question","name":"Is it safe to update BIOS?","acceptedAnswer":{"@type":"Answer","text":"Yes, if done correctly. Only update BIOS if you have a specific reason: compatibility with a new CPU that requires BIOS support, fixing a known BIOS bug, or enabling a new feature. Do not update BIOS during a thunderstorm or if the system is unstable. Always use a UPS or ensure the PC won't lose power during the flash. A failed BIOS flash can make the board unbootable (though most modern boards have a BIOS recovery mechanism)."}}
+]
+}</script>
+
+<link rel="preload" href="/app.js?v=1.0.9" as="script"/>
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Context"/>
+</head>
+<body>
+<header id="site-header">
+<div class="header-inner"><a class="logo" href="/" aria-label="ErrorFixer – Home"><svg class="logo-icon"
+width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+<path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg> <span class="logo-text">Error<strong>Fixer</strong></span></a>
+<nav class="main-nav" aria-label="Main navigation"><a href="/" class="nav-link">Home</a> <a
+href="/#categories" class="nav-link">Categories</a> <a href="/#stats" class="nav-link">Statistics</a></nav>
+<div class="header-actions"><button class="hamburger" id="hamburger"
+aria-label="Menu"><span></span><span></span><span></span></button></div>
+</div>
+</header>
+<main>
+<section class="guide-hero">
+<div class="container">
+<nav class="breadcrumb" style="justify-content:center;margin-bottom:24px;padding:0" aria-label="Breadcrumb"><a
+href="/">ErrorFixer</a><span>›</span> <a href="/#guides">Guides</a><span>›</span> <span>BIOS Startup
+Errors</span></nav>
+<h1>BIOS Errors on Startup – <span class="gradient-text">Causes &amp; Complete Fix Guide</span></h1>
+<p class="lead">BIOS and UEFI errors during PC startup range from harmless warnings to complete failures that
+prevent Windows from loading. The BIOS (Basic Input/Output System) or its modern replacement UEFI performs a
+Power-On Self-Test (POST) every time your PC starts, checking that all essential hardware is present and
+functional. When this test fails, you get beep codes, error messages on screen, or simply a black display with
+no output. Understanding what each error means is crucial for fast diagnosis — most BIOS startup errors can be
+resolved without professional help by following a systematic troubleshooting process.</p>
+</div>
+</section>
+<div class="guide-body">
+<section class="guide-section">
+<h2>Common BIOS Beep Codes Reference</h2>
+<div class="beep-table-wrap">
+<table>
+<thead>
+<tr>
+<th>Beep Pattern</th>
+<th>BIOS Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1 short</code></td>
+<td>AMI / Award</td>
+<td>POST successful — system OK</td>
+</tr>
+<tr>
+<td><code>1 long, 2 short</code></td>
+<td>AMI</td>
+<td>Video card / GPU error</td>
+</tr>
+<tr>
+<td><code>3 long</code></td>
+<td>AMI</td>
+<td>RAM not detected or seated</td>
+</tr>
+<tr>
+<td><code>5 short</code></td>
+<td>AMI</td>
+<td>CPU / Processor failure</td>
+</tr>
+<tr>
+<td><code>1 long, 3 short</code></td>
+<td>Award</td>
+<td>Video memory test failure</td>
+</tr>
+<tr>
+<td><code>Continuous beeping</code></td>
+<td>Any</td>
+<td>RAM or power supply issue</td>
+</tr>
+<tr>
+<td><code>No beep, no POST</code></td>
+<td>Any</td>
+<td>PSU, CPU, or motherboard fault</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="guide-section">
+<h2>Most Common Causes of BIOS Startup Errors</h2>
+<ul class="cause-list emoji-gear">
+<li>RAM not seated correctly — most frequent cause of POST failure and no-display errors</li>
+<li>Dead CMOS battery — causes BIOS settings reset and checksum errors on every boot</li>
+<li>Wrong or corrupted BIOS settings — after failed OC attempt or power loss during save</li>
+<li>Incompatible CPU — processor not supported by current BIOS version (requires BIOS update)</li>
+<li>Boot device not found — SSD/HDD not detected or boot order incorrect</li>
+<li>GPU not seated properly — causes no video output despite system powering on</li>
+<li>Failed BIOS update — corrupted firmware leaving the board unbootable</li>
+<li>Loose SATA/PCIe cables — storage or expansion cards not making proper contact</li>
+</ul>
+</section>
+<section class="guide-section">
+<h2>How to Fix BIOS Startup Errors – Step by Step</h2>
+<ol class="guide-steps-list">
+<li><strong>Listen to the beep code pattern on startup</strong>If your system has a PC speaker, count the
+beeps carefully. Refer to the table above to identify what the pattern means for your BIOS type (check your
+motherboard box or manual for the BIOS vendor — usually AMI or Award). This immediately narrows down the
+failed component.</li>
+<li><strong>Reseat all RAM, GPU, and cables</strong>Power off, unplug. Remove and firmly reinsert all RAM
+sticks. Remove and reseat the GPU. Check all SATA and power cables. Try booting with only one RAM stick in
+the A2 slot (closest to CPU is usually A2, check manual). This resolves the majority of POST failures.</li>
+<li><strong>Clear CMOS to reset BIOS to defaults</strong>Power off, unplug. Find the CR2032 CMOS battery on
+the motherboard — it looks like a watch battery. Remove it for 30 seconds, then reinsert. Some boards have a
+CLRTC/CLR_CMOS jumper or button — consult your manual. After clearing CMOS, re-enter all BIOS settings
+including XMP/EXPO and boot order.</li>
+<li><strong>Verify boot order in BIOS settings</strong>Enter BIOS (press DEL or F2 during the initial boot
+logo). Navigate to Boot → Boot Priority. Ensure your Windows drive is first. If the drive is not listed,
+check the Storage/SATA settings. For NVMe drives, confirm the M.2 slot is enabled and the correct key type
+(M-key vs B+M-key) is supported.</li>
+<li><strong>Test with minimal hardware configuration</strong>Remove all non-essential components: disconnect
+extra drives, remove all but one RAM stick, remove the dedicated GPU (use integrated graphics if available).
+If POST succeeds with minimal hardware, add components back one at a time until the failure reappears — this
+identifies the faulty part.</li>
+<li><strong>Check CPU compatibility and update BIOS</strong>If you've installed a new CPU, verify it's
+supported by your current BIOS version on the manufacturer's CPU support page (e.g., asus.com/support). New
+CPUs often require a BIOS update. If the board won't POST with the new CPU, you may need to temporarily
+install a compatible older CPU to flash the BIOS first.</li>
+<li><strong>Update or recover BIOS firmware</strong>Download the latest BIOS from your motherboard
+manufacturer. For ASUS: use EZ Flash in BIOS. For MSI: use M-Flash. For Gigabyte: use Q-Flash. Place the
+BIOS file on a FAT32 USB. If the board is unbootable, check for a BIOS Flashback feature (USB port labeled
+for this) to flash without a CPU or RAM.</li>
+<li><strong>Replace the CMOS battery</strong>If you get a "CMOS Checksum Error" or the clock resets on every
+boot, the CR2032 CMOS battery is dead (typical lifespan: 5–10 years). Replace with a new CR2032 battery
+(widely available for ~$2). After replacement, configure BIOS settings from scratch.</li>
+</ol>
+</section>
+<section class="guide-section">
+<h2>Most Common BIOS Error Codes</h2>
+<div class="error-table-wrap">
+<table>
+<thead>
+<tr>
+<th>Code / Message</th>
+<th>Error Name</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>No POST</code></td>
+<td>Power-On Self-Test failure – no video or beep</td>
+<td><span class="badge badge-critical">Critical</span></td>
+</tr>
+<tr>
+<td><code>CMOS Checksum Error</code></td>
+<td>BIOS settings corrupted – CMOS battery dead</td>
+<td><span class="badge badge-high">High</span></td>
+</tr>
+<tr>
+<td><code>Boot Device Not Found</code></td>
+<td>BIOS cannot locate OS drive</td>
+<td><span class="badge badge-critical">Critical</span></td>
+</tr>
+<tr>
+<td><code>CPU Fan Error</code></td>
+<td>CPU cooler fan not detected by BIOS</td>
+<td><span class="badge badge-high">High</span></td>
+</tr>
+<tr>
+<td><code>Overclocking Failed</code></td>
+<td>BIOS reset OC — unstable settings applied</td>
+<td><span class="badge badge-medium">Medium</span></td>
+</tr>
+<tr>
+<td><code>DRAM Light (Q-LED)</code></td>
+<td>RAM not detected or incompatible</td>
+<td><span class="badge badge-critical">Critical</span></td>
+</tr>
+<tr>
+<td><code>Secure Boot Violation</code></td>
+<td>OS or boot file fails Secure Boot check</td>
+<td><span class="badge badge-high">High</span></td>
+</tr>
+<tr>
+<td><code>CPU Vcore Out of Range</code></td>
+<td>CPU voltage outside acceptable limits</td>
+<td><span class="badge badge-high">High</span></td>
+</tr>
+<tr>
+<td><code>CPU_VCORE_LOW</code></td>
+<td><a href="/error/CPU-VCORE-LOW/">CPU_VCORE_LOW</a> – Core voltage below stable limit, fails post</td>
+<td><span class="badge badge-high">High</span></td>
+</tr>
+<tr>
+<td><code>RAM_NOT_DETECTED</code></td>
+<td><a href="/error/RAM-NOT-DETECTED/">RAM_NOT_DETECTED</a> – Motherboard fails to detect RAM on boot</td>
+<td><span class="badge badge-critical">Critical</span></td>
+</tr>
+<tr>
+<td><code>CPPC_NOT_SUPPORTED</code></td>
+<td><a href="/error/CPPC-NOT-SUPPORTED/">CPPC_NOT_SUPPORTED</a> – Collaborative Processor Performance Control not supported</td>
+<td><span class="badge badge-medium">Medium</span></td>
+</tr>
+<tr>
+<td><code>0x0000009C</code></td>
+<td><a href="/error/MACHINE-CHECK-EXCEPTION/">MACHINE_CHECK_EXCEPTION</a> – Hardware exception detected by CPU</td>
+<td><span class="badge badge-critical">Critical</span></td>
+</tr>
+<tr>
+<td><code>XMP Instability</code></td>
+<td><a href="/error/XMP-INSTABILITY/">XMP_INSTABILITY</a> – RAM overclocking profile unstable on startup</td>
+<td><span class="badge badge-high">High</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="guide-section">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-q">What does no POST mean and how do I fix it?</div>
+<div class="faq-a">No POST means the system powers on but produces no video and no beeps. Common causes: (1)
+RAM not seated — remove and reinstall firmly, try one stick at a time. (2) No CPU power — check the
+4/8-pin CPU power connector. (3) GPU not seated or cable connected to motherboard instead of GPU. (4) Dead
+PSU — test with a PSU tester or swap for a known-good unit.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is a CMOS checksum error and how do I fix it?</div>
+<div class="faq-a">A CMOS Checksum Error means BIOS settings are corrupted or the CMOS battery has died. Fix
+by replacing the CR2032 CMOS battery on the motherboard (cost: ~$2). After replacement, BIOS resets to
+defaults — re-enter your XMP/EXPO settings, boot order, and system date/time.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What does 'Boot Device Not Found' mean?</div>
+<div class="faq-a">'Boot Device Not Found' means BIOS cannot locate an OS to start. Causes: (1) drive not
+detected in BIOS — check cable connections. (2) Wrong boot order — correct it in BIOS settings. (3)
+Corrupted Windows bootloader — fix with bootrec /rebuildbcd from a Windows USB recovery. (4) NVMe drive
+invisible after Windows update — reinstall NVMe driver.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Is it safe to update BIOS?</div>
+<div class="faq-a">Yes, when done correctly. Only update BIOS if you have a specific reason: new CPU
+support, fixing a known bug, or enabling a feature. Never flash during a storm or if the system is
+unstable. Use a UPS to prevent power loss during flashing. Most modern motherboards have BIOS recovery
+features (BIOS Flashback) if a flash fails.</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<svg class="logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+<path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>
+<span class="logo-text">Error<strong>Fixer</strong></span>
+<p>
+Comprehensive error code database for technicians and enthusiasts.
+</p>
+</div>
+<div class="footer-links">
+<h3>Categories</h3>
+<a href="/#categories" class="footer-cat-link">Processor</a>
+<a href="/#categories" class="footer-cat-link">Graphics</a>
+<a href="/#categories" class="footer-cat-link">Windows</a>
+<a href="/#categories" class="footer-cat-link">HW BIOS</a>
+<a href="/#categories" class="footer-cat-link">SW BIOS/FW</a>
+</div>
+<div class="footer-links">
+<h3>Guides</h3>
+<a href="/guides/pc-build-guide/" class="footer-guide-link">PC Build Guide</a>
+<a href="/guides/cpu-overheating/" class="footer-guide-link">CPU Overheating</a>
+<a href="/guides/directx-errors/" class="footer-guide-link">DirectX Errors</a>
+<a href="/guides/bsod-codes/" class="footer-guide-link">BSOD Codes</a>
+<a href="/guides/ram-troubleshooting/" class="footer-guide-link">RAM Troubleshooting</a>
+<a href="/guides/ssd-hdd-diagnostics/" class="footer-guide-link">SSD &amp; HDD Diagnostics</a>
+<a href="/guides/windows-update-fix/" class="footer-guide-link">Windows Update Fix</a>
+<a href="/guides/psu-troubleshooting/" class="footer-guide-link">PSU Troubleshooting</a>
+<a href="/sitemap.html" class="footer-guide-link">HTML Sitemap</a>
+</div>
+<div class="footer-links">
+<h3>About &amp; Support</h3>
+<a href="/about.html" class="footer-guide-link">About Us</a>
+<a href="/contact.html" class="footer-guide-link">Contact Us</a>
+<a href="/privacy-policy.html" class="footer-guide-link">Privacy Policy</a>
+<button class="footer-report-btn" id="footer-report-btn">
+Report Missing Code
+</button>
+</div>
+</div>
+<div class="footer-disclaimer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+stroke-linecap="round" style="
+display: inline;
+vertical-align: middle;
+margin-right: 5px;
+flex-shrink: 0;
+">
+<circle cx="12" cy="12" r="10" />
+<line x1="12" y1="8" x2="12" y2="12" />
+<line x1="12" y1="16" x2="12.01" y2="16" />
+</svg>
+<span><strong>Disclaimer:</strong> Information on this website is
+provided for informational purposes only. The author assumes no
+responsibility for hardware damage, data loss, or any other damage
+resulting from the use or misuse of the solutions provided. Perform
+all actions at your own risk.</span>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 ErrorFixer &ndash; Error Database</span>
+</div>
+</div>
+</footer>
+<script src="/app.js?v=1.0.9" defer="defer"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en"><head>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var l=false;function load(){if(l)return;l=true;
+var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-D5CWSS5ZHC';s.async=true;document.head.appendChild(s);
+gtag('js',new Date());gtag('config','G-D5CWSS5ZHC');}
+if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:3000});}
+else{setTimeout(load,2000);}})();
+</script>
+<meta name="color-scheme" content="dark light">
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>How to Fix DirectX Errors in Windows – Full Guide | ErrorFixer</title><meta name="description" content="Fix DirectX errors in Windows 10 and 11. Covers DXGI_ERROR_DEVICE_HUNG, DirectX function errors, and how to reinstall DirectX step by step."/><meta name="keywords" content="fix DirectX errors Windows, DXGI error, DirectX function error, DirectX crash fix, reinstall DirectX, DirectX 12 errors"/><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/><meta name="author" content="ErrorFixer"/><meta name="theme-color" content="#0f0f14"/><link rel="canonical" href="https://errorsfixer.com/guides/directx-errors/"/><meta property="og:type" content="article"/><meta property="og:site_name" content="ErrorFixer"/><meta property="og:title" content="How to Fix DirectX Errors in Windows – Full Guide"/><meta property="og:description" content="Step-by-step solutions for all DirectX errors including DXGI_ERROR_DEVICE_HUNG, DirectX function crashes, and DLL missing errors."/><meta property="og:url" content="https://errorsfixer.com/guides/directx-errors/"/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/><link rel="preload" href="/style.css?v=1.0.9" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/style.css?v=1.0.9"></noscript>
+<link rel="preload" href="/detail-pages.css?v=1.0.9" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/detail-pages.css?v=1.0.9"></noscript><script type="application/ld+json">{
+"@context": "https://schema.org",
+"@type": "HowTo",
+"name": "How to Fix DirectX Errors in Windows",
+"description": "Complete step-by-step guide to diagnosing and fixing DirectX errors in Windows 10 and Windows 11.",
+"totalTime": "PT45M",
+"step": [
+{"@type":"HowToStep","position":1,"name":"Run DirectX Diagnostic Tool","text":"Press Win+R, type dxdiag, press Enter. Check the DirectX version and look for errors on the Display tab."},
+{"@type":"HowToStep","position":2,"name":"Update GPU drivers","text":"Download the latest GPU drivers from NVIDIA or AMD website. Use DDU in Safe Mode for a clean reinstall if updating doesn't help."},
+{"@type":"HowToStep","position":3,"name":"Run Windows Update","text":"DirectX 12 is delivered via Windows Update. Open Settings > Windows Update > Check for updates and install all available updates."},
+{"@type":"HowToStep","position":4,"name":"Run the DirectX End-User Runtime installer","text":"Download the DirectX End-User Runtime Web Installer from Microsoft's official site to reinstall DirectX 9/10/11 components."},
+{"@type":"HowToStep","position":5,"name":"Repair Visual C++ Redistributables","text":"Uninstall and reinstall all Microsoft Visual C++ Redistributable packages from the Control Panel. These contain DLLs that DirectX depends on."},
+{"@type":"HowToStep","position":6,"name":"Run sfc and DISM","text":"Open CMD as Administrator and run: sfc /scannow, then DISM /Online /Cleanup-Image /RestoreHealth to repair corrupted Windows system files."}
+]
+}</script><script type="application/ld+json">{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{"@type":"Question","name":"What causes DXGI_ERROR_DEVICE_HUNG?","acceptedAnswer":{"@type":"Answer","text":"DXGI_ERROR_DEVICE_HUNG means the GPU stopped responding to Direct3D commands and the driver had to reset it. Common causes are GPU overheating, unstable GPU overclock, outdated drivers, or a game bug. Fix by updating GPU drivers, reducing GPU clock speeds, and ensuring adequate cooling."}},
+{"@type":"Question","name":"How do I check which version of DirectX I have?","acceptedAnswer":{"@type":"Answer","text":"Press Win+R, type dxdiag and press Enter. The DirectX Diagnostic Tool shows your installed DirectX version in the System tab. Windows 11 and Windows 10 (1903+) include DirectX 12 Ultimate by default. DirectX version is tied to Windows Update, not a standalone installer."}},
+{"@type":"Question","name":"Can I reinstall DirectX on Windows 10 or 11?","acceptedAnswer":{"@type":"Answer","text":"DirectX 12 cannot be uninstalled or reinstalled separately — it's part of Windows. However, you can repair older DirectX 9/10/11 components by running the DirectX End-User Runtime Web Installer from Microsoft's Download Center. Also running sfc /scannow repairs any corrupted DirectX DLL files."}},
+{"@type":"Question","name":"Why does my game crash with a DirectX error only?","acceptedAnswer":{"@type":"Answer","text":"Game-specific DirectX crashes are usually caused by: (1) outdated or corrupted GPU drivers, (2) GPU overheating or overclock instability, (3) game files that need verification/repair (use Steam's 'Verify integrity of game files'), or (4) conflicting software like antivirus or overlays (try disabling Discord, RTSS, or MSI Afterburner overlays)."}}
+]
+}</script>
+
+<link rel="preload" href="/app.js?v=1.0.9" as="script"/>
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Context"/>
+</head><body><header id="site-header"><div class="header-inner"><a class="logo" href="/" aria-label="ErrorFixer – Home"><svg class="logo-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> <span class="logo-text">Error<strong>Fixer</strong></span></a><nav class="main-nav" aria-label="Main navigation"><a href="/" class="nav-link">Home</a> <a href="/#categories" class="nav-link">Categories</a> <a href="/#stats" class="nav-link">Statistics</a></nav><div class="header-actions"><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></div></header><main><section class="guide-hero"><div class="container"><nav class="breadcrumb" style="justify-content:center;margin-bottom:24px;padding:0" aria-label="Breadcrumb"><a href="/">ErrorFixer</a><span>›</span> <a href="/#guides">Guides</a><span>›</span> <span>DirectX Errors</span></nav><h1>How to Fix DirectX Errors in Windows – <span class="gradient-text">Full Guide</span></h1><p class="lead">DirectX errors are among the most frustrating PC problems for gamers and content creators alike. Whether you're seeing DXGI_ERROR_DEVICE_HUNG, a "DirectX function" crash popup, or a missing d3d11.dll message, these errors disrupt your work and gaming experience. DirectX is Microsoft's core API for graphics and multimedia — when something goes wrong with it, games crash, applications freeze, and video playback fails. This guide explains every major DirectX error type and how to resolve each one systematically.</p></div></section><div class="guide-body"><section class="guide-section"><h2>Most Common Causes of DirectX Errors</h2><ul class="cause-list emoji-diamond"><li>Outdated, corrupted, or incompatible GPU drivers — the #1 cause of DirectX crashes</li><li>GPU overheating — causes the graphics device to stop responding (TDR event)</li><li>Unstable GPU overclock — memory or core overclock causes rendering failures</li><li>Missing or corrupted DirectX DLL files (d3d11.dll, d3d12.dll, dxgi.dll)</li><li>Outdated Windows — DirectX 12 updates arrive through Windows Update</li><li>Missing or corrupted Visual C++ Redistributable packages</li><li>Game file corruption — incomplete installation or failed update</li><li>Third-party overlays (Discord, MSI Afterburner, RTSS) conflicting with DirectX</li></ul></section><section class="guide-section"><h2>How to Fix DirectX Errors – Step by Step</h2><ol class="guide-steps-list"><li><strong>Run the DirectX Diagnostic Tool (dxdiag)</strong>Press <code>Win+R</code>, type <code>dxdiag</code>, press Enter. Check the System tab for your DirectX version and the Display tab for any reported errors. Note the GPU driver version and date — if it's more than 6 months old, update it.</li><li><strong>Update GPU drivers (clean install)</strong>Download the latest driver from nvidia.com or amd.com. During installation, choose "Clean Install" or "Factory Reset" option. If issues persist, download DDU (Display Driver Uninstaller), boot to Safe Mode, run DDU to fully remove old drivers, then install fresh.</li><li><strong>Run Windows Update</strong>DirectX 12 is delivered via Windows Update. Go to Settings → Windows Update → Check for updates. Install all cumulative and optional updates. Restart and test.</li><li><strong>Install DirectX End-User Runtime (for legacy DX9/10/11 components)</strong>Search "DirectX End-User Runtime Web Installer" on Microsoft's Download Center. Run it — it installs older DirectX components that many games still depend on. This repairs missing d3dx9_XX.dll errors.</li><li><strong>Repair Visual C++ Redistributables</strong>Open Control Panel → Programs → Uninstall a Program. Find all "Microsoft Visual C++ Redistributable" entries, uninstall them all, then download and install the latest x86 and x64 versions from Microsoft's website.</li><li><strong>Run sfc /scannow and DISM</strong>Open CMD as Administrator. Run <code>sfc /scannow</code> and wait for completion. Then run <code>DISM /Online /Cleanup-Image /RestoreHealth</code>. Restart. These commands repair corrupted Windows files including DirectX DLLs.</li><li><strong>Verify game files and disable overlays</strong>In Steam, right-click the game → Properties → Local Files → Verify integrity. Disable all overlays: Discord, GeForce Experience, MSI Afterburner, RTSS. Test if the error persists without them.</li><li><strong>Check GPU temperatures and remove overclock</strong>If the error occurs under graphics load, use HWiNFO64 to monitor GPU temperatures and MSI Afterburner to reset all clocks to stock. GPU-Z can also help identify if the card is operating at correct voltages.</li></ol></section><section class="guide-section"><h2>Most Common DirectX Error Codes</h2><div class="error-table-wrap"><table><thead><tr><th>Code / ID</th><th>Error Name</th><th>Severity</th></tr></thead><tbody><tr><td><code>0x887A0006</code></td><td><a href="/error/DXGI-ERROR-DEVICE-HUNG/">DXGI_ERROR_DEVICE_HUNG</a></td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x887A0005</code></td><td>DXGI_ERROR_DEVICE_REMOVED</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x887A0007</code></td><td>DXGI_ERROR_DEVICE_RESET</td><td><span class="badge badge-high">High</span></td></tr><tr><td><code>0x887A0020</code></td><td>DXGI_ERROR_FRAME_STATISTICS_DISJOINT</td><td><span class="badge badge-medium">Medium</span></td></tr><tr><td><code>d3d11.dll missing</code></td><td>Direct3D 11 DLL not found</td><td><span class="badge badge-high">High</span></td></tr><tr><td><code>d3dx9_43.dll missing</code></td><td>Legacy DirectX 9 component missing</td><td><span class="badge badge-medium">Medium</span></td></tr><tr><td><code>DirectX Function Error</code></td><td>Generic game-reported DirectX crash</td><td><span class="badge badge-high">High</span></td></tr></tbody></table></div></section><section class="guide-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-q">What causes DXGI_ERROR_DEVICE_HUNG?</div><div class="faq-a">DXGI_ERROR_DEVICE_HUNG means the GPU stopped responding to Direct3D commands and the driver reset it. Common causes are GPU overheating, unstable overclock, outdated drivers, or a game-specific bug. Fix by updating GPU drivers, reducing clock speeds, and ensuring proper cooling.</div></div><div class="faq-item"><div class="faq-q">How do I check which version of DirectX I have?</div><div class="faq-a">Press Win+R, type <code>dxdiag</code> and press Enter. The DirectX Diagnostic Tool shows your installed version in the System tab. Windows 11 and Windows 10 (version 1903+) include DirectX 12 Ultimate by default.</div></div><div class="faq-item"><div class="faq-q">Can I reinstall DirectX on Windows 10 or 11?</div><div class="faq-a">DirectX 12 cannot be reinstalled separately — it's part of Windows. However, you can repair DirectX 9/10/11 components via the DirectX End-User Runtime Web Installer from Microsoft. Running <code>sfc /scannow</code> also repairs any corrupted DirectX DLL files.</div></div><div class="faq-item"><div class="faq-q">Why does my game crash with a DirectX error only?</div><div class="faq-a">Game-specific DirectX crashes are usually caused by: (1) outdated or corrupted GPU drivers, (2) GPU overheating, (3) corrupted game files — verify via Steam, or (4) conflicting overlays. Try disabling Discord overlay, RTSS, and MSI Afterburner while testing.</div></div></div></section></div></main><footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<svg class="logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+<path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>
+<span class="logo-text">Error<strong>Fixer</strong></span>
+<p>
+Comprehensive error code database for technicians and enthusiasts.
+</p>
+</div>
+<div class="footer-links">
+<h3>Categories</h3>
+<a href="/#categories" class="footer-cat-link">Processor</a>
+<a href="/#categories" class="footer-cat-link">Graphics</a>
+<a href="/#categories" class="footer-cat-link">Windows</a>
+<a href="/#categories" class="footer-cat-link">HW BIOS</a>
+<a href="/#categories" class="footer-cat-link">SW BIOS/FW</a>
+</div>
+<div class="footer-links">
+<h3>Guides</h3>
+<a href="/guides/pc-build-guide/" class="footer-guide-link">PC Build Guide</a>
+<a href="/guides/cpu-overheating/" class="footer-guide-link">CPU Overheating</a>
+<a href="/guides/directx-errors/" class="footer-guide-link">DirectX Errors</a>
+<a href="/guides/bsod-codes/" class="footer-guide-link">BSOD Codes</a>
+<a href="/guides/ram-troubleshooting/" class="footer-guide-link">RAM Troubleshooting</a>
+<a href="/guides/ssd-hdd-diagnostics/" class="footer-guide-link">SSD &amp; HDD Diagnostics</a>
+<a href="/guides/windows-update-fix/" class="footer-guide-link">Windows Update Fix</a>
+<a href="/guides/psu-troubleshooting/" class="footer-guide-link">PSU Troubleshooting</a>
+<a href="/sitemap.html" class="footer-guide-link">HTML Sitemap</a>
+</div>
+<div class="footer-links">
+<h3>About &amp; Support</h3>
+<a href="/about.html" class="footer-guide-link">About Us</a>
+<a href="/contact.html" class="footer-guide-link">Contact Us</a>
+<a href="/privacy-policy.html" class="footer-guide-link">Privacy Policy</a>
+<button class="footer-report-btn" id="footer-report-btn">
+Report Missing Code
+</button>
+</div>
+</div>
+<div class="footer-disclaimer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+stroke-linecap="round" style="
+display: inline;
+vertical-align: middle;
+margin-right: 5px;
+flex-shrink: 0;
+">
+<circle cx="12" cy="12" r="10" />
+<line x1="12" y1="8" x2="12" y2="12" />
+<line x1="12" y1="16" x2="12.01" y2="16" />
+</svg>
+<span><strong>Disclaimer:</strong> Information on this website is
+provided for informational purposes only. The author assumes no
+responsibility for hardware damage, data loss, or any other damage
+resulting from the use or misuse of the solutions provided. Perform
+all actions at your own risk.</span>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 ErrorFixer &ndash; Error Database</span>
+</div>
+</div>
+</footer><script src="/app.js?v=1.0.9" defer="defer"></script></body></html>

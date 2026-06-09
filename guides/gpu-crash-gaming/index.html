@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"><head>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var l=false;function load(){if(l)return;l=true;
+var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-D5CWSS5ZHC';s.async=true;document.head.appendChild(s);
+gtag('js',new Date());gtag('config','G-D5CWSS5ZHC');}
+if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:3000});}
+else{setTimeout(load,2000);}})();
+</script>
+<meta name="color-scheme" content="dark light">
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>GPU Crash in Games – Causes & Complete Fix Guide | ErrorFixer</title><meta name="description" content="GPU crashing in games? This guide covers every cause and fix: driver crashes, TDR errors, VRAM overload, overheating, and overclock instability."/><meta name="keywords" content="GPU crash in games, graphics card crash fix, TDR error, DXGI error device hung, nvlddmkm crash, GPU driver crash, game crashing fix"/><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/><meta name="author" content="ErrorFixer"/><meta name="theme-color" content="#0f0f14"/><link rel="canonical" href="https://errorsfixer.com/guides/gpu-crash-gaming/"/><meta property="og:type" content="article"/><meta property="og:site_name" content="ErrorFixer"/><meta property="og:title" content="GPU Crash in Games – Causes & Complete Fix Guide"/><meta property="og:description" content="Fix GPU crashes in games with our expert guide. Covers driver crashes, TDR errors, VRAM issues, overheating, and overclock instability."/><meta property="og:url" content="https://errorsfixer.com/guides/gpu-crash-gaming/"/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/><link rel="preload" href="/style.css?v=1.0.9" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/style.css?v=1.0.9"></noscript>
+<link rel="preload" href="/detail-pages.css?v=1.0.9" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/detail-pages.css?v=1.0.9"></noscript><script type="application/ld+json">{
+"@context": "https://schema.org",
+"@type": "HowTo",
+"name": "How to Fix GPU Crashes in Games",
+"description": "Step-by-step guide to diagnosing and fixing graphics card crashes during gaming, including driver crashes, TDR errors, and thermal issues.",
+"totalTime": "PT1H",
+"step": [
+{"@type":"HowToStep","position":1,"name":"Identify crash type","text":"Determine if the crash produces a black screen with recovery, a full system BSOD, or a game crash to desktop with an error message. Each pattern points to a different root cause."},
+{"@type":"HowToStep","position":2,"name":"Check GPU temperature under load","text":"Run HWiNFO64 alongside a game or FurMark. If GPU core temperature exceeds 90°C or memory temperature exceeds 100°C, overheating is the cause."},
+{"@type":"HowToStep","position":3,"name":"Remove GPU overclock","text":"Open MSI Afterburner and reset all sliders to zero (stock). Many crashes are caused by unstable GPU memory overclocks that only manifest under specific game loads."},
+{"@type":"HowToStep","position":4,"name":"Perform clean GPU driver reinstall with DDU","text":"Boot into Safe Mode, run Display Driver Uninstaller (DDU) to fully remove all GPU driver traces, then install the latest driver from NVIDIA/AMD website."},
+{"@type":"HowToStep","position":5,"name":"Disable overlays and conflicting software","text":"Disable Discord overlay, NVIDIA/AMD in-game overlay, MSI Afterburner, and RTSS. These can conflict with DirectX and cause crashes, especially in DX12 and Vulkan games."},
+{"@type":"HowToStep","position":6,"name":"Check GPU power and PCIe connections","text":"Ensure all GPU power cables are firmly seated. Check that the PCIe power connectors are not daisy-chained on a PSU that doesn't support it. Use separate cables from the PSU for each GPU connector."},
+{"@type":"HowToStep","position":7,"name":"Run GPU stress test to reproduce","text":"Run FurMark or Unigine Superposition for 15-30 minutes. If the system crashes, the GPU or its cooling is the issue. If it passes but games crash, it's likely game-specific or driver-related."}
+]
+}</script><script type="application/ld+json">{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{"@type":"Question","name":"Why does my GPU crash only in certain games?","acceptedAnswer":{"@type":"Answer","text":"Game-specific GPU crashes usually indicate a driver compatibility issue, game file corruption, or a DirectX/Vulkan conflict. Try verifying game file integrity (Steam: right-click → Properties → Local Files → Verify). Also check if the game has a known crash issue with your GPU driver version — roll back to a previous driver if needed. Some games also stress VRAM more than others, exposing an unstable memory overclock."}},
+{"@type":"Question","name":"What is a TDR crash and how do I fix it?","acceptedAnswer":{"@type":"Answer","text":"TDR (Timeout Detection and Recovery) is a Windows mechanism that resets the GPU driver when the GPU stops responding for more than 2 seconds. You'll see a black screen flash and a notification 'Display driver stopped responding and has recovered.' Fix by: (1) updating GPU drivers, (2) removing GPU overclock, (3) checking GPU temperatures, (4) increasing TDR delay in Registry (TdrDelay DWORD to 8), and (5) ensuring the PSU provides adequate wattage."}},
+{"@type":"Question","name":"Can a faulty PSU cause GPU crashes?","acceptedAnswer":{"@type":"Answer","text":"Yes. An underpowered or failing PSU is a common cause of GPU crashes under load. When the GPU demands peak power (during intense scenes), a weak PSU causes voltage drops that trigger driver resets or system shutdowns. Use a PSU calculator to verify your PSU wattage is sufficient. If the PSU is over 5 years old, consider replacing it even if wattage seems adequate."}},
+{"@type":"Question","name":"How do I know if my GPU is dying?","acceptedAnswer":{"@type":"Answer","text":"Signs of a dying GPU include: persistent screen artifacts (colored dots, polygons, distortion) even outside games, crashes that occur at lower and lower workloads over time, GPU not being detected in Device Manager, thermal throttling even after repasting, and Code 43 error in Device Manager. Run FurMark — if artifacts appear at low load or within minutes, the GPU hardware is failing."}}
+]
+}</script>
+
+<link rel="preload" href="/app.js?v=1.0.9" as="script"/>
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Context"/>
+</head><body><header id="site-header"><div class="header-inner"><a class="logo" href="/" aria-label="ErrorFixer – Home"><svg class="logo-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> <span class="logo-text">Error<strong>Fixer</strong></span></a><nav class="main-nav" aria-label="Main navigation"><a href="/" class="nav-link">Home</a> <a href="/#categories" class="nav-link">Categories</a> <a href="/#stats" class="nav-link">Statistics</a></nav><div class="header-actions"><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></div></header><main><section class="guide-hero"><div class="container"><nav class="breadcrumb" style="justify-content:center;margin-bottom:24px;padding:0" aria-label="Breadcrumb"><a href="/">ErrorFixer</a><span>›</span> <a href="/#guides">Guides</a><span>›</span> <span>GPU Crash in Games</span></nav><h1>GPU Crash in Games – <span class="gradient-text">Causes & Complete Fix Guide</span></h1><p class="lead">Few things are more frustrating than a graphics card crash mid-game — whether it's a black screen that recovers after a few seconds, a sudden BSOD, or a game that crashes to desktop with a cryptic DirectX error. GPU crashes during gaming have many potential causes: outdated drivers, thermal throttling, unstable overclocks, VRAM shortages, power delivery problems, and conflicting software. The good news is that the vast majority of GPU crashes are software or configuration issues that can be fixed without replacing any hardware. This guide walks through every type of GPU crash, how to identify your specific issue, and a proven step-by-step fix process.</p></div></section><div class="guide-body"><section class="guide-section"><h2>Types of GPU Crashes</h2><div class="crash-type-grid"><div class="crash-type-card"><div class="ct-icon">⬛</div><div class="ct-name">Black Screen Flash</div><div class="ct-desc">Screen goes black for 1–3 seconds, then recovers. TDR event — driver restarted.</div></div><div class="crash-type-card"><div class="ct-icon">💙</div><div class="ct-name">BSOD Crash</div><div class="ct-desc">Blue screen with stop code (nvlddmkm.sys, atikmpag.sys). Full system restart.</div></div><div class="crash-type-card"><div class="ct-icon">🎮</div><div class="ct-name">Game Crash to Desktop</div><div class="ct-desc">Game closes with DirectX or GPU error message. Often driver or game file issue.</div></div><div class="crash-type-card"><div class="ct-icon">📺</div><div class="ct-name">Visual Artifacts</div><div class="ct-desc">Colored dots, flickering polygons, distorted textures. GPU hardware or VRAM issue.</div></div></div></section><section class="guide-section"><h2>Most Common Causes of GPU Crashes in Games</h2><ul class="cause-list emoji-bolt"><li>Outdated or corrupted GPU drivers — most frequent cause of in-game crashes</li><li>GPU overheating — core or VRAM temperatures exceeding safe limits under load</li><li>Unstable GPU overclock — even factory OC cards can be unstable with certain game loads</li><li>Insufficient PSU wattage — GPU power spikes causing voltage drops and resets</li><li>Corrupt or missing game files — causes DirectX errors in specific titles only</li><li>Conflicting overlays — Discord, GeForce Experience, MSI Afterburner injecting into DX12/Vulkan</li><li>Outdated Windows — missing DirectX patches delivered via Windows Update</li><li>Faulty GPU hardware — failing VRAM, damaged PCB, or dying GPU chip</li><li>PCIe slot contact issue — GPU not fully seated or slot damaged</li></ul></section><section class="guide-section"><h2>How to Fix GPU Crashes in Games – Step by Step</h2><ol class="guide-steps-list"><li><strong>Monitor GPU temperature during gameplay</strong>Install HWiNFO64 and run it alongside your game. Monitor GPU Core Temp and GPU Memory Junction Temp. Core should stay below 85°C; memory below 100°C. If exceeded, overheating is your primary issue — clean dust, repaste, or improve case airflow.</li><li><strong>Reset all GPU overclocks to stock</strong>Open MSI Afterburner. Click the Reset button (circular arrow) to restore all values to default. Many "factory OC" cards (e.g., ASUS TUF OC, Gigabyte Gaming OC) run slightly outside their stable range and need to be underclocked to fix crash issues.</li><li><strong>Perform a clean driver reinstall using DDU</strong>Download DDU (Display Driver Uninstaller) from guru3d.com. Boot into Safe Mode (hold Shift, click Restart → Troubleshoot → Advanced Options → Startup Settings). Run DDU, select your GPU brand, click "Clean and restart." Install the latest official driver from nvidia.com or amd.com.</li><li><strong>Disable all third-party overlays</strong>Disable: Discord Overlay (Settings → Game Overlay → off), GeForce Experience in-game overlay (Alt+Z → Settings), MSI Afterburner/RTSS overlay. Some DX12 and Vulkan games crash specifically because of overlay injection. Test the game with all overlays disabled.</li><li><strong>Verify game file integrity</strong>Steam: Right-click game → Properties → Local Files → Verify integrity of game files. Epic Games: Library → three dots → Manage → Verify. GOG Galaxy: Manage Installation → Verify. Corrupted shader cache or game DLL can cause GPU-level crashes in a single game.</li><li><strong>Check PCIe power cables and GPU seating</strong>Power off completely and unplug. Reseat the GPU in the PCIe slot — press firmly until the clip locks. Remove and reconnect all GPU power cables. If your PSU uses a daisy chain, use separate cables for each GPU power connector instead.</li><li><strong>Run FurMark stress test to isolate hardware failure</strong>Run FurMark at 1080p for 15 minutes. If artifacts appear or the system crashes before 10 minutes, GPU hardware is suspect. Compare this to game crashes — if FurMark passes but games crash, the issue is software. If FurMark also crashes, consider GPU RMA or replacement.</li><li><strong>Try undervolting the GPU</strong>Using MSI Afterburner's voltage/frequency curve editor (Ctrl+F), lower the GPU core voltage while maintaining clock speed. Undervolting reduces heat and often stabilizes GPUs with power delivery or thermal issues without reducing performance.</li></ol></section><section class="guide-section"><h2>Most Common GPU Crash Error Codes</h2><div class="error-table-wrap"><table><thead><tr><th>Code / ID</th><th>Error Name</th><th>Severity</th></tr></thead><tbody><tr><td><code><a href="/error/nvlddmkm.sys/">nvlddmkm.sys</a></code></td><td>NVIDIA display driver TDR crash (BSOD)</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>atikmpag.sys</code></td><td>AMD GPU driver kernel crash (BSOD)</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x887A0006</code></td><td><a href="/error/DXGI-ERROR-DEVICE-HUNG/">DXGI_ERROR_DEVICE_HUNG</a> – GPU not responding</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x887A0005</code></td><td>DXGI_ERROR_DEVICE_REMOVED – GPU disconnected</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>Code 43</code></td><td>Windows stopped the GPU (<a href="/error/CODE-43-GPU/">CODE-43-GPU</a>) – driver/hardware fault</td><td><span class="badge badge-high">High</span></td></tr><tr><td><code>TDR Event</code></td><td>Display driver stopped responding and recovered</td><td><span class="badge badge-high">High</span></td></tr><tr><td><code>VIDEO_TDR_FAILURE</code></td><td>BSOD – GPU driver timeout (<a href="/error/VIDEO-TDR-FAILURE/">VIDEO_TDR_FAILURE</a> / 0x00000116)</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>VIDEO_DXGKRNL_FATAL_ERROR</code></td><td>DirectX kernel fatal error (0x00000113)</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>GPU_FAN_FAILURE</code></td><td><a href="/error/GPU-FAN-FAILURE/">GPU_FAN_FAILURE</a> – GPU cooling fan stopped or hardware error</td><td><span class="badge badge-high">High</span></td></tr></tbody></table></div></section><section class="guide-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-q">Why does my GPU crash only in certain games?</div><div class="faq-a">Game-specific crashes usually indicate a driver compatibility issue, game file corruption, or a DirectX/Vulkan conflict. Verify game file integrity via Steam or Epic. Check if the game has known issues with your driver version — roll back to a previous driver if needed. Some games stress VRAM more than others, exposing an unstable memory overclock.</div></div><div class="faq-item"><div class="faq-q">What is a TDR crash and how do I fix it?</div><div class="faq-a">TDR (Timeout Detection and Recovery) is a Windows mechanism that resets the GPU driver when it stops responding for more than 2 seconds. You'll see a black screen flash and a notification "Display driver stopped responding and has recovered." Fix by: updating drivers, removing GPU overclock, checking temperatures, and ensuring the PSU provides adequate wattage.</div></div><div class="faq-item"><div class="faq-q">Can a faulty PSU cause GPU crashes?</div><div class="faq-a">Yes. An underpowered or failing PSU is a common cause of GPU crashes under load. When the GPU demands peak power during intense scenes, voltage drops trigger driver resets or shutdowns. Use a PSU wattage calculator to verify headroom. If the PSU is over 5 years old, consider replacing it regardless of rated wattage.</div></div><div class="faq-item"><div class="faq-q">How do I know if my GPU is dying?</div><div class="faq-a">Signs of a dying GPU include: persistent artifacts even outside games, crashes that occur under lighter and lighter loads over time, GPU not detected in Device Manager, and Code 43 errors. Run FurMark — if artifacts appear at low load or the system crashes within minutes at stock clocks, the GPU hardware is failing and needs replacement.</div></div></div></section></div></main><footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<svg class="logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+<path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>
+<span class="logo-text">Error<strong>Fixer</strong></span>
+<p>
+Comprehensive error code database for technicians and enthusiasts.
+</p>
+</div>
+<div class="footer-links">
+<h3>Categories</h3>
+<a href="/#categories" class="footer-cat-link">Processor</a>
+<a href="/#categories" class="footer-cat-link">Graphics</a>
+<a href="/#categories" class="footer-cat-link">Windows</a>
+<a href="/#categories" class="footer-cat-link">HW BIOS</a>
+<a href="/#categories" class="footer-cat-link">SW BIOS/FW</a>
+</div>
+<div class="footer-links">
+<h3>Guides</h3>
+<a href="/guides/pc-build-guide/" class="footer-guide-link">PC Build Guide</a>
+<a href="/guides/cpu-overheating/" class="footer-guide-link">CPU Overheating</a>
+<a href="/guides/directx-errors/" class="footer-guide-link">DirectX Errors</a>
+<a href="/guides/bsod-codes/" class="footer-guide-link">BSOD Codes</a>
+<a href="/guides/ram-troubleshooting/" class="footer-guide-link">RAM Troubleshooting</a>
+<a href="/guides/ssd-hdd-diagnostics/" class="footer-guide-link">SSD &amp; HDD Diagnostics</a>
+<a href="/guides/windows-update-fix/" class="footer-guide-link">Windows Update Fix</a>
+<a href="/guides/psu-troubleshooting/" class="footer-guide-link">PSU Troubleshooting</a>
+<a href="/sitemap.html" class="footer-guide-link">HTML Sitemap</a>
+</div>
+<div class="footer-links">
+<h3>About &amp; Support</h3>
+<a href="/about.html" class="footer-guide-link">About Us</a>
+<a href="/contact.html" class="footer-guide-link">Contact Us</a>
+<a href="/privacy-policy.html" class="footer-guide-link">Privacy Policy</a>
+<button class="footer-report-btn" id="footer-report-btn">
+Report Missing Code
+</button>
+</div>
+</div>
+<div class="footer-disclaimer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+stroke-linecap="round" style="
+display: inline;
+vertical-align: middle;
+margin-right: 5px;
+flex-shrink: 0;
+">
+<circle cx="12" cy="12" r="10" />
+<line x1="12" y1="8" x2="12" y2="12" />
+<line x1="12" y1="16" x2="12.01" y2="16" />
+</svg>
+<span><strong>Disclaimer:</strong> Information on this website is
+provided for informational purposes only. The author assumes no
+responsibility for hardware damage, data loss, or any other damage
+resulting from the use or misuse of the solutions provided. Perform
+all actions at your own risk.</span>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 ErrorFixer &ndash; Error Database</span>
+</div>
+</div>
+</footer><script src="/app.js?v=1.0.9" defer="defer"></script></body></html>

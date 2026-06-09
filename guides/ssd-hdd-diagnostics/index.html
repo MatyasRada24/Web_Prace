@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var l=false;function load(){if(l)return;l=true;
+var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-D5CWSS5ZHC';s.async=true;document.head.appendChild(s);
+gtag('js',new Date());gtag('config','G-D5CWSS5ZHC');}
+if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:3000});}
+else{setTimeout(load,2000);}})();
+</script>
+<meta name="color-scheme" content="dark light">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SSD &amp; HDD Diagnostics &amp; Health Guide | ErrorFixer</title>
+<meta name="description" content="Check SSD and HDD drive health, diagnose bad sectors, fix S.M.A.R.T. status errors, and troubleshoot Boot Device Not Found. Step-by-step diagnostic guide." />
+<meta name="keywords" content="SSD diagnostics, HDD health test, SMART status bad, boot device not found, chkdsk command, fix SSD errors, drive health monitoring" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="author" content="ErrorFixer" />
+<meta name="theme-color" content="#0f0f14" />
+<link rel="canonical" href="https://errorsfixer.com/guides/ssd-hdd-diagnostics/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="ErrorFixer" />
+<meta property="og:title" content="SSD &amp; HDD Diagnostics &amp; Health Guide" />
+<meta property="og:description" content="Resolve hard drive corruptions, slow boot speeds, and storage device failures. Learn how to check S.M.A.R.T., run chkdsk, and format drives safely." />
+<meta property="og:url" content="https://errorsfixer.com/guides/ssd-hdd-diagnostics/" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+<link rel="preload" href="/style.css?v=1.0.9" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/style.css?v=1.0.9"></noscript>
+<link rel="preload" href="/detail-pages.css?v=1.0.9" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/detail-pages.css?v=1.0.9"></noscript>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "HowTo",
+"name": "How to Diagnose and Monitor SSD & HDD Health",
+"description": "Step-by-step guide to run storage diagnostics, analyze S.M.A.R.T. health values, test SATA/NVMe connections, and repair disk filesystems.",
+"totalTime": "PT1H",
+"step": [
+{"@type":"HowToStep","position":1,"name":"Monitor S.M.A.R.T. status","text":"Download CrystalDiskInfo or run HWiNFO64. Check the health status of your drives. S.M.A.R.T. warnings (e.g. caution/bad) indicate imminent hardware failure."},
+{"@type":"HowToStep","position":2,"name":"Test physical storage connections","text":"Power off, unplug the PC. Check SATA data and power cables (for HDDs/SATA SSDs) or reseat the M.2 NVMe SSD in its PCIe slot. Ensure the retaining screw is secure."},
+{"@type":"HowToStep","position":3,"name":"Run chkdsk filesystem repair","text":"Open CMD as administrator and type: chkdsk C: /f /r. Press Y if prompted to schedule at restart. This scans for and fixes directory corruptions and bad sectors."},
+{"@type":"HowToStep","position":4,"name":"Check BIOS Storage Configuration","text":"Enter BIOS (DEL/F2). Navigate to storage settings. Ensure SATA controller is set to AHCI mode (not IDE) and that NVMe RAID is disabled unless specifically required."},
+{"@type":"HowToStep","position":5,"name":"Enable SSD TRIM support","text":"Open PowerShell as administrator and type: fsutil behavior query DisableDeleteNotify. If it returns 0, TRIM is active. To enable it manually, type: fsutil behavior set DisableDeleteNotify 0."},
+{"@type":"HowToStep","position":6,"name":"Perform a clean low-level format","text":"If a secondary drive has persistent errors, run a clean format in Disk Management. Avoid full formats on SSDs; use 'Quick Format' to prevent unnecessary write wear."}
+]
+}
+</script>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{"@type":"Question","name":"What does S.M.A.R.T. status bad mean?","acceptedAnswer":{"@type":"Answer","text":"S.M.A.R.T. (Self-Monitoring, Analysis, and Reporting Technology) is a monitoring system built into drives. A 'Bad' or 'Caution' warning means the drive has exceeded internal failure thresholds (e.g., too many reallocated sectors or write failures). Backup your data immediately — the drive could fail completely at any moment."}},
+{"@type":"Question","name":"How long do SSDs and HDDs typically last?","acceptedAnswer":{"@type":"Answer","text":"Traditional mechanical hard drives (HDDs) typically last 3–5 years due to mechanical wear of moving parts. Solid State Drives (SSDs) lack moving parts and can last 5–10+ years. SSD lifespan is measured in Terabytes Written (TBW) — once you reach the rated TBW limit, the memory chips degrade and the drive becomes read-only."}},
+{"@type":"Question","name":"What causes 'Boot Device Not Found' errors?","acceptedAnswer":{"@type":"Answer","text":"This error occurs when the motherboard BIOS cannot detect an operating system drive. Common causes include a loose SATA or M.2 connection, a completely failed drive, a corrupted Windows bootloader partition (EFI/BCD), or the wrong boot priority order set in the BIOS settings."}},
+{"@type":"Question","name":"Should I defragment my SSD?","acceptedAnswer":{"@type":"Answer","text":"No, never defragment a Solid State Drive. Defragmentation is designed for mechanical HDDs to align files sequentially. SSDs read data electronically and gain no speed benefit from defragging. Running defragmentation on an SSD writes unnecessary data, wearing out the NAND memory blocks faster. Windows automatically optimizes SSDs using TRIM."}}
+]
+}
+</script>
+
+<link rel="preload" href="/app.js?v=1.0.9" as="script"/>
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Context"/>
+</head>
+<body>
+<header id="site-header">
+<div class="header-inner">
+<a class="logo" href="/" aria-label="ErrorFixer – Home">
+<svg class="logo-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+<path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>
+<span class="logo-text">Error<strong>Fixer</strong></span>
+</a>
+<nav class="main-nav" aria-label="Main navigation">
+<a href="/" class="nav-link">Home</a>
+<a href="/#categories" class="nav-link">Categories</a>
+<a href="/#stats" class="nav-link">Statistics</a>
+</nav>
+<div class="header-actions">
+<button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+<main>
+<section class="guide-hero">
+<div class="container">
+<nav class="breadcrumb" style="justify-content:center;margin-bottom:24px;padding:0" aria-label="Breadcrumb">
+<a href="/">ErrorFixer</a><span>›</span> <a href="/#guides">Guides</a><span>›</span> <span>SSD &amp; HDD Diagnostics</span>
+</nav>
+<h1>SSD &amp; HDD Diagnostics – <span class="gradient-text">Complete Health Guide</span></h1>
+<p class="lead">Persistent slowdowns, disappearing files, and errors stating "Boot Device Not Found" are warning signs of failing storage drives. Hard Disk Drives (HDDs) fail due to mechanical degradation of heads and platters, while Solid State Drives (SSDs) wear down over years of writing data to NAND flash cells. This guide explains how to monitor drive health via S.M.A.R.T., configure settings in BIOS, repair directory corruptions, and prolong SSD lifespan.</p>
+</div>
+</section>
+<div class="guide-body">
+<div class="temp-info-box">
+<h2>💾 Drive Health Quick Reference</h2>
+<p><strong>Primary Tool:</strong> CrystalDiskInfo (Health Status: Good/Caution/Bad) &nbsp;|&nbsp; <strong>Vital Command:</strong> <code>chkdsk /f /r</code> &nbsp;|&nbsp; <strong>SSD Settings:</strong> Ensure TRIM is active and AHCI mode is enabled in BIOS.</p>
+</div>
+<section class="guide-section">
+<h2>Most Common Causes of Storage Drive Failures</h2>
+<ul class="cause-list emoji-gear">
+<li>Bad sectors – physical sectors on HDD platters or SSD cells that lose magnetism or voltage, preventing read/write</li>
+<li>Power surges / unstable voltage – damages drive controllers, especially in cheap SSDs</li>
+<li>High temperatures – SSD controller overheating triggers thermal throttling and read-only locks</li>
+<li>Mechanical shock – dropping or bumping an active HDD can scratch platters, causing permanent damage</li>
+<li>Wear-out of NAND flash cells – exceeding the SSD’s Terabytes Written (TBW) endurance limit</li>
+<li>Corrupted filesystem metadata – caused by sudden power cuts, system crashes, or unsafe USB ejects</li>
+<li>Loose or damaged cables – SATA data/power cords loose or bent at severe angles</li>
+</ul>
+</section>
+<section class="guide-section">
+<h2>How to Diagnose and Repair Storage Drives – Step by Step</h2>
+<ol class="guide-steps-list">
+<li><strong>Monitor S.M.A.R.T. health data</strong>Download CrystalDiskInfo (free). Open it to see your drives. Pay attention to "Reallocated Sectors Count", "Current Pending Sector Count", and "Uncorrectable Sector Count". Any non-zero values indicate physical drive degradation.</li>
+<li><strong>Fix filesystem corruptions using chkdsk</strong>Press Win + S, type <code>cmd</code>, right-click and choose "Run as administrator". Type <code>chkdsk C: /f /r</code> (replace C with your drive letter if testing a secondary drive). If scanning the OS drive, press Y and restart. The scanner will attempt to locate bad sectors and recover readable information.</li>
+<li><strong>Check physical cable and slot connections</strong>Power off, unplug the PC. Open the side panel. For HDDs/SATA SSDs, disconnect and firmly reconnect the SATA data cable (to motherboard and drive) and the SATA power cable. For M.2 NVMe SSDs, remove the SSD, blow any dust from the slot, reinsert it at a 30-degree angle, press down, and secure it with the mounting screw.</li>
+<li><strong>Verify BIOS controller and boot order configurations</strong>Boot and enter BIOS (DEL/F2). Navigate to Advanced → SATA Configuration. Ensure the mode is set to AHCI, which supports modern drive features (Native Command Queuing, Hot-plugging). Verify that your boot order priority has your bootloader (e.g. Windows Boot Manager) as the first option.</li>
+<li><strong>Check and enable TRIM support on SSDs</strong>TRIM is a command that tells the SSD controller which data blocks are no longer in use, allowing the drive to wipe them in the background. Open PowerShell as admin, type: <code>fsutil behavior query DisableDeleteNotify</code>. If it returns <code>DisableDeleteNotify = 0</code>, TRIM is active. If it returns 1, type: <code>fsutil behavior set DisableDeleteNotify 0</code> to enable it.</li>
+<li><strong>Verify NVMe SSD cooling and heatsinks</strong>High-speed PCIe 4.0/5.0 NVMe SSDs run extremely hot under heavy write loads. If they exceed 70–80°C, they thermal throttle, dropping speeds to HDD levels or disconnecting. Install the thermal pads and heatsinks provided by your motherboard manufacturer to maintain stable temperatures.</li>
+<li><strong>Low-level diagnostics using manufacturer software</strong>If you suspect drive issues, download the official utility from the manufacturer (Samsung Magician, Western Digital Dashboard, Crucial Storage Executive). Run their extended diagnostic scan, check for SSD firmware updates, and verify true health status.</li>
+</ol>
+</section>
+<section class="guide-section">
+<h2>Most Common Error Codes in This Category</h2>
+<div class="error-table-wrap">
+<table>
+<thead>
+<tr>
+<th>Code / ID</th>
+<th>Error Name</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>S.M.A.R.T. Bad</code></td>
+<td><a href="/error/SMART-REALLOCATED/">SMART-REALLOCATED</a> – Drive has bad sectors exceeding limit</td>
+<td><span class="badge badge-critical">Critical</span></td>
+</tr>
+<tr>
+<td><code>0x0000007B</code></td>
+<td><a href="/error/INACCESSIBLE-BOOT-DEVICE/">INACCESSIBLE_BOOT_DEVICE</a> – Windows boot partition missing or unreadable</td>
+<td><span class="badge badge-critical">Critical</span></td>
+</tr>
+<tr>
+<td><code>0x00000024</code></td>
+<td><a href="/error/NTFS-FILE-SYSTEM/">NTFS_FILE_SYSTEM</a> – NTFS partition index corrupt or unreadable</td>
+<td><span class="badge badge-high">High</span></td>
+</tr>
+<tr>
+<td><code>TRIM Inactive</code></td>
+<td><a href="/error/SSD-TRIM-FAIL/">SSD-TRIM-FAIL</a> – SSD performance degrades due to inactive TRIM</td>
+<td><span class="badge badge-medium">Medium</span></td>
+</tr>
+<tr>
+<td><code>Wear Limit Reached</code></td>
+<td><a href="/error/SSD-WEAR-CRITICAL/">SSD-WEAR-CRITICAL</a> – SSD write cycles exhausted, locked to read-only</td>
+<td><span class="badge badge-high">High</span></td>
+</tr>
+<tr>
+<td><code>Disk Read Error</code></td>
+<td><a href="/error/DISK-READ-ERROR/">DISK-READ-ERROR</a> – Hard drive fails to read sector payload</td>
+<td><span class="badge badge-critical">Critical</span></td>
+</tr>
+<tr>
+<td><code>NVMe Reset</code></td>
+<td><a href="/error/NVME-CONTROLLER-RESET/">NVME-CONTROLLER-RESET</a> – M.2 controller times out under load</td>
+<td><span class="badge badge-high">High</span></td>
+</tr>
+<tr>
+<td><code>0x0000007A</code></td>
+<td><a href="/error/KERNEL-DATA-INPAGE-ERROR/">KERNEL_DATA_INPAGE-ERROR</a> – Kernel requested page fails to load from disk</td>
+<td><span class="badge badge-critical">Critical</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="guide-section">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-q">What does S.M.A.R.T. status bad mean?</div>
+<div class="faq-a">S.M.A.R.T. (Self-Monitoring, Analysis, and Reporting Technology) is a monitoring system built into drives. A "Bad" or "Caution" warning means the drive has exceeded internal failure thresholds (e.g., too many reallocated sectors or write failures). Backup your data immediately — the drive could fail completely at any moment.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How long do SSDs and HDDs typically last?</div>
+<div class="faq-a">Traditional mechanical hard drives (HDDs) typically last 3–5 years due to mechanical wear of moving parts. Solid State Drives (SSDs) lack moving parts and can last 5–10+ years. SSD lifespan is measured in Terabytes Written (TBW) — once you reach the rated TBW limit, the memory chips degrade and the drive becomes read-only.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What causes 'Boot Device Not Found' errors?</div>
+<div class="faq-a">This error occurs when the motherboard BIOS cannot detect an operating system drive. Common causes include a loose SATA or M.2 connection, a completely failed drive, a corrupted Windows bootloader partition (EFI/BCD), or the wrong boot priority order set in the BIOS settings.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Should I defragment my SSD?</div>
+<div class="faq-a">No, never defragment a Solid State Drive. Defragmentation is designed for mechanical HDDs to align files sequentially. SSDs read data electronically and gain no speed benefit from defragging. Running defragmentation on an SSD writes unnecessary data, wearing out the NAND memory blocks faster. Windows automatically optimizes SSDs using TRIM.</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<svg class="logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+<path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>
+<span class="logo-text">Error<strong>Fixer</strong></span>
+<p>
+Comprehensive error code database for technicians and enthusiasts.
+</p>
+</div>
+<div class="footer-links">
+<h3>Categories</h3>
+<a href="/#categories" class="footer-cat-link">Processor</a>
+<a href="/#categories" class="footer-cat-link">Graphics</a>
+<a href="/#categories" class="footer-cat-link">Windows</a>
+<a href="/#categories" class="footer-cat-link">HW BIOS</a>
+<a href="/#categories" class="footer-cat-link">SW BIOS/FW</a>
+</div>
+<div class="footer-links">
+<h3>Guides</h3>
+<a href="/guides/pc-build-guide/" class="footer-guide-link">PC Build Guide</a>
+<a href="/guides/cpu-overheating/" class="footer-guide-link">CPU Overheating</a>
+<a href="/guides/directx-errors/" class="footer-guide-link">DirectX Errors</a>
+<a href="/guides/bsod-codes/" class="footer-guide-link">BSOD Codes</a>
+<a href="/guides/ram-troubleshooting/" class="footer-guide-link">RAM Troubleshooting</a>
+<a href="/guides/ssd-hdd-diagnostics/" class="footer-guide-link">SSD &amp; HDD Diagnostics</a>
+<a href="/guides/windows-update-fix/" class="footer-guide-link">Windows Update Fix</a>
+<a href="/guides/psu-troubleshooting/" class="footer-guide-link">PSU Troubleshooting</a>
+<a href="/sitemap.html" class="footer-guide-link">HTML Sitemap</a>
+</div>
+<div class="footer-links">
+<h3>About &amp; Support</h3>
+<a href="/about.html" class="footer-guide-link">About Us</a>
+<a href="/contact.html" class="footer-guide-link">Contact Us</a>
+<a href="/privacy-policy.html" class="footer-guide-link">Privacy Policy</a>
+<button class="footer-report-btn" id="footer-report-btn">
+Report Missing Code
+</button>
+</div>
+</div>
+<div class="footer-disclaimer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+stroke-linecap="round" style="
+display: inline;
+vertical-align: middle;
+margin-right: 5px;
+flex-shrink: 0;
+">
+<circle cx="12" cy="12" r="10" />
+<line x1="12" y1="8" x2="12" y2="12" />
+<line x1="12" y1="16" x2="12.01" y2="16" />
+</svg>
+<span><strong>Disclaimer:</strong> Information on this website is
+provided for informational purposes only. The author assumes no
+responsibility for hardware damage, data loss, or any other damage
+resulting from the use or misuse of the solutions provided. Perform
+all actions at your own risk.</span>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 ErrorFixer &ndash; Error Database</span>
+</div>
+</div>
+</footer>
+<script src="/app.js?v=1.0.9" defer="defer"></script>
+</body>
+</html>

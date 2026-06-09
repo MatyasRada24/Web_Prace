@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"><head>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var l=false;function load(){if(l)return;l=true;
+var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-D5CWSS5ZHC';s.async=true;document.head.appendChild(s);
+gtag('js',new Date());gtag('config','G-D5CWSS5ZHC');}
+if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:3000});}
+else{setTimeout(load,2000);}})();
+</script>
+<meta name="color-scheme" content="dark light">
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Most Common BSOD Codes – Blue Screen Fix Guide | ErrorFixer</title><meta name="description" content="Complete guide to the most common Windows Blue Screen of Death (BSOD) error codes: what they mean, root causes, and step-by-step fixes for every stop code."/><meta name="keywords" content="BSOD codes, blue screen of death, Windows stop codes, BSOD fix, 0x0000007E, MEMORY_MANAGEMENT, IRQL_NOT_LESS_OR_EQUAL"/><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/><meta name="author" content="ErrorFixer"/><meta name="theme-color" content="#0f0f14"/><link rel="canonical" href="https://errorsfixer.com/guides/bsod-codes/"/><meta property="og:type" content="article"/><meta property="og:site_name" content="ErrorFixer"/><meta property="og:title" content="Most Common BSOD Codes – Blue Screen Fix Guide"/><meta property="og:description" content="Identify and fix the most frequent Windows Blue Screen stop codes with our expert diagnostic guide. Covers driver issues, RAM failures, and kernel errors."/><meta property="og:url" content="https://errorsfixer.com/guides/bsod-codes/"/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/><link rel="preload" href="/style.css?v=1.0.9" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/style.css?v=1.0.9"></noscript>
+<link rel="preload" href="/detail-pages.css?v=1.0.9" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/detail-pages.css?v=1.0.9"></noscript><script type="application/ld+json">{
+"@context": "https://schema.org",
+"@type": "HowTo",
+"name": "How to Diagnose and Fix BSOD Errors",
+"description": "Step-by-step guide to identifying the most common Windows Blue Screen of Death stop codes and resolving them permanently.",
+"totalTime": "PT2H",
+"step": [
+{"@type":"HowToStep","position":1,"name":"Record the stop code","text":"Photograph or write down the exact stop code displayed on the blue screen (e.g., MEMORY_MANAGEMENT or 0x0000001A). This is the key to identifying the root cause."},
+{"@type":"HowToStep","position":2,"name":"Check Windows Event Viewer","text":"Open Event Viewer (eventvwr.msc), navigate to Windows Logs > System, and filter for Critical and Error events around the time of the crash."},
+{"@type":"HowToStep","position":3,"name":"Analyze the minidump file","text":"Use WinDbg or WhoCrashed to open the minidump file from C:\\Windows\\Minidump. The analysis reveals which driver or module caused the crash."},
+{"@type":"HowToStep","position":4,"name":"Update or roll back drivers","text":"Open Device Manager, check for recently updated drivers (especially GPU and network), and roll them back if the BSOD started after an update."},
+{"@type":"HowToStep","position":5,"name":"Run Windows Memory Diagnostic","text":"Press Win+R, type mdsched.exe, and restart. Windows will scan RAM for errors. If errors are found, test sticks individually to identify the faulty module."},
+{"@type":"HowToStep","position":6,"name":"Run SFC and DISM","text":"Open an elevated Command Prompt and run: sfc /scannow followed by DISM /Online /Cleanup-Image /RestoreHealth. These repair corrupted system files."},
+{"@type":"HowToStep","position":7,"name":"Check disk health","text":"Run chkdsk C: /f /r in an elevated prompt and restart. Bad sectors on the system drive cause many BSOD crashes related to file system corruption."}
+]
+}</script><script type="application/ld+json">{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{"@type":"Question","name":"What is a BSOD and why does it happen?","acceptedAnswer":{"@type":"Answer","text":"A Blue Screen of Death (BSOD) is a critical Windows kernel error from which the system cannot safely recover. It is triggered when a driver, hardware component, or kernel process encounters a fatal condition — such as accessing invalid memory, a hardware failure, or a corrupted system file. Windows halts immediately to prevent data corruption and logs a minidump file for diagnosis."}},
+{"@type":"Question","name":"How do I find my BSOD stop code?","acceptedAnswer":{"@type":"Answer","text":"The stop code is displayed on the blue screen itself (e.g., MEMORY_MANAGEMENT). If the system reboots too fast to read it, go to Settings > System > About > Advanced system settings > Startup and Recovery, and uncheck 'Automatically restart'. You can also find past BSODs in Event Viewer under Windows Logs > System (filter by Critical)."}},
+{"@type":"Question","name":"Can a faulty driver cause a BSOD?","acceptedAnswer":{"@type":"Answer","text":"Yes — drivers are the most common cause of BSODs on modern Windows systems. A buggy third-party driver running in kernel mode can corrupt memory or access restricted addresses, triggering a stop error. Use WhoCrashed or WinDbg to open the minidump file and identify the offending driver (usually shown as a .sys file name)."}},
+{"@type":"Question","name":"Is a BSOD a sign of hardware failure?","acceptedAnswer":{"@type":"Answer","text":"Not always. BSODs can be caused by software (drivers, corrupted system files) or hardware (faulty RAM, failing SSD, overheating). If BSODs are random and not tied to a specific action, run Windows Memory Diagnostic and check disk health with CrystalDiskInfo. If they happen under GPU load, suspect a GPU driver issue or overheating."}}
+]
+}</script>
+
+<link rel="preload" href="/app.js?v=1.0.9" as="script"/>
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Context"/>
+</head><body><header id="site-header"><div class="header-inner"><a class="logo" href="/" aria-label="ErrorFixer – Home"><svg class="logo-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> <span class="logo-text">Error<strong>Fixer</strong></span></a><nav class="main-nav" aria-label="Main navigation"><a href="/" class="nav-link">Home</a> <a href="/#categories" class="nav-link">Categories</a> <a href="/#stats" class="nav-link">Statistics</a></nav><div class="header-actions"><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></div></header><main><section class="guide-hero"><div class="container"><nav class="breadcrumb" style="justify-content:center;margin-bottom:24px;padding:0" aria-label="Breadcrumb"><a href="/">ErrorFixer</a><span>›</span> <a href="/#guides">Guides</a><span>›</span> <span>BSOD Codes</span></nav><h1>Most Common BSOD Codes – <span class="gradient-text">Complete Stop Code Guide</span></h1><p class="lead">The Blue Screen of Death (BSOD) is Windows' last line of defense — a controlled crash that prevents deeper system damage. While the sudden blue screen is alarming, every stop code carries a specific meaning that points directly at the root cause. This guide covers the most frequent BSOD stop codes encountered on Windows 10 and 11, explains what each one means, and provides actionable step-by-step fixes so you can get back to a stable system quickly.</p></div></section><div class="guide-body"><div class="bsod-info-box"><h2>🔵 Where to Find Your Minidump Files</h2><p>Windows saves a crash log every time a BSOD occurs. Navigate to <code>C:\Windows\Minidump</code> and open the <code>.dmp</code> file with <strong>WhoCrashed</strong> (free tool) or <strong>WinDbg</strong> to identify the exact driver or module responsible. Always start diagnosis here before replacing hardware.</p></div><section class="guide-section"><h2>Most Common Causes of BSOD Errors</h2><ul class="cause-list emoji-laptop"><li>Corrupted, outdated, or incompatible device drivers (GPU, network, storage)</li><li>Faulty or failing RAM modules — bad sectors or incompatible XMP profiles</li><li>Corrupted Windows system files or a damaged Windows Registry</li><li>Failing or incompatible SSD/HDD — bad sectors on the system partition</li><li>CPU or GPU overheating causing hardware-level errors</li><li>Malware or rootkits tampering with kernel-level processes</li><li>Incompatible software running in kernel mode (antivirus, VPN drivers)</li><li>Failed Windows Update or a partially applied system patch</li></ul></section><section class="guide-section"><h2>How to Diagnose and Fix a BSOD – Step by Step</h2><ol class="guide-steps-list"><li><strong>Record or photograph the stop code</strong>Write down the exact error name (e.g., <code>MEMORY_MANAGEMENT</code>) and any file name shown below it (e.g., <code>ntfs.sys</code>). If the PC reboots too fast, go to Settings → System → About → Advanced system settings → Startup and Recovery → uncheck "Automatically restart".</li><li><strong>Analyse the minidump with WhoCrashed</strong>Download and run WhoCrashed (free). It reads <code>C:\Windows\Minidump\*.dmp</code> and displays a plain-English summary of which driver caused the crash. This is the single most effective first step.</li><li><strong>Update or roll back the guilty driver</strong>Open Device Manager (devmgmt.msc). If WhoCrashed named a driver (e.g., <code><a href="/error/nvlddmkm.sys/">nvlddmkm.sys</a></code> = NVIDIA), right-click the device → Properties → Driver tab → Roll Back Driver. If rolling back isn't available, download the latest stable driver from the manufacturer's website.</li><li><strong>Run Windows Memory Diagnostic</strong>Press <code>Win + R</code>, type <code>mdsched.exe</code>, and choose "Restart now and check for problems". After reboot, Windows scans RAM. If errors are found, test each RAM stick individually by removing others. Replace any faulty stick.</li><li><strong>Repair system files with SFC and DISM</strong>Open Command Prompt as Administrator and run: <code>sfc /scannow</code> — wait for completion, then run <code>DISM /Online /Cleanup-Image /RestoreHealth</code>. Reboot and re-run SFC. These commands repair corrupted Windows kernel files that cause many stop errors.</li><li><strong>Check disk health</strong>Run <code>chkdsk C: /f /r</code> in an elevated prompt and restart. Also check your SSD/HDD health with CrystalDiskInfo — a drive showing "Caution" or "Bad" status needs to be replaced immediately.</li><li><strong>Boot into Safe Mode for persistent BSODs</strong>If Windows won't boot, press F8 during startup (or boot from Windows USB → Repair → Troubleshoot → Advanced → Startup Settings → Safe Mode with Networking). In Safe Mode, uninstall the most recently installed software or driver before the crashes began.</li></ol></section><section class="guide-section"><h2>Most Common BSOD Stop Codes Reference Table</h2><div class="error-table-wrap"><table><thead><tr><th>Stop Code</th><th>Error Name</th><th>Severity</th></tr></thead><tbody><tr><td><code>0x0000001A</code></td><td><a href="/error/MEMORY-MANAGEMENT/">MEMORY_MANAGEMENT</a> – RAM error or driver memory corruption</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x0000000A</code></td><td>IRQL_NOT_LESS_OR_EQUAL – driver accessed invalid memory address</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x0000003B</code></td><td>SYSTEM_SERVICE_EXCEPTION – kernel service threw unhandled exception</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x00000050</code></td><td>PAGE_FAULT_IN_NONPAGED_AREA – invalid memory reference</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x0000007E</code></td><td>SYSTEM_THREAD_EXCEPTION_NOT_HANDLED – driver or system thread crash</td><td><span class="badge badge-high">High</span></td></tr><tr><td><code>0x0000007F</code></td><td>UNEXPECTED_KERNEL_MODE_TRAP – hardware failure or overclocking</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x000000EF</code></td><td>CRITICAL_PROCESS_DIED – essential Windows process terminated</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x0000009F</code></td><td>DRIVER_POWER_STATE_FAILURE – driver not handling power state changes</td><td><span class="badge badge-high">High</span></td></tr><tr><td><code>0x000000D1</code></td><td>DRIVER_IRQL_NOT_LESS_OR_EQUAL – network or storage driver bug</td><td><span class="badge badge-high">High</span></td></tr><tr><td><code>0x0000001E</code></td><td>KMODE_EXCEPTION_NOT_HANDLED – kernel-mode code raised exception</td><td><span class="badge badge-high">High</span></td></tr><tr><td><code>0x00000024</code></td><td>NTFS_FILE_SYSTEM – NTFS driver error, often a failing drive</td><td><span class="badge badge-high">High</span></td></tr><tr><td><code>0x0000012B</code></td><td>FAULTY_HARDWARE_CORRUPTED_PAGE – hardware-level memory corruption</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x00000101</code></td><td><a href="/error/CLOCK-WATCHDOG-TIMEOUT/">CLOCK_WATCHDOG_TIMEOUT</a> – CPU core not responding, often heat/OC</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x00000124</code></td><td><a href="/error/WHEA-UNCORRECTABLE-ERROR/">WHEA_UNCORRECTABLE_ERROR</a> – hardware exception (CPU, RAM, PCIe)</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x000000C4</code></td><td>DRIVER_VERIFIER_DETECTED_VIOLATION – Driver Verifier caught a bad driver</td><td><span class="badge badge-medium">Medium</span></td></tr><tr><td><code>0x00000019</code></td><td><a href="/error/BAD-POOL-HEADER/">BAD_POOL_HEADER</a> – Memory pool header error, corrupt driver or RAM fault</td><td><span class="badge badge-high">High</span></td></tr><tr><td><code>XMP_INSTABILITY</code></td><td><a href="/error/XMP-INSTABILITY/">XMP_INSTABILITY</a> – RAM overclocking profile unstable, causes crashes</td><td><span class="badge badge-high">High</span></td></tr><tr><td><code>0x00000116</code></td><td><a href="/error/VIDEO-TDR-FAILURE/">VIDEO_TDR_FAILURE</a> – Video recovery timeout, GPU driver or hardware fault</td><td><span class="badge badge-critical">Critical</span></td></tr><tr><td><code>0x000000C5</code></td><td>DRIVER_CORRUPTED_EXPOOL – driver corrupted kernel memory pool</td><td><span class="badge badge-high">High</span></td></tr><tr><td><code>0x000000BE</code></td><td>ATTEMPTED_WRITE_TO_READONLY_MEMORY – driver writing to read-only memory</td><td><span class="badge badge-medium">Medium</span></td></tr><tr><td><code>0x000000F4</code></td><td>CRITICAL_OBJECT_TERMINATION – critical system object terminated unexpectedly</td><td><span class="badge badge-critical">Critical</span></td></tr></tbody></table></div></section><section class="guide-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-q">What is a BSOD and why does Windows crash?</div><div class="faq-a">A Blue Screen of Death is a critical kernel-level error from which Windows cannot safely recover. It occurs when a driver, hardware component, or core system process encounters a fatal condition — such as invalid memory access or a hardware exception. Windows halts immediately to prevent data corruption and saves a minidump file for diagnosis.</div></div><div class="faq-item"><div class="faq-q">How do I find my BSOD stop code if Windows reboots too fast?</div><div class="faq-a">Go to Settings → System → About → Advanced system settings → Startup and Recovery → uncheck "Automatically restart". This keeps the blue screen on screen until you manually reboot. Alternatively, open Event Viewer (eventvwr.msc) → Windows Logs → System and look for Critical events at the time of the crash.</div></div><div class="faq-item"><div class="faq-q">Can a faulty driver cause a BSOD?</div><div class="faq-a">Yes — buggy drivers are the most common cause of BSODs on modern Windows. A driver running in kernel mode can corrupt memory or access invalid addresses, triggering a stop error. Use WhoCrashed or WinDbg to read the minidump file. It will identify the offending .sys file, usually pointing directly to the problematic driver.</div></div><div class="faq-item"><div class="faq-q">Is a BSOD always a sign of hardware failure?</div><div class="faq-a">No. Many BSODs are caused by software issues — corrupt drivers, failed Windows Updates, or malware. However, stop codes like WHEA_UNCORRECTABLE_ERROR, MEMORY_MANAGEMENT, and CLOCK_WATCHDOG_TIMEOUT often indicate hardware problems (RAM, CPU overheating, failing SSD). Run memory diagnostics and disk health checks before assuming a hardware replacement is needed.</div></div><div class="faq-item"><div class="faq-q">What tools should I use to diagnose BSODs?</div><div class="faq-a">The essential toolkit: <strong>WhoCrashed</strong> (free minidump reader), <strong>WinDbg</strong> (advanced crash analysis), <strong>Windows Memory Diagnostic</strong> or <strong>MemTest86</strong> (RAM testing), <strong>CrystalDiskInfo</strong> (drive health), <strong>HWiNFO64</strong> (temperature monitoring), and the built-in <strong>Event Viewer</strong>. Start with WhoCrashed — it provides the fastest path to identifying the cause.</div></div></div></section></div></main><footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<svg class="logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M12 2L2 19h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+<path d="M12 9v5M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>
+<span class="logo-text">Error<strong>Fixer</strong></span>
+<p>
+Comprehensive error code database for technicians and enthusiasts.
+</p>
+</div>
+<div class="footer-links">
+<h3>Categories</h3>
+<a href="/#categories" class="footer-cat-link">Processor</a>
+<a href="/#categories" class="footer-cat-link">Graphics</a>
+<a href="/#categories" class="footer-cat-link">Windows</a>
+<a href="/#categories" class="footer-cat-link">HW BIOS</a>
+<a href="/#categories" class="footer-cat-link">SW BIOS/FW</a>
+</div>
+<div class="footer-links">
+<h3>Guides</h3>
+<a href="/guides/pc-build-guide/" class="footer-guide-link">PC Build Guide</a>
+<a href="/guides/cpu-overheating/" class="footer-guide-link">CPU Overheating</a>
+<a href="/guides/directx-errors/" class="footer-guide-link">DirectX Errors</a>
+<a href="/guides/bsod-codes/" class="footer-guide-link">BSOD Codes</a>
+<a href="/guides/ram-troubleshooting/" class="footer-guide-link">RAM Troubleshooting</a>
+<a href="/guides/ssd-hdd-diagnostics/" class="footer-guide-link">SSD &amp; HDD Diagnostics</a>
+<a href="/guides/windows-update-fix/" class="footer-guide-link">Windows Update Fix</a>
+<a href="/guides/psu-troubleshooting/" class="footer-guide-link">PSU Troubleshooting</a>
+<a href="/sitemap.html" class="footer-guide-link">HTML Sitemap</a>
+</div>
+<div class="footer-links">
+<h3>About &amp; Support</h3>
+<a href="/about.html" class="footer-guide-link">About Us</a>
+<a href="/contact.html" class="footer-guide-link">Contact Us</a>
+<a href="/privacy-policy.html" class="footer-guide-link">Privacy Policy</a>
+<button class="footer-report-btn" id="footer-report-btn">
+Report Missing Code
+</button>
+</div>
+</div>
+<div class="footer-disclaimer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+stroke-linecap="round" style="
+display: inline;
+vertical-align: middle;
+margin-right: 5px;
+flex-shrink: 0;
+">
+<circle cx="12" cy="12" r="10" />
+<line x1="12" y1="8" x2="12" y2="12" />
+<line x1="12" y1="16" x2="12.01" y2="16" />
+</svg>
+<span><strong>Disclaimer:</strong> Information on this website is
+provided for informational purposes only. The author assumes no
+responsibility for hardware damage, data loss, or any other damage
+resulting from the use or misuse of the solutions provided. Perform
+all actions at your own risk.</span>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 ErrorFixer &ndash; Error Database</span>
+</div>
+</div>
+</footer><script src="/app.js?v=1.0.9" defer="defer"></script></body></html>
