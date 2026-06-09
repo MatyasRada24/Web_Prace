@@ -3,11 +3,7 @@
 <head>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-(function(){var l=false;function load(){if(l)return;l=true;
-var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-D5CWSS5ZHC';s.async=true;document.head.appendChild(s);
-gtag('js',new Date());gtag('config','G-D5CWSS5ZHC');}
-if('requestIdleCallback' in window){requestIdleCallback(load,{timeout:3000});}
-else{setTimeout(load,2000);}})();
+gtag('js',new Date());gtag('config','G-D5CWSS5ZHC');
 </script>
 <meta name="color-scheme" content="dark light">
 <meta charset="UTF-8" />
@@ -168,18 +164,8 @@ content="Comprehensive database of BSOD, GPU, CPU, DirectX, and Windows errors w
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" /><link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <link rel="shortcut icon" href="/favicon.svg" />
-<link rel="preload"
-href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-as="style" onload="((this.onload = null), (this.rel = 'stylesheet'))" />
-<noscript>
-<link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-rel="stylesheet" />
-</noscript>
-<link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="style.css"></noscript>
-<link rel="preload" as="font"
-href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2"
-type="font/woff2" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="style.css">
 <style>
 #error-index a {
 color: var(--accent, #3b82f6);
@@ -261,9 +247,6 @@ stroke-width="2" style="display: none">
 <main>
 <section class="hero" id="hero">
 <div class="hero-content">
-<div class="hero-badge">
-<span class="badge-dot"></span> Real-time Troubleshooting Database
-</div>
 <div class="hero-text">
 <h1 class="hero-title">
 The Ultimate<br /><span class="gradient-text">PC Windows Error &amp; Bug Fix</span>
@@ -298,7 +281,6 @@ aria-label="Search issues" />
 <div class="hero-trends-bar">
 <div class="hero-trends-header">
 <h2 class="hero-trends-title">Most Searched Issues</h2>
-<span class="hero-trends-hint">Click a card to view the full solution</span>
 </div>
 <div class="hero-trends-cards" id="hero-trends-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin-top: 15px;">
 <a href="/error/WHEA-UNCORRECTABLE-ERROR/" class="trend-card" style="text-decoration:none; background:linear-gradient(145deg, var(--bg2) 0%, var(--bg) 100%); border:1px solid var(--border); border-radius:var(--radius); padding:16px 20px; cursor:pointer; transition:all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); display:flex; flex-direction:column; height: 100%; position:relative; overflow:hidden;" onmouseover="this.style.borderColor='var(--accent)'; this.style.boxShadow='0 10px 30px -10px rgba(59,130,246,0.15)'; this.style.transform='translateY(-4px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.boxShadow='none'; this.style.transform='none';">
@@ -391,10 +373,6 @@ View
 <section class="update-alerts-section" id="update-alerts">
 <div class="container">
 <div class="section-header">
-<div class="alert-status-badge">
-<span class="pulse-dot"></span>
-<span>Live Update Alert Tracker</span>
-</div>
 <h2 class="section-title">Active Windows Update Alerts</h2>
 <p class="section-subtitle">
 Critical system bugs, boot failures, and BSOD loops triggered by recent Microsoft Windows updates.
@@ -455,6 +433,42 @@ Identify hardware and software issues step-by-step by selecting symptoms
 </p>
 </div>
 <div class="wizard-card" id="wizard-card-container">
+<div class="wizard-progress-bar">
+<div class="wizard-progress-fill" style="width: 0%"></div>
+</div>
+<div class="wizard-header-meta">
+<span class="wizard-step-info">Step 1 of 3</span>
+</div>
+<h3 class="wizard-question">What kind of system issue are you experiencing?</h3>
+<div class="wizard-options">
+<button class="wizard-option-btn" data-opt-id="boot" data-next="boot_step2" data-has-result="false">
+<div class="wizard-option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg></div>
+<span class="wizard-option-title">Boot &amp; Startup Issues</span>
+<p class="wizard-option-desc">PC won't turn on, is stuck on black screen, or loops infinitely into BIOS.</p>
+</button>
+<button class="wizard-option-btn" data-opt-id="crash" data-next="crash_step2" data-has-result="false">
+<div class="wizard-option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></svg></div>
+<span class="wizard-option-title">System Crashing / BSOD</span>
+<p class="wizard-option-desc">Windows Blue Screen of Death, random freezes, or application crashes.</p>
+</button>
+<button class="wizard-option-btn" data-opt-id="gpu" data-next="gpu_step2" data-has-result="false">
+<div class="wizard-option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="12" y1="2" x2="12" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line></svg></div>
+<span class="wizard-option-title">Graphics &amp; Gaming Issues</span>
+<p class="wizard-option-desc">DirectX errors, game crashes, visual artifacts, or low framerates.</p>
+</button>
+<button class="wizard-option-btn" data-opt-id="perf" data-next="perf_step2" data-has-result="false">
+<div class="wizard-option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div>
+<span class="wizard-option-title">Performance &amp; Sluggishness</span>
+<p class="wizard-option-desc">High CPU/disk usage, overheating, lagging, or slow updates.</p>
+</button>
+</div>
+<div class="wizard-actions">
+<button class="btn-wizard-back" id="wizard-back-btn" disabled="">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+Back
+</button>
+<button class="btn-wizard-back" id="wizard-reset-btn" style="margin-left: auto;">Reset</button>
+</div>
 </div>
 </div>
 </section>
@@ -745,7 +759,113 @@ Hardware processor faults, temperature limits, and performance issues
 <th class="th-fix">Fix / Solution</th>
 </tr>
 </thead>
-<tbody id="error-tbody"></tbody>
+<tbody id="error-tbody">
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 100px; height: 22px;"></span></div><span class="skel" style="width: 60px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 140px; height: 20px;"></span></div><span class="skel" style="width: 80px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 70%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 120px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 90px; height: 22px;"></span></div><span class="skel" style="width: 50px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 120px; height: 20px;"></span></div><span class="skel" style="width: 90px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 60%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 110px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 110px; height: 22px;"></span></div><span class="skel" style="width: 70px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 160px; height: 20px;"></span></div><span class="skel" style="width: 70px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 80%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 130px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 80px; height: 22px;"></span></div><span class="skel" style="width: 55px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 110px; height: 20px;"></span></div><span class="skel" style="width: 60px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 50%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 100px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 100px; height: 22px;"></span></div><span class="skel" style="width: 60px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 130px; height: 20px;"></span></div><span class="skel" style="width: 75px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 75%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 120px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 95px; height: 22px;"></span></div><span class="skel" style="width: 50px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 125px; height: 20px;"></span></div><span class="skel" style="width: 85px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 65%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 115px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 105px; height: 22px;"></span></div><span class="skel" style="width: 65px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 150px; height: 20px;"></span></div><span class="skel" style="width: 70px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 70%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 125px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 100px; height: 22px;"></span></div><span class="skel" style="width: 60px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 140px; height: 20px;"></span></div><span class="skel" style="width: 80px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 70%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 120px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 90px; height: 22px;"></span></div><span class="skel" style="width: 55px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 130px; height: 20px;"></span></div><span class="skel" style="width: 75px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 60%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 110px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 105px; height: 22px;"></span></div><span class="skel" style="width: 60px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 145px; height: 20px;"></span></div><span class="skel" style="width: 85px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 75%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 125px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 100px; height: 22px;"></span></div><span class="skel" style="width: 60px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 135px; height: 20px;"></span></div><span class="skel" style="width: 80px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 65%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 118px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 95px; height: 22px;"></span></div><span class="skel" style="width: 50px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 120px; height: 20px;"></span></div><span class="skel" style="width: 70px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 70%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 110px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 115px; height: 22px;"></span></div><span class="skel" style="width: 70px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 155px; height: 20px;"></span></div><span class="skel" style="width: 90px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 80%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 135px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 85px; height: 22px;"></span></div><span class="skel" style="width: 55px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 115px; height: 20px;"></span></div><span class="skel" style="width: 65px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 55%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 105px; height: 18px;"></span></td>
+</tr>
+<tr class="skeleton-row">
+<td class="td-code"><div style="margin-bottom:6px"><span class="skel" style="width: 100px; height: 22px;"></span></div><span class="skel" style="width: 60px; height: 12px;"></span></td>
+<td class="td-name"><div style="margin-bottom:6px"><span class="skel" style="width: 140px; height: 20px;"></span></div><span class="skel" style="width: 80px; height: 16px;"></span></td>
+<td class="td-severity"><span class="skel" style="width: 70px; height: 22px; border-radius: 100px;"></span></td>
+<td class="td-desc"><div style="margin-bottom:6px"><span class="skel" style="width: 100%; height: 14px;"></span></div><span class="skel" style="width: 70%; height: 14px;"></span></td>
+<td class="td-fix"><span class="skel" style="width: 120px; height: 18px;"></span></td>
+</tr>
+</tbody>
 </table>
 <div id="empty-state" class="empty-state" style="display: none">
 <div class="empty-icon">🔎</div>
