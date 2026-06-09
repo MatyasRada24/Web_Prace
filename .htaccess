@@ -273,10 +273,6 @@
         Header set Cache-Control "public, max-age=1800, stale-while-revalidate=600"
     </FilesMatch>
 
-
-
-
-
     <IfModule mod_rewrite.c>
         RewriteCond %{HTTP_USER_AGENT} (libwww-perl|wget|python|nikto|sqlmap|dirbuster|nmap|masscan) [NC]
         RewriteRule .* - [F,L]
