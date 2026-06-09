@@ -1,11 +1,11 @@
-# ErrorFixer - Počítačová Databáze Chyb & Diagnostika
+# ErrorsFixer - Počítačová Databáze Chyb & Diagnostika
 
 Tento projekt je komplexní databáze počítačových chyb. Slouží jako diagnostický nástroj všechny.
 
 ---
 
 ## 1. Úvod
-* **Název projektu:** ErrorFixer
+* **Název projektu:** ErrorsFixer
 * **Téma:** Vyhledávání a diagnostika hardwarových a softwarových chyb PC, návody krok za krokem.
 * **Živý web (GitHub Pages):** (https://matyasrada24.github.io/Web_Prace/) (web je propojen s vlastní doménou pomocí souboru `CNAME.txt` od hostingu Namecheap).
 
