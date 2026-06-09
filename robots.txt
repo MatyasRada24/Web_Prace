@@ -1,4 +1,4 @@
-# ErrorFixer – robots.txt
+# ErrorsFixer – robots.txt
 # https://errorsfixer.com/
 
 User-agent: *
